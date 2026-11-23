@@ -17,17 +17,15 @@ import {
   ArrowRight,
   Check,
   CheckCheck,
-  FileText,
+  ChevronRight,
   Loader2,
   Pencil,
   RefreshCw,
   Sparkles,
-  BookOpen,
 } from "lucide-react";
 import { getLessonProject } from "@/lib/projectStore";
 import {
   MOCK_LESSON_ASSETS,
-  MOCK_SOURCE_SECTIONS,
   MOCK_TEMPLATES,
 } from "@/mocks/mockBook2Video";
 import type { LessonAsset, LessonAssetType } from "@/types/lesson";
@@ -46,7 +44,6 @@ export default function ProjectOverviewPage() {
   const [assets, setAssets] = useState<LessonAsset[]>(MOCK_LESSON_ASSETS);
   const [activeTab, setActiveTab] = useState<FilterTab>("all");
   const [editingAsset, setEditingAsset] = useState<LessonAsset | null>(null);
-  const [showSourcePanel, setShowSourcePanel] = useState(true);
 
   if (!project) {
     return <Navigate to="/" replace />;
@@ -98,7 +95,7 @@ export default function ProjectOverviewPage() {
     <div className="h-full flex flex-col bg-stone-50/70 dark:bg-neutral-950 overflow-hidden">
       {/* Header */}
       <header className="h-14 border-b px-4 md:px-6 flex items-center justify-between bg-white dark:bg-neutral-900 shrink-0 gap-3">
-        <div className="flex items-center gap-3 min-w-0">
+        <div className="flex items-center gap-2 min-w-0">
           <Button
             variant="ghost"
             size="sm"
@@ -106,9 +103,9 @@ export default function ProjectOverviewPage() {
             className="shrink-0"
           >
             <ArrowLeft className="w-4 h-4 mr-1" />
-            Trang chủ
+            Dự án
           </Button>
-          <div className="h-5 w-px bg-border hidden sm:block" />
+          <ChevronRight className="w-4 h-4 text-muted-foreground shrink-0 hidden sm:block" />
           <div className="min-w-0">
             <div className="flex items-center gap-2">
               <h1 className="font-semibold text-sm md:text-base truncate">
@@ -131,15 +128,6 @@ export default function ProjectOverviewPage() {
           >
             {approvedCount}/{assets.length} assets đã duyệt
           </Badge>
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={() => setShowSourcePanel((v) => !v)}
-            className="hidden lg:inline-flex"
-          >
-            <BookOpen className="w-4 h-4 mr-1.5" />
-            {showSourcePanel ? "Ẩn học liệu gốc" : "Xem học liệu gốc"}
-          </Button>
           <Button
             size="sm"
             onClick={() => navigate(`/editor/${project.id}`)}
@@ -184,21 +172,15 @@ export default function ProjectOverviewPage() {
               {[
                 { id: "all", label: `Tất cả (${assets.length})` },
                 {
-                  id: "vocab-visual",
-                  label: `Từ vựng & Ảnh (${
-                    assets.filter((a) => a.type === "vocab-visual").length
-                  })`,
-                },
-                {
                   id: "character",
-                  label: `Nhân vật & Bối cảnh (${
+                  label: `Nhân vật (${
                     assets.filter((a) => a.type === "character").length
                   })`,
                 },
                 {
-                  id: "exercise",
-                  label: `Bài tập (${
-                    assets.filter((a) => a.type === "exercise").length
+                  id: "object",
+                  label: `Đồ vật (${
+                    assets.filter((a) => a.type === "object").length
                   })`,
                 },
               ].map((tab) => (
@@ -234,38 +216,50 @@ export default function ProjectOverviewPage() {
                     <div>
                       {/* Visual Preview */}
                       <div
-                        className={`h-32 bg-gradient-to-br ${asset.visualBg} relative flex flex-col items-center justify-center p-3 border-b`}
+                        className={`h-36 ${
+                          asset.imageUrl
+                            ? "bg-white dark:bg-neutral-950"
+                            : `bg-gradient-to-br ${asset.visualBg}`
+                        } relative flex flex-col items-center justify-center p-3 border-b`}
                       >
                         <Badge
                           variant="secondary"
-                          className="absolute top-2 left-2 text-[10px] bg-white/90 text-slate-700"
+                          className="absolute top-2 left-2 text-[10px] bg-white/90 text-slate-700 shadow-xs"
                         >
                           {asset.templateSlot}
                         </Badge>
                         <Badge
                           variant="secondary"
-                          className="absolute top-2 right-2 text-[10px] bg-white/90 text-slate-700"
+                          className="absolute top-2 right-2 text-[10px] bg-white/90 text-slate-700 shadow-xs"
                         >
                           {asset.section}
                         </Badge>
 
                         {isRegen ? (
                           <Loader2 className="w-8 h-8 animate-spin text-blue-600" />
+                        ) : asset.imageUrl ? (
+                          <img
+                            src={asset.imageUrl}
+                            alt={asset.title}
+                            className="max-h-28 max-w-full object-contain rounded"
+                          />
                         ) : (
                           <span className="text-4xl mb-1">{asset.visualEmoji}</span>
-                        )}
-                        <span className="font-bold text-slate-900 text-base">
-                          {asset.title}
-                        </span>
-                        {asset.subtitle && (
-                          <span className="text-xs text-slate-600 font-mono">
-                            {asset.subtitle}
-                          </span>
                         )}
                       </div>
 
                       {/* Details */}
                       <div className="p-3.5 space-y-1.5 text-xs">
+                        <div className="flex items-baseline justify-between gap-2">
+                          <span className="font-bold text-slate-900 dark:text-slate-100 text-sm">
+                            {asset.title}
+                          </span>
+                          {asset.subtitle && (
+                            <span className="text-[11px] text-slate-500 font-mono">
+                              {asset.subtitle}
+                            </span>
+                          )}
+                        </div>
                         {asset.meaning && (
                           <div>
                             <span className="text-muted-foreground">Nghĩa: </span>
@@ -332,41 +326,6 @@ export default function ProjectOverviewPage() {
             </div>
           </div>
         </main>
-
-        {/* Right: Source Material Structure Panel */}
-        {showSourcePanel && (
-          <aside className="hidden lg:flex w-80 border-l bg-white dark:bg-neutral-900 flex-col shrink-0">
-            <div className="p-4 border-b">
-              <div className="flex items-center gap-2 font-semibold text-sm">
-                <FileText className="w-4 h-4 text-blue-600" />
-                Cấu trúc học liệu gốc
-              </div>
-              <p className="text-xs text-muted-foreground mt-0.5 truncate">
-                SB: {project.sbFileName} · TB: {project.tbFileName}
-              </p>
-            </div>
-            <div className="flex-1 overflow-y-auto p-3 space-y-2">
-              {MOCK_SOURCE_SECTIONS.map((sec) => (
-                <div
-                  key={sec.skill}
-                  className="p-3 rounded-lg border bg-stone-50/70 dark:bg-neutral-800/40 text-xs space-y-1"
-                >
-                  <div className="flex items-center justify-between">
-                    <Badge variant="secondary" className="text-[10px]">
-                      {sec.label}
-                    </Badge>
-                    <span className="text-[10px] text-muted-foreground font-mono">
-                      {sec.start_hms} – {sec.end_hms}
-                    </span>
-                  </div>
-                  <div className="font-medium text-foreground leading-snug">
-                    {sec.title}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </aside>
-        )}
       </div>
 
       {/* Edit Asset Dialog */}

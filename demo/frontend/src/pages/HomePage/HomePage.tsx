@@ -2,18 +2,12 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import {
-  BookOpen,
-  FileText,
-  Layers,
   LayoutGrid,
   List,
   Plus,
   Search,
-  Sparkles,
-  Volume2,
 } from "lucide-react";
 import { getAllLessonProjects, saveLessonProject } from "@/lib/projectStore";
 import { MOCK_TEMPLATES } from "@/mocks/mockBook2Video";
@@ -71,6 +65,7 @@ export default function HomePage() {
       createdAt: "Vừa xong",
       author: "My Anh",
       status: "ready",
+      thumbnailUrl: "/slides/slide-02.jpg",
       accentColor:
         MOCK_TEMPLATES.find((t) => t.id === data.templateId)?.accentColor ||
         "#2563eb",
@@ -91,16 +86,7 @@ export default function HomePage() {
       {/* Header */}
       <header className="sticky top-0 z-30 h-14 border-b px-4 md:px-6 flex items-center justify-between bg-white/95 dark:bg-neutral-900/95 backdrop-blur shrink-0">
         <div className="flex items-center gap-2.5">
-          <div className="w-8 h-8 rounded-lg bg-blue-600 text-white flex items-center justify-center shadow-sm">
-            <BookOpen className="w-4 h-4" />
-          </div>
           <span className="text-lg font-bold tracking-tight">Book2Video</span>
-          <Badge
-            variant="secondary"
-            className="hidden sm:inline-flex bg-blue-50 text-blue-700 border-blue-200 text-[11px]"
-          >
-            Tiếng Anh · Slide bài giảng có lồng tiếng
-          </Badge>
         </div>
         <div className="flex items-center gap-2 text-sm">
           <span className="text-muted-foreground hidden sm:inline">My Anh</span>
@@ -115,12 +101,8 @@ export default function HomePage() {
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
           <div>
             <h1 className="text-2xl font-bold tracking-tight">
-              Bài giảng của tôi
+              Dự án
             </h1>
-            <p className="text-sm text-muted-foreground mt-0.5">
-              Tải lên học liệu Tiếng Anh (.docx, .pdf, .txt, .md) → Chọn
-              template → Duyệt Assets → Tạo Slide & Lồng tiếng Vbee
-            </p>
           </div>
           <Button
             onClick={() => {
@@ -136,12 +118,12 @@ export default function HomePage() {
 
         {/* Search & View Switcher */}
         <div className="flex items-center justify-between gap-3 mb-5">
-          <div className="relative flex-1 max-w-sm">
+          <div className="relative flex-1">
             <Search className="w-4 h-4 text-muted-foreground absolute left-3 top-1/2 -translate-y-1/2" />
             <Input
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Tìm theo tên bài giảng hoặc file nguồn..."
+              placeholder="Tìm kiếm..."
               className="pl-9 bg-white dark:bg-neutral-900"
             />
           </div>
@@ -172,62 +154,16 @@ export default function HomePage() {
               <Card
                 key={project.id}
                 onClick={() => handleProjectClick(project)}
-                className="p-4 cursor-pointer hover:shadow-md hover:border-blue-300 transition-all flex flex-col justify-between bg-white dark:bg-neutral-900"
+                className="overflow-hidden cursor-pointer hover:shadow-md hover:border-blue-300 transition-all flex flex-col bg-white dark:bg-neutral-900 p-0 gap-0"
               >
-                <div>
-                  <div className="flex items-start justify-between gap-2 mb-3">
-                    <Badge
-                      variant="outline"
-                      className="text-[11px] bg-blue-50/70 text-blue-700 border-blue-200"
-                    >
-                      {project.subject} · {project.level}
-                    </Badge>
-                    {project.status === "draft" ? (
-                      <Badge variant="secondary" className="text-[11px]">
-                        Đang tạo
-                      </Badge>
-                    ) : (
-                      <Badge className="text-[11px] bg-emerald-50 text-emerald-700 border-emerald-200 hover:bg-emerald-50">
-                        Sẵn sàng
-                      </Badge>
-                    )}
-                  </div>
-
-                  <h3 className="font-semibold text-base line-clamp-2 mb-1.5">
-                    {project.title}
-                  </h3>
-                  <p className="text-xs text-muted-foreground line-clamp-2 mb-4">
-                    {project.textPreview}
-                  </p>
-                </div>
-
-                <div className="pt-3 border-t space-y-2 text-xs text-muted-foreground">
-                  <div className="flex items-center justify-between">
-                    <span className="flex items-center gap-1.5 truncate">
-                      <FileText className="w-3.5 h-3.5 text-blue-600 shrink-0" />
-                      <span className="truncate">
-                        {project.sbFileName} + {project.tbFileName}
-                      </span>
-                    </span>
-                    <span className="shrink-0">{project.createdAt}</span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="flex items-center gap-1">
-                      <Sparkles className="w-3.5 h-3.5 text-amber-500" />
-                      {getTemplateName(project.templateId)}
-                    </span>
-                    <span className="flex items-center gap-2">
-                      <span className="flex items-center gap-1">
-                        <Layers className="w-3.5 h-3.5" />
-                        {project.slideCount} slides
-                      </span>
-                      <span className="flex items-center gap-1">
-                        <Volume2 className="w-3.5 h-3.5" />
-                        Vbee
-                      </span>
-                    </span>
-                  </div>
-                </div>
+                <img
+                  src={project.thumbnailUrl || "/slides/slide-02.jpg"}
+                  alt={project.title}
+                  className="w-full aspect-video object-cover border-b bg-white"
+                />
+                <h3 className="font-semibold text-sm md:text-base line-clamp-2 p-3.5">
+                  {project.title}
+                </h3>
               </Card>
             ))}
           </div>

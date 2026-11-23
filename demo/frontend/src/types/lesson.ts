@@ -14,7 +14,7 @@ export interface LessonTemplate {
   previewLayout: TemplateLayoutType;
 }
 
-export type LessonAssetType = "vocab-visual" | "character" | "exercise" | "audio";
+export type LessonAssetType = "character" | "object";
 export type LessonAssetStatus = "pending" | "approved" | "regenerating";
 
 export interface LessonAsset {
@@ -124,4 +124,5 @@ export interface LessonProject {
   author: string;
   status?: "draft" | "ready";
   accentColor?: string;
+  thumbnailUrl?: string;
 }

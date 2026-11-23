@@ -53,7 +53,7 @@ export default function CreateLessonModal({
 }: CreateLessonModalProps) {
   const [step, setStep] = useState<1 | 2 | 3>(1);
   const [title, setTitle] = useState(
-    draftProject?.title || "Logistics English - Lesson 1.1.1: Hello, I'm…"
+    draftProject?.title || "Logistics English - Lesson 1.1.1"
   );
   const [level, setLevel] = useState(draftProject?.level || "TB1 · A1");
   const [sbFileName, setSbFileName] = useState(
