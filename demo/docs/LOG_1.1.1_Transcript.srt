@@ -1,0 +1,1288 @@
+1
+00:00:00,000 --> 00:00:09,210
+Chào các em. Hôm nay chúng ta bắt đầu bài học đầu tiên trong chương trình tiếng Anh nghề logistics: bài một chấm một chấm một, Chào hỏi và giới thiệu tên.
+
+2
+00:00:09,210 --> 00:00:18,470
+Trong ngành kho bãi và giao nhận, việc chào hỏi và giới thiệu rõ họ tên là bước giao tiếp cơ bản nhất mỗi khi làm việc với đối tác, tài xế hay đồng nghiệp.
+
+3
+00:00:18,870 --> 00:00:21,310
+Học xong bài này, các em sẽ:
+
+4
+00:00:21,310 --> 00:00:25,090
+Chào hỏi, nói tên và đáp lại câu Nice to meet you.
+
+5
+00:00:25,090 --> 00:00:29,050
+Nghe hiểu đoạn hội thoại ngắn để nhận biết tên riêng.
+
+6
+00:00:29,050 --> 00:00:32,960
+Đọc thẻ thông tin cá nhân để tìm họ, tên và lớp học.
+
+7
+00:00:32,960 --> 00:00:36,620
+Điền thẻ tên và viết câu tự giới thiệu bản thân.
+
+8
+00:00:36,620 --> 00:00:40,770
+Bây giờ, các em mở Student Book, Lesson 1 chấm 1 chấm 1.
+
+9
+00:00:41,170 --> 00:00:47,210
+Chúng ta cùng bắt đầu với phần khởi động. Các em nhìn tranh và đoán xem:
+
+10
+00:00:47,210 --> 00:00:49,010
+Who are they?
+
+11
+00:00:49,010 --> 00:00:50,520
+Họ là ai?
+
+12
+00:00:50,520 --> 00:00:52,610
+What do they say?
+
+13
+00:00:52,610 --> 00:00:55,700
+Và họ đang nói gì với nhau nào?
+
+14
+00:00:56,100 --> 00:01:04,010
+Hai bạn trong tranh là Nam và Hoa. Các em cùng lắng nghe hai bạn chào nhau nhé.
+
+15
+00:01:04,010 --> 00:01:06,360
+Hello! I’m Nam.
+
+16
+00:01:06,360 --> 00:01:09,230
+Xin chào! Tôi là Nam.
+
+17
+00:01:09,230 --> 00:01:11,310
+Hi! I’m Hoa.
+
+18
+00:01:11,310 --> 00:01:13,830
+Chào! Tôi là Hoa.
+
+19
+00:01:14,230 --> 00:01:22,630
+Phần A: Từ vựng. Chúng ta sẽ làm quen với tám từ mới dùng để chào hỏi và giới thiệu.
+
+20
+00:01:25,630 --> 00:01:31,770
+Từ thứ nhất. Các em nghe và nhắc lại hai lần nhé.
+
+21
+00:01:31,770 --> 00:01:33,480
+hello
+
+22
+00:01:33,480 --> 00:01:35,190
+hello
+
+23
+00:01:35,190 --> 00:01:40,930
+nghĩa là xin chào. Các em nghe câu ví dụ nhé.
+
+24
+00:01:40,930 --> 00:01:43,650
+Hello. I’m Nam.
+
+25
+00:01:43,650 --> 00:01:46,970
+Xin chào. Tôi là Nam.
+
+26
+00:01:47,370 --> 00:01:53,300
+Từ thứ hai. Các em nghe và nhắc lại hai lần nhé.
+
+27
+00:01:53,300 --> 00:01:54,690
+hi
+
+28
+00:01:54,690 --> 00:01:56,080
+hi
+
+29
+00:01:56,080 --> 00:02:04,390
+nghĩa là chào, dùng thân mật hơn từ hello. Chúng ta cùng nghe câu ví dụ.
+
+30
+00:02:04,390 --> 00:02:06,760
+Hi. I’m Hoa.
+
+31
+00:02:06,760 --> 00:02:09,630
+Chào. Tôi là Hoa.
+
+32
+00:02:10,030 --> 00:02:15,650
+Từ thứ ba. Các em nghe và nhắc lại hai lần nhé.
+
+33
+00:02:15,650 --> 00:02:17,180
+name
+
+34
+00:02:17,180 --> 00:02:18,700
+name
+
+35
+00:02:18,700 --> 00:02:26,990
+nghĩa là tên. Các em nhớ khép môi phát âm âm mờ ở cuối nhé. Nghe ví dụ nào.
+
+36
+00:02:26,990 --> 00:02:29,560
+My name is Hoa.
+
+37
+00:02:29,560 --> 00:02:32,130
+Tên tôi là Hoa.
+
+38
+00:02:32,530 --> 00:02:38,360
+Từ thứ tư. Các em nghe và nhắc lại hai lần nhé.
+
+39
+00:02:38,360 --> 00:02:39,750
+my
+
+40
+00:02:39,750 --> 00:02:41,130
+my
+
+41
+00:02:41,130 --> 00:02:46,070
+nghĩa là của tôi. Cùng nghe ví dụ nào.
+
+42
+00:02:46,070 --> 00:02:48,830
+My name is Tuan.
+
+43
+00:02:48,830 --> 00:02:51,600
+Tên tôi là Tuấn.
+
+44
+00:02:52,000 --> 00:02:58,200
+Từ thứ năm. Các em nghe và nhắc lại hai lần nhé.
+
+45
+00:02:58,200 --> 00:02:59,850
+your
+
+46
+00:02:59,850 --> 00:03:01,510
+your
+
+47
+00:03:01,510 --> 00:03:06,880
+nghĩa là của bạn. Các em nghe ví dụ nhé.
+
+48
+00:03:06,880 --> 00:03:09,880
+Your name is Mai.
+
+49
+00:03:09,880 --> 00:03:12,670
+Tên bạn là Mai.
+
+50
+00:03:13,070 --> 00:03:18,740
+Từ thứ sáu. Các em nghe và nhắc lại hai lần nhé.
+
+51
+00:03:18,740 --> 00:03:20,250
+this
+
+52
+00:03:20,250 --> 00:03:21,770
+this
+
+53
+00:03:21,770 --> 00:03:28,670
+nghĩa là đây, cái này, chỉ đồ vật ở gần mình. Nghe ví dụ nào.
+
+54
+00:03:28,670 --> 00:03:31,790
+This is my name card.
+
+55
+00:03:31,790 --> 00:03:35,100
+Đây là thẻ tên của tôi.
+
+56
+00:03:35,500 --> 00:03:40,860
+Cụm từ thứ bảy. Các em nghe và nhắc lại hai lần nhé.
+
+57
+00:03:40,860 --> 00:03:43,290
+Nice to meet you.
+
+58
+00:03:43,290 --> 00:03:45,720
+Nice to meet you.
+
+59
+00:03:45,720 --> 00:03:51,420
+nghĩa là Rất vui được gặp bạn. Chúng ta cùng nghe ví dụ.
+
+60
+00:03:51,420 --> 00:03:54,600
+Hi, Nam. Nice to meet you.
+
+61
+00:03:54,600 --> 00:03:58,200
+Chào Nam. Rất vui được gặp bạn.
+
+62
+00:03:58,600 --> 00:04:04,030
+Từ thứ tám. Các em nghe và nhắc lại hai lần nhé.
+
+63
+00:04:04,030 --> 00:04:05,750
+goodbye
+
+64
+00:04:05,750 --> 00:04:07,470
+goodbye
+
+65
+00:04:07,470 --> 00:04:12,270
+nghĩa là tạm biệt. Nghe ví dụ nào các em.
+
+66
+00:04:12,270 --> 00:04:14,540
+Goodbye, Hoa!
+
+67
+00:04:14,540 --> 00:04:16,800
+Tạm biệt Hoa!
+
+68
+00:04:17,200 --> 00:04:22,190
+Tiếp theo là hai từ chức năng rất quen thuộc:
+
+69
+00:04:22,190 --> 00:04:23,320
+I
+
+70
+00:04:23,320 --> 00:04:26,730
+nghĩa là tôi. Tiếp theo là:
+
+71
+00:04:26,730 --> 00:04:28,050
+you
+
+72
+00:04:28,050 --> 00:04:30,230
+nghĩa là bạn.
+
+73
+00:04:30,630 --> 00:04:38,430
+Bây giờ chúng ta cùng làm bài tập A một: Nối từ với nghĩa tương ứng. Câu một, cô làm mẫu nhé.
+
+74
+00:04:38,430 --> 00:04:39,920
+1. hello
+
+75
+00:04:39,920 --> 00:04:48,170
+Hello là lời chào khi gặp mặt, nên ta tìm định nghĩa tương đương là nói xin chào: a word to say hi.
+
+76
+00:04:48,570 --> 00:04:52,990
+1. hello - c. a word to say hi
+
+77
+00:04:52,990 --> 00:05:02,470
+Đáp án là một c. Hello là câu chào khi gặp nhau, tương đương a word to say hi.
+
+78
+00:05:02,870 --> 00:05:06,250
+Câu hai. Các em chọn đáp án nhé.
+
+79
+00:05:06,250 --> 00:05:07,720
+2. name
+
+80
+00:05:07,720 --> 00:05:12,800
+Name có nghĩa là tên. Các em chọn chữ cái phù hợp nào.
+
+81
+00:05:15,800 --> 00:05:20,400
+2. name - a. Nam, Hoa, or Linh
+
+82
+00:05:20,400 --> 00:05:29,600
+Đáp án là hai a. Nam, Hoa, Linh là các tên riêng, thuộc nhóm nghĩa name.
+
+83
+00:05:30,000 --> 00:05:31,800
+Câu ba nào.
+
+84
+00:05:31,800 --> 00:05:33,130
+3. my
+
+85
+00:05:33,130 --> 00:05:38,600
+My nghĩa là của tôi. Cụm từ nào giải thích đúng nghĩa này?
+
+86
+00:05:41,600 --> 00:05:46,160
+3. my - e. a word for “of me”
+
+87
+00:05:46,160 --> 00:05:54,070
+Đáp án là ba e. My nghĩa là của tôi, tương đương với of me.
+
+88
+00:05:54,470 --> 00:05:55,920
+Câu bốn.
+
+89
+00:05:55,920 --> 00:05:57,510
+4. goodbye
+
+90
+00:05:57,510 --> 00:06:01,130
+Goodbye là từ dùng khi nào các em nhỉ?
+
+91
+00:06:04,130 --> 00:06:08,420
+4. goodbye - b. a word when you leave
+
+92
+00:06:08,420 --> 00:06:15,600
+Đáp án là bốn b. Goodbye là lời chào lúc ra về, a word when you leave.
+
+93
+00:06:16,000 --> 00:06:17,810
+Câu năm.
+
+94
+00:06:17,810 --> 00:06:19,530
+5. this
+
+95
+00:06:19,530 --> 00:06:22,700
+This chỉ vật ở đâu nào?
+
+96
+00:06:25,700 --> 00:06:29,610
+5. this - d. here, near me
+
+97
+00:06:29,610 --> 00:06:37,530
+Đáp án là năm d. This chỉ một vật ở gần người nói, here, near me.
+
+98
+00:06:37,930 --> 00:06:43,630
+Phần B: Mẫu câu. Chúng ta sẽ học hai cách chào và tự giới thiệu tên mình.
+
+99
+00:06:46,630 --> 00:06:53,840
+Cấu trúc thứ nhất dùng để chào và nói tên: Hello hoặc Hi, đi với I'm và tên.
+
+100
+00:06:53,840 --> 00:06:55,810
+Hi. I’m Hoa.
+
+101
+00:06:55,810 --> 00:07:06,870
+Chào. Tôi là Hoa. Các em chú ý: I'm là dạng viết tắt của I am. Trong giao tiếp hằng ngày, từ Hi ngắn và thân mật hơn Hello.
+
+102
+00:07:07,270 --> 00:07:11,230
+Cấu trúc thứ hai là My name is đi với tên.
+
+103
+00:07:11,230 --> 00:07:13,720
+My name is Hoa Nguyen.
+
+104
+00:07:13,720 --> 00:07:25,170
+Tên tôi là Hoa Nguyễn. Cấu trúc này dùng để nói tên đầy đủ, thường kèm theo họ. Trong tiếng Anh, chúng ta viết tên gọi trước rồi mới đến họ nhé.
+
+105
+00:07:25,570 --> 00:07:30,680
+Một lỗi rất hay gặp là các em trộn hai cấu trúc với nhau, nói thành:
+
+106
+00:07:30,680 --> 00:07:32,470
+I’m name is Hoa.
+
+107
+00:07:32,470 --> 00:07:34,330
+Câu đúng phải là:
+
+108
+00:07:34,330 --> 00:07:36,060
+My name is Hoa.
+
+109
+00:07:36,060 --> 00:07:42,070
+Các em nhớ chọn I'm cộng tên, hoặc My name is cộng tên, không nói I'm name is nhé.
+
+110
+00:07:42,470 --> 00:07:51,520
+Bây giờ chúng ta làm bài tập B một: Nhìn thẻ tên và viết câu hoàn chỉnh. Câu một, cô làm mẫu.
+
+111
+00:07:51,520 --> 00:07:53,760
+Tuan (Hi. I …)
+
+112
+00:07:53,760 --> 00:08:00,230
+Gợi ý mở đầu là Hi, I. Vậy ta chỉ cần viết tiếp 'm và tên Tuấn.
+
+113
+00:08:00,630 --> 00:08:02,770
+Hi. I’m Tuan.
+
+114
+00:08:02,770 --> 00:08:09,700
+Gợi ý là Hi, I. Ta thêm 'm và tên để có câu hoàn chỉnh: Hi. I’m Tuan.
+
+115
+00:08:10,100 --> 00:08:11,610
+Câu hai.
+
+116
+00:08:11,610 --> 00:08:13,880
+Mai Vo (My name …)
+
+117
+00:08:13,880 --> 00:08:20,000
+Thẻ tên ghi Mai Vo, gợi ý là My name. Các em hãy viết câu hoàn chỉnh.
+
+118
+00:08:23,000 --> 00:08:25,490
+My name is Mai Vo.
+
+119
+00:08:25,490 --> 00:08:33,970
+Chữa bài nhé: gợi ý là My name, ta viết tiếp is kèm họ tên đầy đủ thành My name is Mai Vo.
+
+120
+00:08:34,370 --> 00:08:36,190
+Câu ba nào.
+
+121
+00:08:36,190 --> 00:08:38,420
+Huy (Hello. I …)
+
+122
+00:08:38,420 --> 00:08:42,870
+Thẻ tên là Huy, gợi ý bắt đầu bằng Hello. I.
+
+123
+00:08:45,870 --> 00:08:48,120
+Hello. I’m Huy.
+
+124
+00:08:48,120 --> 00:08:54,530
+Gợi ý là Hello. I, ta thêm 'm và tên để được câu: Hello. I’m Huy.
+
+125
+00:08:54,930 --> 00:08:56,640
+Câu bốn.
+
+126
+00:08:56,640 --> 00:08:59,190
+An Bui (My name …)
+
+127
+00:08:59,190 --> 00:09:03,700
+Thẻ tên ghi An Bui, bắt đầu bằng My name.
+
+128
+00:09:06,700 --> 00:09:09,590
+My name is An Bui.
+
+129
+00:09:09,590 --> 00:09:17,200
+Gợi ý là My name, ta viết is và họ tên viết hoa: My name is An Bui.
+
+130
+00:09:17,600 --> 00:09:19,480
+Câu năm.
+
+131
+00:09:19,480 --> 00:09:22,010
+Trang (Hi. I …)
+
+132
+00:09:22,010 --> 00:09:26,230
+Thẻ tên là Trang, gợi ý là Hi. I.
+
+133
+00:09:29,230 --> 00:09:31,600
+Hi. I’m Trang.
+
+134
+00:09:31,600 --> 00:09:37,600
+Dùng mẫu Hi, I'm cộng tên, ta được câu: Hi. I’m Trang.
+
+135
+00:09:38,000 --> 00:09:45,600
+Phần C: Luyện nghe. Chúng ta cùng nghe câu chuyện ngày đầu tiên ở trường cao đẳng của Nam và Hoa.
+
+136
+00:09:48,600 --> 00:09:58,170
+Trước khi nghe, các em lưu ý: để mở đầu một cuộc nói chuyện, ta dùng Hello hoặc Hi. Còn để kết thúc cuộc nói chuyện, ta dùng Goodbye.
+
+137
+00:09:58,570 --> 00:10:07,870
+Các em đọc lướt qua năm câu hỏi của bài tập C một nhé.
+
+138
+00:10:07,870 --> 00:10:15,070
+1. The boy’s name is... a. Huy. b. Nam.
+
+139
+00:10:15,070 --> 00:10:22,540
+2. The girl’s name is... a. Linh. b. Hoa.
+
+140
+00:10:22,540 --> 00:10:33,120
+3. Nam says “Hello.” Hoa answers... a. “Hi, Nam.” b. “Goodbye.”
+
+141
+00:10:33,120 --> 00:10:40,870
+4. Nam shows his... a. phone. b. name card.
+
+142
+00:10:40,870 --> 00:10:49,900
+5. Nam’s full name is... a. Nam Tran. b. Nam Nguyen.
+
+143
+00:10:50,300 --> 00:10:59,130
+Bây giờ các em nghe hội thoại lần thứ nhất. Chú ý lắng nghe tên của từng bạn và đồ vật mà Nam đưa ra nhé.
+
+144
+00:10:59,130 --> 00:11:01,170
+Hello! I’m Nam.
+
+145
+00:11:01,170 --> 00:11:03,890
+Hi, Nam. My name is Hoa.
+
+146
+00:11:03,890 --> 00:11:06,450
+Nice to meet you, Hoa.
+
+147
+00:11:06,450 --> 00:11:09,320
+Nice to meet you too, Nam.
+
+148
+00:11:09,320 --> 00:11:13,850
+Look. This is my name card. My name is Nam Tran.
+
+149
+00:11:13,850 --> 00:11:18,530
+Nam Tran. OK! My name is Hoa Nguyen. Goodbye, Nam!
+
+150
+00:11:18,930 --> 00:11:23,150
+Bây giờ chúng ta nghe lần hai, có lời thoại trên màn hình.
+
+151
+00:11:23,150 --> 00:11:24,780
+Hello! I’m Nam.
+
+152
+00:11:24,780 --> 00:11:26,770
+Xin chào! Tôi là Nam.
+
+153
+00:11:27,170 --> 00:11:29,600
+Hi, Nam. My name is Hoa.
+
+154
+00:11:29,600 --> 00:11:32,100
+Chào Nam. Tên tôi là Hoa.
+
+155
+00:11:32,500 --> 00:11:34,330
+Nice to meet you, Hoa.
+
+156
+00:11:34,330 --> 00:11:36,370
+Rất vui được gặp bạn, Hoa.
+
+157
+00:11:36,770 --> 00:11:38,590
+Nice to meet you too, Nam.
+
+158
+00:11:38,590 --> 00:11:40,900
+Mình cũng rất vui được gặp bạn, Nam.
+
+159
+00:11:41,300 --> 00:11:46,110
+Look. This is my name card. My name is Nam Tran.
+
+160
+00:11:46,110 --> 00:11:51,400
+Nhìn này. Đây là thẻ tên của tôi. Tên tôi là Nam Tran.
+
+161
+00:11:51,800 --> 00:11:57,030
+Nam Tran. OK! My name is Hoa Nguyen. Goodbye, Nam!
+
+162
+00:11:57,030 --> 00:12:02,770
+Nam Tran. Được rồi! Tên tôi là Hoa Nguyen. Tạm biệt Nam!
+
+163
+00:12:03,170 --> 00:12:09,240
+Bây giờ chúng ta cùng chữa bài C một nhé. Câu một, cô làm mẫu.
+
+164
+00:12:09,240 --> 00:12:11,860
+The boy’s name is...
+
+165
+00:12:11,860 --> 00:12:14,080
+a. Huy. b. Nam.
+
+166
+00:12:14,080 --> 00:12:20,070
+Ngay câu đầu tiên, bạn nam đã tự giới thiệu tên của mình rồi.
+
+167
+00:12:20,470 --> 00:12:21,840
+b. Nam
+
+168
+00:12:21,840 --> 00:12:27,570
+Đáp án là b. Bạn nam nói Hello! I'm Nam, nên tên bạn ấy là Nam.
+
+169
+00:12:27,970 --> 00:12:29,870
+Câu hai.
+
+170
+00:12:29,870 --> 00:12:33,010
+The girl’s name is...
+
+171
+00:12:33,010 --> 00:12:35,680
+a. Linh. b. Hoa.
+
+172
+00:12:35,680 --> 00:12:39,200
+Tên của bạn nữ là gì nào?
+
+173
+00:12:42,200 --> 00:12:43,710
+b. Hoa
+
+174
+00:12:43,710 --> 00:12:50,270
+Đáp án là b. Bạn nữ nói My name is Hoa, nên tên của bạn ấy là Hoa.
+
+175
+00:12:50,670 --> 00:12:52,580
+Câu ba.
+
+176
+00:12:52,580 --> 00:12:57,020
+Nam says “Hello.” Hoa answers...
+
+177
+00:12:57,020 --> 00:13:00,960
+a. “Hi, Nam.” b. “Goodbye.”
+
+178
+00:13:00,960 --> 00:13:06,100
+Khi Nam nói Hello, Hoa trả lời thế nào?
+
+179
+00:13:09,100 --> 00:13:11,060
+a. “Hi, Nam.”
+
+180
+00:13:11,060 --> 00:13:17,100
+Đáp án là a. Khi được chào bằng Hello, Hoa chào lại bằng Hi, Nam.
+
+181
+00:13:17,500 --> 00:13:19,480
+Câu bốn.
+
+182
+00:13:19,480 --> 00:13:22,260
+Nam shows his...
+
+183
+00:13:22,260 --> 00:13:25,730
+a. phone. b. name card.
+
+184
+00:13:25,730 --> 00:13:29,400
+Nam đưa ra đồ vật gì nào?
+
+185
+00:13:32,400 --> 00:13:34,400
+b. name card
+
+186
+00:13:34,400 --> 00:13:41,170
+Đáp án là b. Nam nói This is my name card, tức là Nam đưa ra thẻ tên.
+
+187
+00:13:41,570 --> 00:13:43,390
+Câu năm.
+
+188
+00:13:43,390 --> 00:13:46,410
+Nam’s full name is...
+
+189
+00:13:46,410 --> 00:13:49,980
+a. Nam Tran. b. Nam Nguyen.
+
+190
+00:13:49,980 --> 00:13:53,630
+Họ tên đầy đủ của Nam là gì?
+
+191
+00:13:56,630 --> 00:13:58,500
+a. Nam Tran
+
+192
+00:13:58,500 --> 00:14:04,930
+Đáp án là a. Nam nói My name is Nam Tran. Còn Nguyen là họ của Hoa.
+
+193
+00:14:05,330 --> 00:14:11,170
+Phần D: Luyện đọc. Chúng ta cùng đọc phiếu thông tin cá nhân của Hoa.
+
+194
+00:14:14,170 --> 00:14:22,680
+Các em hãy đọc thẻ thông tin và đoạn văn để tìm họ tên đầy đủ của Hoa nhé.
+
+195
+00:14:22,680 --> 00:14:37,530
+Hello! My name is Hoa Nguyen. I’m a college student. I’m in class LG01. This is my profile card. My last name is Nguyen. Nice to meet you!
+
+196
+00:14:37,930 --> 00:14:44,790
+Bây giờ là bài tập D một. Các em hãy đóng vai Hoa để trả lời các câu hỏi. Câu một, cô làm mẫu.
+
+197
+00:14:44,790 --> 00:14:46,670
+What’s your name?
+
+198
+00:14:46,670 --> 00:14:52,370
+Tên bạn là gì? Ta nhìn vào dòng đầu tiên của đoạn văn để tìm họ tên của Hoa.
+
+199
+00:14:52,770 --> 00:14:55,400
+My name is Hoa Nguyen.
+
+200
+00:14:55,400 --> 00:15:01,130
+Bài đọc cho biết họ tên đầy đủ của Hoa: My name is Hoa Nguyen.
+
+201
+00:15:01,530 --> 00:15:02,810
+Câu hai.
+
+202
+00:15:02,810 --> 00:15:04,730
+Are you a student?
+
+203
+00:15:04,730 --> 00:15:09,400
+Bạn là sinh viên à? Các em tìm câu trả lời trong bài đọc nhé.
+
+204
+00:15:12,400 --> 00:15:15,610
+Yes, I’m a college student.
+
+205
+00:15:15,610 --> 00:15:21,300
+Chữa bài nhé. Bài đọc nêu rõ: Yes, I’m a college student.
+
+206
+00:15:21,700 --> 00:15:22,940
+Câu ba.
+
+207
+00:15:22,940 --> 00:15:24,960
+What is your class?
+
+208
+00:15:24,960 --> 00:15:29,470
+Bạn học lớp nào? Hãy nhìn vào thông tin lớp học trên thẻ.
+
+209
+00:15:32,470 --> 00:15:35,080
+I’m in class LG01.
+
+210
+00:15:35,080 --> 00:15:42,670
+Đáp án là: I’m in class LG01. Bài đọc cho biết lớp của Hoa là LG không một.
+
+211
+00:15:43,070 --> 00:15:44,470
+Câu bốn.
+
+212
+00:15:44,470 --> 00:15:46,930
+What is your last name?
+
+213
+00:15:46,930 --> 00:15:51,770
+Họ của bạn là gì? Từ last name có nghĩa là họ nhé các em.
+
+214
+00:15:54,770 --> 00:15:57,360
+My last name is Nguyen.
+
+215
+00:15:57,360 --> 00:16:03,430
+Đáp án là My last name is Nguyen. Bài đọc nêu rõ họ của Hoa là Nguyễn.
+
+216
+00:16:03,830 --> 00:16:05,100
+Câu năm.
+
+217
+00:16:05,100 --> 00:16:07,010
+Is this your card?
+
+218
+00:16:07,010 --> 00:16:09,100
+Đây là thẻ của bạn à?
+
+219
+00:16:12,100 --> 00:16:14,910
+Yes, it’s my profile card.
+
+220
+00:16:14,910 --> 00:16:21,870
+Đáp án là: Yes, it’s my profile card. Bài đọc nêu rõ đây là thẻ thông tin của Hoa.
+
+221
+00:16:22,270 --> 00:16:28,630
+Phần E: Luyện nói. Chúng ta cùng thực hành làm quen với một người bạn mới trong lớp.
+
+222
+00:16:31,630 --> 00:16:36,080
+Các em theo dõi hội thoại mẫu phần một.
+
+223
+00:16:36,080 --> 00:16:38,520
+Hello. I’m Linh.
+
+224
+00:16:38,520 --> 00:16:41,490
+Xin chào. Tôi là Linh.
+
+225
+00:16:41,490 --> 00:16:44,800
+Hi, Linh. My name is Tuan.
+
+226
+00:16:44,800 --> 00:16:48,200
+Chào Linh. Tên tôi là Tuấn.
+
+227
+00:16:48,600 --> 00:16:51,870
+Tiếp tục hội thoại mẫu phần hai nào.
+
+228
+00:16:51,870 --> 00:16:54,260
+Nice to meet you, Tuan.
+
+229
+00:16:54,260 --> 00:16:56,920
+Rất vui được gặp bạn, Tuấn.
+
+230
+00:16:56,920 --> 00:16:59,170
+Nice to meet you too.
+
+231
+00:16:59,170 --> 00:17:02,100
+Mình cũng rất vui được gặp bạn.
+
+232
+00:17:02,500 --> 00:17:05,570
+Và phần ba của hội thoại:
+
+233
+00:17:05,570 --> 00:17:08,310
+This is my name card.
+
+234
+00:17:08,310 --> 00:17:11,220
+Đây là thẻ tên của tôi.
+
+235
+00:17:11,220 --> 00:17:13,710
+OK. Goodbye, Linh!
+
+236
+00:17:13,710 --> 00:17:16,700
+Được rồi. Tạm biệt Linh!
+
+237
+00:17:17,100 --> 00:17:22,900
+Bây giờ đến lượt các em thực hành. Bạn Linh nói trước, cô làm mẫu lượt đáp của Tuấn nhé.
+
+238
+00:17:22,900 --> 00:17:24,530
+Hello. I’m Linh.
+
+239
+00:17:24,530 --> 00:17:27,600
+Đến lượt em: Chào lại Linh và nói tên em.
+
+240
+00:17:31,600 --> 00:17:35,470
+Câu mẫu, các em nghe và nói lại nhé:
+
+241
+00:17:35,470 --> 00:17:38,530
+Hi, Linh. My name is Tuan.
+
+242
+00:17:38,530 --> 00:17:41,670
+Chào Linh. Tên tôi là Tuấn.
+
+243
+00:17:42,070 --> 00:17:43,410
+Lượt hai nào.
+
+244
+00:17:43,410 --> 00:17:45,290
+Nice to meet you, Tuan.
+
+245
+00:17:45,290 --> 00:17:48,200
+Đến lượt em: Nói em cũng rất vui được gặp.
+
+246
+00:17:52,200 --> 00:17:55,690
+Câu mẫu, các em nghe và nói lại nhé:
+
+247
+00:17:55,690 --> 00:17:58,090
+Nice to meet you too.
+
+248
+00:17:58,090 --> 00:18:01,800
+Nhớ thêm từ too ở cuối câu đáp lại nhé.
+
+249
+00:18:02,200 --> 00:18:03,450
+Lượt ba.
+
+250
+00:18:03,450 --> 00:18:05,500
+This is my name card.
+
+251
+00:18:05,500 --> 00:18:09,370
+Đến lượt em: Nói “được rồi” và chào tạm biệt Linh.
+
+252
+00:18:13,370 --> 00:18:16,900
+Câu mẫu, các em nghe và nói lại nhé:
+
+253
+00:18:16,900 --> 00:18:19,110
+OK. Goodbye, Linh!
+
+254
+00:18:19,110 --> 00:18:21,770
+Được rồi. Tạm biệt Linh!
+
+255
+00:18:22,170 --> 00:18:25,920
+Lượt bốn, chúng ta đổi sang cặp bạn Minh và Lan.
+
+256
+00:18:25,920 --> 00:18:28,920
+Hello. I’m Minh. My name is Minh Vo.
+
+257
+00:18:28,920 --> 00:18:32,670
+Đến lượt em: Chào lại Minh và nói họ tên đầy đủ.
+
+258
+00:18:36,670 --> 00:18:41,260
+Câu mẫu, các em nghe và nói lại nhé:
+
+259
+00:18:41,260 --> 00:18:45,280
+Hi, Minh. My name is Lan Pham.
+
+260
+00:18:45,280 --> 00:18:49,400
+Chào Minh. Tên tôi là Lan Phạm.
+
+261
+00:18:49,800 --> 00:18:50,890
+Lượt năm.
+
+262
+00:18:50,890 --> 00:18:52,640
+Nice to meet you, Lan.
+
+263
+00:18:52,640 --> 00:18:55,430
+Đến lượt em: Nói em cũng rất vui được gặp.
+
+264
+00:18:59,430 --> 00:19:02,680
+Câu mẫu, các em nghe và nói lại nhé:
+
+265
+00:19:02,680 --> 00:19:04,920
+Nice to meet you too.
+
+266
+00:19:04,920 --> 00:19:07,830
+Mình cũng rất vui được gặp bạn.
+
+267
+00:19:08,230 --> 00:19:14,030
+Phần F: Luyện viết. Chúng ta sẽ cùng làm thẻ tên của chính mình.
+
+268
+00:19:17,030 --> 00:19:25,290
+Các em hãy quan sát thẻ tên mẫu của bạn Hoa. Thẻ gồm có năm phần:
+
+269
+00:19:25,290 --> 00:19:36,230
+Name: Hoa Nguyen. Class: LG01. Course: Logistics English. Date: 9 October. Signature: Hoa.
+
+270
+00:19:36,230 --> 00:19:41,270
+Tên, lớp, khóa học, ngày và chữ ký.
+
+271
+00:19:41,670 --> 00:19:49,720
+Bây giờ các em làm bài tập F hai: chép câu mẫu và tự điền thông tin của mình. Câu một, cô làm mẫu nhé.
+
+272
+00:19:49,720 --> 00:19:51,480
+Hello! I’m...
+
+273
+00:19:51,480 --> 00:19:56,000
+Sau I'm, các em điền tên gọi của mình vào chỗ trống.
+
+274
+00:19:56,400 --> 00:19:58,590
+Câu mẫu của Hoa là:
+
+275
+00:19:58,590 --> 00:20:00,500
+Hello! I’m Hoa.
+
+276
+00:20:00,500 --> 00:20:05,670
+Sau I'm là tên gọi, các em nhớ luôn viết hoa chữ cái đầu nhé.
+
+277
+00:20:06,070 --> 00:20:07,210
+Câu hai.
+
+278
+00:20:07,210 --> 00:20:08,650
+My name is...
+
+279
+00:20:08,650 --> 00:20:11,800
+Các em hãy điền họ và tên của mình vào nhé.
+
+280
+00:20:14,800 --> 00:20:16,750
+Câu mẫu của Hoa:
+
+281
+00:20:16,750 --> 00:20:19,130
+My name is Hoa Nguyen.
+
+282
+00:20:19,130 --> 00:20:25,970
+Sau My name is, chúng ta viết họ tên đầy đủ theo trật tự tiếng Anh: tên trước, họ sau.
+
+283
+00:20:26,370 --> 00:20:27,240
+Câu ba.
+
+284
+00:20:27,240 --> 00:20:28,160
+I’m a...
+
+285
+00:20:28,160 --> 00:20:31,100
+Nghề nghiệp sinh viên của chúng ta viết thế nào nhỉ?
+
+286
+00:20:34,100 --> 00:20:35,900
+Câu mẫu của Hoa:
+
+287
+00:20:35,900 --> 00:20:38,100
+I’m a college student.
+
+288
+00:20:38,100 --> 00:20:41,900
+College student có nghĩa là sinh viên cao đẳng.
+
+289
+00:20:42,300 --> 00:20:43,410
+Câu bốn.
+
+290
+00:20:43,410 --> 00:20:44,910
+I’m in class...
+
+291
+00:20:44,910 --> 00:20:48,130
+Các em viết mã lớp của mình vào chỗ trống nhé.
+
+292
+00:20:51,130 --> 00:20:53,360
+Câu mẫu của Hoa:
+
+293
+00:20:53,360 --> 00:20:55,740
+I’m in class LG01.
+
+294
+00:20:55,740 --> 00:21:01,870
+Các em nhớ viết đúng mã lớp theo thẻ tên, ví dụ như LG không một.
+
+295
+00:21:02,270 --> 00:21:03,480
+Câu năm.
+
+296
+00:21:03,480 --> 00:21:04,990
+This is my...
+
+297
+00:21:04,990 --> 00:21:07,470
+Đây là vật gì của các em nào?
+
+298
+00:21:10,470 --> 00:21:12,200
+Câu mẫu của Hoa:
+
+299
+00:21:12,200 --> 00:21:14,240
+This is my name card.
+
+300
+00:21:14,240 --> 00:21:17,830
+Name card là thẻ tên hoặc danh thiếp của mình.
+
+301
+00:21:18,230 --> 00:21:20,260
+Hôm nay các em đã học:
+
+302
+00:21:20,260 --> 00:21:21,630
+Hello., Hi.
+
+303
+00:21:21,630 --> 00:21:22,580
+Chào
+
+304
+00:21:22,580 --> 00:21:25,140
+I’m + name., My name is + name.
+
+305
+00:21:25,140 --> 00:21:26,570
+Nói tên mình
+
+306
+00:21:26,570 --> 00:21:28,300
+Nice to meet you.
+
+307
+00:21:28,300 --> 00:21:30,200
+Rất vui được gặp bạn
+
+308
+00:21:30,200 --> 00:21:32,170
+This is my name card.
+
+309
+00:21:32,170 --> 00:21:34,490
+Giới thiệu thẻ tên của mình
+
+310
+00:21:34,490 --> 00:21:35,680
+Goodbye!
+
+311
+00:21:35,680 --> 00:21:37,170
+Chào tạm biệt
+
+312
+00:21:37,570 --> 00:21:42,260
+Bây giờ các em tự đánh giá. Em đã làm được những việc sau chưa?
+
+313
+00:21:42,260 --> 00:21:46,140
+Chào hỏi, nói tên và đáp lại câu Nice to meet you.
+
+314
+00:21:46,140 --> 00:21:50,210
+Nghe hiểu đoạn hội thoại ngắn để nhận biết tên riêng.
+
+315
+00:21:50,210 --> 00:21:54,220
+Đọc thẻ thông tin cá nhân để tìm họ, tên và lớp học.
+
+316
+00:21:54,220 --> 00:21:57,980
+Điền thẻ tên và viết câu tự giới thiệu bản thân.
+
+317
+00:21:57,980 --> 00:22:01,730
+Các em đánh dấu những việc mình đã làm được nhé.
+
+318
+00:22:02,130 --> 00:22:04,640
+Bài tập về nhà của các em:
+
+319
+00:22:04,640 --> 00:22:08,330
+Hoàn thành các bài tập trong Workbook 1.1.1.
+
+320
+00:22:08,330 --> 00:22:12,160
+Làm bài tập luyện tập trên hệ thống LMS 1.1.1.
+
+321
+00:22:12,160 --> 00:22:17,770
+Làm một thẻ tên (name card) thật bằng giấy cứng theo mẫu F1 mang đến lớp.
+
+322
+00:22:17,770 --> 00:22:20,870
+Chào các em, hẹn gặp lại ở bài sau.
+

@@ -1,0 +1,354 @@
+{
+ "lesson": "1.1.1",
+ "level": "TB1",
+ "duration": 1341.27,
+ "duration_hms": "22:21",
+ "note": "segments: mỗi kỹ năng có start/end (giây) để LMS bỏ qua đoạn; questions: start = hiện câu hỏi, stop = mốc dừng video cho học viên làm, answer = bắt đầu chữa, end = hết chữa",
+ "segments": [
+  {
+   "skill": "intro",
+   "label": "Mở đầu",
+   "title": "Mở đầu, mục tiêu, khởi động",
+   "start": 0.0,
+   "end": 74.23,
+   "start_hms": "00:00",
+   "end_hms": "01:14"
+  },
+  {
+   "skill": "vocabulary",
+   "label": "Từ vựng",
+   "title": "A | NEW WORDS TO USE | Từ vựng · 8 từ mới",
+   "section": "A",
+   "start": 74.23,
+   "end": 397.93,
+   "start_hms": "01:14",
+   "end_hms": "06:38"
+  },
+  {
+   "skill": "grammar",
+   "label": "Mẫu câu",
+   "title": "B | STRUCTURES TO PRACTISE | Mẫu câu · Chào và nói tên",
+   "section": "B",
+   "start": 397.93,
+   "end": 578.0,
+   "start_hms": "06:38",
+   "end_hms": "09:38"
+  },
+  {
+   "skill": "listening",
+   "label": "Nghe",
+   "title": "C | LISTENING | Nghe · First day at college",
+   "section": "C",
+   "start": 578.0,
+   "end": 845.33,
+   "start_hms": "09:38",
+   "end_hms": "14:05"
+  },
+  {
+   "skill": "reading",
+   "label": "Đọc",
+   "title": "D | READING | Đọc · Hoa’s profile card",
+   "section": "D",
+   "start": 845.33,
+   "end": 982.27,
+   "start_hms": "14:05",
+   "end_hms": "16:22"
+  },
+  {
+   "skill": "speaking",
+   "label": "Nói",
+   "title": "E | SPEAKING | Nói · Meet a new classmate",
+   "section": "E",
+   "start": 982.27,
+   "end": 1148.23,
+   "start_hms": "16:22",
+   "end_hms": "19:08"
+  },
+  {
+   "skill": "writing",
+   "label": "Viết",
+   "title": "F | WRITING | Viết · My name card",
+   "section": "F",
+   "start": 1148.23,
+   "end": 1278.23,
+   "start_hms": "19:08",
+   "end_hms": "21:18"
+  },
+  {
+   "skill": "closing",
+   "label": "Tổng kết",
+   "title": "Tổng kết, tự đánh giá, bài về nhà",
+   "start": 1278.23,
+   "end": 1341.27,
+   "start_hms": "21:18",
+   "end_hms": "22:21"
+  }
+ ],
+ "questions": [
+  {
+   "qid": "A1.1",
+   "start": 270.63,
+   "section": "A",
+   "answer": 288.57,
+   "end": 302.87,
+   "skill": "vocabulary"
+  },
+  {
+   "qid": "A1.2",
+   "start": 302.87,
+   "section": "A",
+   "stop": 312.8,
+   "answer": 315.8,
+   "end": 330.0,
+   "skill": "vocabulary"
+  },
+  {
+   "qid": "A1.3",
+   "start": 330.0,
+   "section": "A",
+   "stop": 338.6,
+   "answer": 341.6,
+   "end": 354.47,
+   "skill": "vocabulary"
+  },
+  {
+   "qid": "A1.4",
+   "start": 354.47,
+   "section": "A",
+   "stop": 361.13,
+   "answer": 364.13,
+   "end": 376.0,
+   "skill": "vocabulary"
+  },
+  {
+   "qid": "A1.5",
+   "start": 376.0,
+   "section": "A",
+   "stop": 382.7,
+   "answer": 385.7,
+   "end": 397.93,
+   "skill": "vocabulary"
+  },
+  {
+   "qid": "B1.1",
+   "start": 462.47,
+   "section": "B",
+   "answer": 480.63,
+   "end": 490.1,
+   "skill": "grammar"
+  },
+  {
+   "qid": "B1.2",
+   "start": 490.1,
+   "section": "B",
+   "stop": 500.0,
+   "answer": 503.0,
+   "end": 514.37,
+   "skill": "grammar"
+  },
+  {
+   "qid": "B1.3",
+   "start": 514.37,
+   "section": "B",
+   "stop": 522.87,
+   "answer": 525.87,
+   "end": 534.93,
+   "skill": "grammar"
+  },
+  {
+   "qid": "B1.4",
+   "start": 534.93,
+   "section": "B",
+   "stop": 543.7,
+   "answer": 546.7,
+   "end": 557.6,
+   "skill": "grammar"
+  },
+  {
+   "qid": "B1.5",
+   "start": 557.6,
+   "section": "B",
+   "stop": 566.23,
+   "answer": 569.23,
+   "end": 578.0,
+   "skill": "grammar"
+  },
+  {
+   "qid": "C1.1",
+   "start": 723.17,
+   "section": "C",
+   "answer": 740.47,
+   "end": 747.97,
+   "skill": "listening"
+  },
+  {
+   "qid": "C1.2",
+   "start": 747.97,
+   "section": "C",
+   "stop": 759.2,
+   "answer": 762.2,
+   "end": 770.67,
+   "skill": "listening"
+  },
+  {
+   "qid": "C1.3",
+   "start": 770.67,
+   "section": "C",
+   "stop": 786.1,
+   "answer": 789.1,
+   "end": 797.5,
+   "skill": "listening"
+  },
+  {
+   "qid": "C1.4",
+   "start": 797.5,
+   "section": "C",
+   "stop": 809.4,
+   "answer": 812.4,
+   "end": 821.57,
+   "skill": "listening"
+  },
+  {
+   "qid": "C1.5",
+   "start": 821.57,
+   "section": "C",
+   "stop": 833.63,
+   "answer": 836.63,
+   "end": 845.33,
+   "skill": "listening"
+  },
+  {
+   "qid": "D1.1",
+   "start": 877.93,
+   "section": "D",
+   "answer": 892.77,
+   "end": 901.53,
+   "skill": "reading"
+  },
+  {
+   "qid": "D1.2",
+   "start": 901.53,
+   "section": "D",
+   "stop": 909.4,
+   "answer": 912.4,
+   "end": 921.7,
+   "skill": "reading"
+  },
+  {
+   "qid": "D1.3",
+   "start": 921.7,
+   "section": "D",
+   "stop": 929.47,
+   "answer": 932.47,
+   "end": 943.07,
+   "skill": "reading"
+  },
+  {
+   "qid": "D1.4",
+   "start": 943.07,
+   "section": "D",
+   "stop": 951.77,
+   "answer": 954.77,
+   "end": 963.83,
+   "skill": "reading"
+  },
+  {
+   "qid": "D1.5",
+   "start": 963.83,
+   "section": "D",
+   "stop": 969.1,
+   "answer": 972.1,
+   "end": 982.27,
+   "skill": "reading"
+  },
+  {
+   "qid": "E.1",
+   "start": 1037.1,
+   "section": "E",
+   "stop": 1047.6,
+   "answer": 1051.6,
+   "end": 1062.07,
+   "skill": "speaking"
+  },
+  {
+   "qid": "E.2",
+   "start": 1062.07,
+   "section": "E",
+   "stop": 1068.2,
+   "answer": 1072.2,
+   "end": 1082.2,
+   "skill": "speaking"
+  },
+  {
+   "qid": "E.3",
+   "start": 1082.2,
+   "section": "E",
+   "stop": 1089.37,
+   "answer": 1093.37,
+   "end": 1102.17,
+   "skill": "speaking"
+  },
+  {
+   "qid": "E.4",
+   "start": 1102.17,
+   "section": "E",
+   "stop": 1112.67,
+   "answer": 1116.67,
+   "end": 1129.8,
+   "skill": "speaking"
+  },
+  {
+   "qid": "E.5",
+   "start": 1129.8,
+   "section": "E",
+   "stop": 1135.43,
+   "answer": 1139.43,
+   "end": 1148.23,
+   "skill": "speaking"
+  },
+  {
+   "qid": "F2.1",
+   "start": 1181.67,
+   "section": "F",
+   "answer": 1196.4,
+   "end": 1206.07,
+   "skill": "writing"
+  },
+  {
+   "qid": "F2.2",
+   "start": 1206.07,
+   "section": "F",
+   "stop": 1211.8,
+   "answer": 1214.8,
+   "end": 1226.37,
+   "skill": "writing"
+  },
+  {
+   "qid": "F2.3",
+   "start": 1226.37,
+   "section": "F",
+   "stop": 1231.1,
+   "answer": 1234.1,
+   "end": 1242.3,
+   "skill": "writing"
+  },
+  {
+   "qid": "F2.4",
+   "start": 1242.3,
+   "section": "F",
+   "stop": 1248.13,
+   "answer": 1251.13,
+   "end": 1262.27,
+   "skill": "writing"
+  },
+  {
+   "qid": "F2.5",
+   "start": 1262.27,
+   "section": "F",
+   "stop": 1267.47,
+   "answer": 1270.47,
+   "end": 1278.23,
+   "skill": "writing"
+  }
+ ]
+}

@@ -1,0 +1,926 @@
+{
+ "course": "Logistics English",
+ "lesson": "1.1.1",
+ "level": "TB1",
+ "title": "Hello, I’m…",
+ "video_duration": 1341.27,
+ "note": "skills: các đoạn kỹ năng của video theo thứ tự (start/end giây, LMS dùng để bỏ qua đoạn). Mỗi đoạn có popups: video_stop = mốc dừng video và hiện popup; học viên làm trong time_limit_sec (gợi ý, LMS tự chỉnh); nộp xong video chạy tiếp từ video_resume để xem chữa, hết chữa ở review_end. questions = danh sách câu trong popup (type, answer_format, options); answer_key KHÔNG hiện cho học viên. Đoạn mở đầu và tổng kết không có popup.",
+ "skills": [
+  {
+   "skill": "intro",
+   "label": "Mở đầu",
+   "title": "Mở đầu, mục tiêu, khởi động",
+   "start": 0.0,
+   "end": 74.23,
+   "start_hms": "00:00",
+   "end_hms": "01:14",
+   "duration": 74.23,
+   "popups": []
+  },
+  {
+   "skill": "vocabulary",
+   "label": "Từ vựng",
+   "title": "A | NEW WORDS TO USE | Từ vựng · 8 từ mới",
+   "start": 74.23,
+   "end": 397.93,
+   "start_hms": "01:14",
+   "end_hms": "06:38",
+   "duration": 323.7,
+   "popups": [
+    {
+     "popup_id": "1.1.1-P1",
+     "skill": "vocabulary",
+     "type": "match",
+     "game": "link_word",
+     "answer_format": "choice",
+     "video_stop": 302.87,
+     "time_limit_sec": 120,
+     "video_resume": 302.87,
+     "review_end": 397.93,
+     "instruction": "Match the words with the meanings.",
+     "audio_file": "",
+     "image_file": "",
+     "material": {},
+     "shared_options": [
+      {
+       "key": "a",
+       "text": "Nam, Hoa, or Linh"
+      },
+      {
+       "key": "b",
+       "text": "a word when you leave"
+      },
+      {
+       "key": "c",
+       "text": "a word to say hi"
+      },
+      {
+       "key": "d",
+       "text": "here, near me"
+      },
+      {
+       "key": "e",
+       "text": "a word for “of me” (my card)"
+      }
+     ],
+     "word_bank": null,
+     "context_text": "Options:\na. Nam, Hoa, or Linh\nb. a word when you leave\nc. a word to say hi\nd. here, near me\ne. a word for “of me” (my card)",
+     "questions": [
+      {
+       "no": 1,
+       "type": "match",
+       "game": "link_word",
+       "answer_format": "choice",
+       "question": "name",
+       "options": [
+        {
+         "key": "a",
+         "text": "Nam, Hoa, or Linh"
+        },
+        {
+         "key": "b",
+         "text": "a word when you leave"
+        },
+        {
+         "key": "c",
+         "text": "a word to say hi"
+        },
+        {
+         "key": "d",
+         "text": "here, near me"
+        },
+        {
+         "key": "e",
+         "text": "a word for “of me” (my card)"
+        }
+       ]
+      },
+      {
+       "no": 2,
+       "type": "match",
+       "game": "link_word",
+       "answer_format": "choice",
+       "question": "my",
+       "options": [
+        {
+         "key": "a",
+         "text": "Nam, Hoa, or Linh"
+        },
+        {
+         "key": "b",
+         "text": "a word when you leave"
+        },
+        {
+         "key": "c",
+         "text": "a word to say hi"
+        },
+        {
+         "key": "d",
+         "text": "here, near me"
+        },
+        {
+         "key": "e",
+         "text": "a word for “of me” (my card)"
+        }
+       ]
+      },
+      {
+       "no": 3,
+       "type": "match",
+       "game": "link_word",
+       "answer_format": "choice",
+       "question": "goodbye",
+       "options": [
+        {
+         "key": "a",
+         "text": "Nam, Hoa, or Linh"
+        },
+        {
+         "key": "b",
+         "text": "a word when you leave"
+        },
+        {
+         "key": "c",
+         "text": "a word to say hi"
+        },
+        {
+         "key": "d",
+         "text": "here, near me"
+        },
+        {
+         "key": "e",
+         "text": "a word for “of me” (my card)"
+        }
+       ]
+      },
+      {
+       "no": 4,
+       "type": "match",
+       "game": "link_word",
+       "answer_format": "choice",
+       "question": "this",
+       "options": [
+        {
+         "key": "a",
+         "text": "Nam, Hoa, or Linh"
+        },
+        {
+         "key": "b",
+         "text": "a word when you leave"
+        },
+        {
+         "key": "c",
+         "text": "a word to say hi"
+        },
+        {
+         "key": "d",
+         "text": "here, near me"
+        },
+        {
+         "key": "e",
+         "text": "a word for “of me” (my card)"
+        }
+       ]
+      }
+     ],
+     "answer_key": [
+      {
+       "no": 1,
+       "qid": "A1.2",
+       "answer": "a",
+       "answer_text": "Nam, Hoa, or Linh",
+       "explanation_vi": "Nam, Hoa, Linh là tên riêng, thuộc nhóm nghĩa “name”.",
+       "open_ended": false,
+       "competency": "VOC.RECEPT",
+       "video_time": 302.87,
+       "grading": "choice_key"
+      },
+      {
+       "no": 2,
+       "qid": "A1.3",
+       "answer": "e",
+       "answer_text": "a word for “of me” (my card)",
+       "explanation_vi": "“My” nghĩa là của tôi, tương đương với “of me”.",
+       "open_ended": false,
+       "competency": "VOC.RECEPT",
+       "video_time": 330.0,
+       "grading": "choice_key"
+      },
+      {
+       "no": 3,
+       "qid": "A1.4",
+       "answer": "b",
+       "answer_text": "a word when you leave",
+       "explanation_vi": "“Goodbye” là lời chào lúc ra về: “a word when you leave”.",
+       "open_ended": false,
+       "competency": "VOC.RECEPT",
+       "video_time": 354.47,
+       "grading": "choice_key"
+      },
+      {
+       "no": 4,
+       "qid": "A1.5",
+       "answer": "d",
+       "answer_text": "here, near me",
+       "explanation_vi": "“This” chỉ một vật ở gần người nói: “here, near me”.",
+       "open_ended": false,
+       "competency": "VOC.RECEPT",
+       "video_time": 376.0,
+       "grading": "choice_key"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "skill": "grammar",
+   "label": "Mẫu câu",
+   "title": "B | STRUCTURES TO PRACTISE | Mẫu câu · Chào và nói tên",
+   "start": 397.93,
+   "end": 578.0,
+   "start_hms": "06:38",
+   "end_hms": "09:38",
+   "duration": 180.07,
+   "popups": [
+    {
+     "popup_id": "1.1.1-P2",
+     "skill": "grammar",
+     "type": "write_sentence",
+     "game": "spelling_sentence",
+     "answer_format": "text",
+     "video_stop": 490.1,
+     "time_limit_sec": 360,
+     "video_resume": 490.1,
+     "review_end": 578.0,
+     "instruction": "Look at the name tags. Write sentences.",
+     "audio_file": "",
+     "image_file": "Chapter 1/Unit 1/Lesson 1/LOG_1.1.1_Hinh_P2.png",
+     "material": {},
+     "shared_options": null,
+     "word_bank": null,
+     "context_text": "",
+     "questions": [
+      {
+       "no": 1,
+       "type": "write_sentence",
+       "game": "spelling_sentence",
+       "answer_format": "text",
+       "question": "Mai Vo (My name …) → ____",
+       "task": "Viết câu hoàn chỉnh."
+      },
+      {
+       "no": 2,
+       "type": "write_sentence",
+       "game": "spelling_sentence",
+       "answer_format": "text",
+       "question": "Huy (Hello. I …) → ____",
+       "task": "Viết câu hoàn chỉnh."
+      },
+      {
+       "no": 3,
+       "type": "write_sentence",
+       "game": "spelling_sentence",
+       "answer_format": "text",
+       "question": "An Bui (My name …) → ____",
+       "task": "Viết câu hoàn chỉnh."
+      },
+      {
+       "no": 4,
+       "type": "write_sentence",
+       "game": "spelling_sentence",
+       "answer_format": "text",
+       "question": "Trang (Hi. I …) → ____",
+       "task": "Viết câu hoàn chỉnh."
+      }
+     ],
+     "answer_key": [
+      {
+       "no": 1,
+       "qid": "B1.2",
+       "answer": "My name is Mai Vo.",
+       "answer_text": "My name is Mai Vo.",
+       "explanation_vi": "Gợi ý là “My name …”. Ta viết “My name is” kèm họ tên đầy đủ.",
+       "open_ended": true,
+       "competency": "GRA.WORDORDER",
+       "video_time": 490.1,
+       "grading": "open"
+      },
+      {
+       "no": 2,
+       "qid": "B1.3",
+       "answer": "Hello. I’m Huy.",
+       "answer_text": "Hello. I’m Huy.",
+       "explanation_vi": "Gợi ý là “Hello. I …”. Ta thêm “’m” và tên thành “Hello. I’m Huy.”.",
+       "open_ended": true,
+       "competency": "GRA.WORDORDER",
+       "video_time": 514.37,
+       "grading": "open"
+      },
+      {
+       "no": 3,
+       "qid": "B1.4",
+       "answer": "My name is An Bui.",
+       "answer_text": "My name is An Bui.",
+       "explanation_vi": "Gợi ý là “My name …”. Ta viết “My name is” và họ tên viết hoa.",
+       "open_ended": true,
+       "competency": "GRA.WORDORDER",
+       "video_time": 534.93,
+       "grading": "open"
+      },
+      {
+       "no": 4,
+       "qid": "B1.5",
+       "answer": "Hi. I’m Trang.",
+       "answer_text": "Hi. I’m Trang.",
+       "explanation_vi": "Dùng mẫu “Hi. I’m + name” để viết thành câu “Hi. I’m Trang.”.",
+       "open_ended": true,
+       "competency": "GRA.WORDORDER",
+       "video_time": 557.6,
+       "grading": "open"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "skill": "listening",
+   "label": "Nghe",
+   "title": "C | LISTENING | Nghe · First day at college",
+   "start": 578.0,
+   "end": 845.33,
+   "start_hms": "09:38",
+   "end_hms": "14:05",
+   "duration": 267.33,
+   "popups": [
+    {
+     "popup_id": "1.1.1-P3",
+     "skill": "listening",
+     "type": "single_choice",
+     "game": "quiz",
+     "answer_format": "choice",
+     "video_stop": 747.97,
+     "time_limit_sec": 210,
+     "video_resume": 747.97,
+     "review_end": 845.33,
+     "instruction": "Listen. Circle a or b.",
+     "audio_file": "Chapter 1/Unit 1/Lesson 1/LOG_1.1.1_Audio_bai_nghe.mp3",
+     "image_file": "",
+     "material": {},
+     "shared_options": null,
+     "word_bank": null,
+     "context_text": "",
+     "questions": [
+      {
+       "no": 1,
+       "type": "single_choice",
+       "game": "quiz",
+       "answer_format": "choice",
+       "question": "The girl’s name is ____.",
+       "options": [
+        {
+         "key": "a",
+         "text": "Linh"
+        },
+        {
+         "key": "b",
+         "text": "Hoa"
+        }
+       ]
+      },
+      {
+       "no": 2,
+       "type": "single_choice",
+       "game": "quiz",
+       "answer_format": "choice",
+       "question": "Nam says “Hello.” Hoa answers ____.",
+       "options": [
+        {
+         "key": "a",
+         "text": "“Hi, Nam.”"
+        },
+        {
+         "key": "b",
+         "text": "“Goodbye.”"
+        }
+       ]
+      },
+      {
+       "no": 3,
+       "type": "single_choice",
+       "game": "quiz",
+       "answer_format": "choice",
+       "question": "Nam shows his ____.",
+       "options": [
+        {
+         "key": "a",
+         "text": "phone"
+        },
+        {
+         "key": "b",
+         "text": "name card"
+        }
+       ]
+      },
+      {
+       "no": 4,
+       "type": "single_choice",
+       "game": "quiz",
+       "answer_format": "choice",
+       "question": "Nam’s full name is ____.",
+       "options": [
+        {
+         "key": "a",
+         "text": "Nam Tran"
+        },
+        {
+         "key": "b",
+         "text": "Nam Nguyen"
+        }
+       ]
+      }
+     ],
+     "answer_key": [
+      {
+       "no": 1,
+       "qid": "C1.2",
+       "answer": "b",
+       "answer_text": "Hoa",
+       "explanation_vi": "Bạn nữ nói “My name is Hoa.”, nên tên của bạn ấy là Hoa.",
+       "open_ended": false,
+       "competency": "LIS.SPECIFIC",
+       "video_time": 747.97,
+       "grading": "choice_key"
+      },
+      {
+       "no": 2,
+       "qid": "C1.3",
+       "answer": "a",
+       "answer_text": "“Hi, Nam.”",
+       "explanation_vi": "Khi được chào bằng “Hello”, Hoa chào lại bằng “Hi, Nam.”.",
+       "open_ended": false,
+       "competency": "LIS.CONV",
+       "video_time": 770.67,
+       "grading": "choice_key"
+      },
+      {
+       "no": 3,
+       "qid": "C1.4",
+       "answer": "b",
+       "answer_text": "name card",
+       "explanation_vi": "Nam nói “This is my name card.”, tức Nam đưa ra thẻ tên.",
+       "open_ended": false,
+       "competency": "LIS.SPECIFIC",
+       "video_time": 797.5,
+       "grading": "choice_key"
+      },
+      {
+       "no": 4,
+       "qid": "C1.5",
+       "answer": "a",
+       "answer_text": "Nam Tran",
+       "explanation_vi": "Nam nói “My name is Nam Tran.” Nguyen là họ của Hoa.",
+       "open_ended": false,
+       "competency": "LIS.SPECIFIC",
+       "video_time": 821.57,
+       "grading": "choice_key"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "skill": "reading",
+   "label": "Đọc",
+   "title": "D | READING | Đọc · Hoa’s profile card",
+   "start": 845.33,
+   "end": 982.27,
+   "start_hms": "14:05",
+   "end_hms": "16:22",
+   "duration": 136.94,
+   "popups": [
+    {
+     "popup_id": "1.1.1-P4",
+     "skill": "reading",
+     "type": "short_answer",
+     "game": "spelling_sentence",
+     "answer_format": "text",
+     "video_stop": 901.53,
+     "time_limit_sec": 300,
+     "video_resume": 901.53,
+     "review_end": 982.27,
+     "instruction": "Read again. Write Hoa’s answers.",
+     "audio_file": "",
+     "image_file": "",
+     "material": {
+      "reading": {
+       "title": "Hoa’s profile card",
+       "card": [
+        {
+         "label": "Name",
+         "value": "Hoa Nguyen"
+        },
+        {
+         "label": "Class",
+         "value": "LG01"
+        },
+        {
+         "label": "City",
+         "value": "Hanoi"
+        },
+        {
+         "label": "Country",
+         "value": "Vietnam"
+        },
+        {
+         "label": "Phone",
+         "value": "0987 654 321"
+        },
+        {
+         "label": "Email",
+         "value": "hoa@mail.com"
+        }
+       ],
+       "text": [
+        "Hello!",
+        "My name is Hoa Nguyen.",
+        "I’m a college student.",
+        "I’m in class LG01.",
+        "This is my profile card.",
+        "My last name is Nguyen.",
+        "Nice to meet you!"
+       ]
+      }
+     },
+     "shared_options": null,
+     "word_bank": null,
+     "context_text": "Hoa’s profile card\n\nName: Hoa Nguyen\nClass: LG01\nCity: Hanoi\nCountry: Vietnam\nPhone: 0987 654 321\nEmail: hoa@mail.com\n\nHello!\nMy name is Hoa Nguyen.\nI’m a college student.\nI’m in class LG01.\nThis is my profile card.\nMy last name is Nguyen.\nNice to meet you!",
+     "questions": [
+      {
+       "no": 1,
+       "type": "short_answer",
+       "game": "spelling_sentence",
+       "answer_format": "text",
+       "question": "Are you a student?"
+      },
+      {
+       "no": 2,
+       "type": "short_answer",
+       "game": "spelling_sentence",
+       "answer_format": "text",
+       "question": "What is your class?"
+      },
+      {
+       "no": 3,
+       "type": "short_answer",
+       "game": "spelling_sentence",
+       "answer_format": "text",
+       "question": "What is your last name?"
+      },
+      {
+       "no": 4,
+       "type": "short_answer",
+       "game": "spelling_sentence",
+       "answer_format": "text",
+       "question": "Is this your card?"
+      }
+     ],
+     "answer_key": [
+      {
+       "no": 1,
+       "qid": "D1.2",
+       "answer": "Yes, I’m a college student.",
+       "answer_text": "Yes, I’m a college student.",
+       "explanation_vi": "Bài đọc nêu rõ: “I’m a college student.”",
+       "open_ended": true,
+       "competency": "REA.INFO",
+       "video_time": 901.53,
+       "grading": "open"
+      },
+      {
+       "no": 2,
+       "qid": "D1.3",
+       "answer": "I’m in class LG01.",
+       "answer_text": "I’m in class LG01.",
+       "explanation_vi": "Bài đọc cho biết lớp của Hoa là LG01.",
+       "open_ended": true,
+       "competency": "REA.INFO",
+       "video_time": 921.7,
+       "grading": "open"
+      },
+      {
+       "no": 3,
+       "qid": "D1.4",
+       "answer": "My last name is Nguyen.",
+       "answer_text": "My last name is Nguyen.",
+       "explanation_vi": "Bài đọc nêu rõ họ của Hoa là Nguyen.",
+       "open_ended": true,
+       "competency": "REA.INFO",
+       "video_time": 943.07,
+       "grading": "open"
+      },
+      {
+       "no": 4,
+       "qid": "D1.5",
+       "answer": "Yes, it’s my profile card.",
+       "answer_text": "Yes, it’s my profile card.",
+       "explanation_vi": "Bài đọc nêu rõ: “This is my profile card.”",
+       "open_ended": true,
+       "competency": "REA.INFO",
+       "video_time": 963.83,
+       "grading": "open"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "skill": "speaking",
+   "label": "Nói",
+   "title": "E | SPEAKING | Nói · Meet a new classmate",
+   "start": 982.27,
+   "end": 1148.23,
+   "start_hms": "16:22",
+   "end_hms": "19:08",
+   "duration": 165.96,
+   "popups": [
+    {
+     "popup_id": "1.1.1-P5",
+     "skill": "speaking",
+     "type": "speak",
+     "game": "speaking_para",
+     "answer_format": "audio",
+     "video_stop": 1037.1,
+     "time_limit_sec": 300,
+     "video_resume": 1037.1,
+     "review_end": 1148.23,
+     "instruction": "Nghe Linh nói và đáp lại trong vai Tuan.",
+     "audio_file": "",
+     "image_file": "",
+     "material": {},
+     "shared_options": null,
+     "word_bank": null,
+     "context_text": "Nhập vai: em là Tuan, Linh nói trước.",
+     "questions": [
+      {
+       "no": 1,
+       "type": "speak",
+       "game": "speaking_para",
+       "answer_format": "audio",
+       "question": "Linh: Hello. I’m Linh.",
+       "task": "Chào lại Linh và nói tên em."
+      },
+      {
+       "no": 2,
+       "type": "speak",
+       "game": "speaking_para",
+       "answer_format": "audio",
+       "question": "Linh: Nice to meet you, Tuan.",
+       "task": "Nói em cũng rất vui được gặp."
+      },
+      {
+       "no": 3,
+       "type": "speak",
+       "game": "speaking_para",
+       "answer_format": "audio",
+       "question": "Linh: This is my name card.",
+       "task": "Nói “được rồi” và chào tạm biệt Linh."
+      },
+      {
+       "no": 4,
+       "type": "speak",
+       "game": "speaking_para",
+       "answer_format": "audio",
+       "question": "Minh: Hello. I’m Minh. My name is Minh Vo.",
+       "task": "Chào lại Minh và nói họ tên đầy đủ."
+      },
+      {
+       "no": 5,
+       "type": "speak",
+       "game": "speaking_para",
+       "answer_format": "audio",
+       "question": "Minh: Nice to meet you, Lan.",
+       "task": "Nói em cũng rất vui được gặp."
+      }
+     ],
+     "answer_key": [
+      {
+       "no": 1,
+       "qid": "E.1",
+       "answer": "Hi, Linh. My name is Tuan.",
+       "answer_text": "Hi, Linh. My name is Tuan.",
+       "explanation_vi": null,
+       "open_ended": true,
+       "competency": "SPE.CONV",
+       "video_time": 1037.1,
+       "grading": "open"
+      },
+      {
+       "no": 2,
+       "qid": "E.2",
+       "answer": "Nice to meet you too.",
+       "answer_text": "Nice to meet you too.",
+       "explanation_vi": null,
+       "open_ended": true,
+       "competency": "SPE.CONV",
+       "video_time": 1062.07,
+       "grading": "open"
+      },
+      {
+       "no": 3,
+       "qid": "E.3",
+       "answer": "OK. Goodbye, Linh!",
+       "answer_text": "OK. Goodbye, Linh!",
+       "explanation_vi": null,
+       "open_ended": true,
+       "competency": "SPE.CONV",
+       "video_time": 1082.2,
+       "grading": "open"
+      },
+      {
+       "no": 4,
+       "qid": "E.4",
+       "answer": "Hi, Minh. My name is Lan Pham.",
+       "answer_text": "Hi, Minh. My name is Lan Pham.",
+       "explanation_vi": null,
+       "open_ended": true,
+       "competency": "SPE.CONV",
+       "video_time": 1102.17,
+       "grading": "open"
+      },
+      {
+       "no": 5,
+       "qid": "E.5",
+       "answer": "Nice to meet you too.",
+       "answer_text": "Nice to meet you too.",
+       "explanation_vi": null,
+       "open_ended": true,
+       "competency": "SPE.CONV",
+       "video_time": 1129.8,
+       "grading": "open"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "skill": "writing",
+   "label": "Viết",
+   "title": "F | WRITING | Viết · My name card",
+   "start": 1148.23,
+   "end": 1278.23,
+   "start_hms": "19:08",
+   "end_hms": "21:18",
+   "duration": 130.0,
+   "popups": [
+    {
+     "popup_id": "1.1.1-P6",
+     "skill": "writing",
+     "type": "fill_gap",
+     "game": "spelling_word",
+     "answer_format": "text",
+     "video_stop": 1206.07,
+     "time_limit_sec": 180,
+     "video_resume": 1206.07,
+     "review_end": 1278.23,
+     "instruction": "Complete the sentences. Use the model. Use the words in the box.",
+     "audio_file": "",
+     "image_file": "",
+     "material": {
+      "model": {
+       "title": "NAME CARD",
+       "fields": [
+        {
+         "label": "Name",
+         "value": "Hoa Nguyen"
+        },
+        {
+         "label": "Class",
+         "value": "LG01"
+        },
+        {
+         "label": "Course",
+         "value": "Logistics English"
+        },
+        {
+         "label": "Date",
+         "value": "9 October"
+        },
+        {
+         "label": "Signature",
+         "value": "Hoa"
+        }
+       ]
+      }
+     },
+     "shared_options": null,
+     "word_bank": [
+      "college student",
+      "LG01",
+      "name card",
+      "Hoa Nguyen"
+     ],
+     "context_text": "NAME CARD\nName: Hoa Nguyen\nClass: LG01\nCourse: Logistics English\nDate: 9 October\nSignature: Hoa\n\nWord bank: college student, LG01, name card, Hoa Nguyen",
+     "questions": [
+      {
+       "no": 1,
+       "type": "fill_gap",
+       "game": "spelling_word",
+       "answer_format": "text",
+       "question": "My name is ____."
+      },
+      {
+       "no": 2,
+       "type": "fill_gap",
+       "game": "spelling_word",
+       "answer_format": "text",
+       "question": "I’m a ____."
+      },
+      {
+       "no": 3,
+       "type": "fill_gap",
+       "game": "spelling_word",
+       "answer_format": "text",
+       "question": "I’m in class ____."
+      },
+      {
+       "no": 4,
+       "type": "fill_gap",
+       "game": "spelling_word",
+       "answer_format": "text",
+       "question": "This is my ____."
+      }
+     ],
+     "answer_key": [
+      {
+       "no": 1,
+       "qid": "F2.2",
+       "answer": "Hoa Nguyen",
+       "answers": [
+        "Hoa Nguyen"
+       ],
+       "answer_text": "My name is Hoa Nguyen.",
+       "explanation_vi": "Sau “My name is”, ta viết họ tên đầy đủ theo trật tự tiếng Anh.",
+       "open_ended": false,
+       "competency": "WRI.NOTES",
+       "video_time": 1206.07,
+       "grading": "text_match"
+      },
+      {
+       "no": 2,
+       "qid": "F2.3",
+       "answer": "college student",
+       "answers": [
+        "college student"
+       ],
+       "answer_text": "I’m a college student.",
+       "explanation_vi": "“College student” có nghĩa là sinh viên cao đẳng.",
+       "open_ended": false,
+       "competency": "WRI.NOTES",
+       "video_time": 1226.37,
+       "grading": "text_match"
+      },
+      {
+       "no": 3,
+       "qid": "F2.4",
+       "answer": "LG01",
+       "answers": [
+        "LG01"
+       ],
+       "answer_text": "I’m in class LG01.",
+       "explanation_vi": "Viết mã lớp học chính xác theo thẻ tên, ví dụ “LG01”.",
+       "open_ended": false,
+       "competency": "WRI.NOTES",
+       "video_time": 1242.3,
+       "grading": "text_match"
+      },
+      {
+       "no": 4,
+       "qid": "F2.5",
+       "answer": "name card",
+       "answers": [
+        "name card"
+       ],
+       "answer_text": "This is my name card.",
+       "explanation_vi": "“Name card” là thẻ tên hoặc danh thiếp.",
+       "open_ended": false,
+       "competency": "WRI.NOTES",
+       "video_time": 1262.27,
+       "grading": "text_match"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "skill": "closing",
+   "label": "Tổng kết",
+   "title": "Tổng kết, tự đánh giá, bài về nhà",
+   "start": 1278.23,
+   "end": 1341.27,
+   "start_hms": "21:18",
+   "end_hms": "22:21",
+   "duration": 63.04,
+   "popups": []
+  }
+ ]
+}

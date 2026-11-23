@@ -1,530 +1,575 @@
-import { useState, useEffect, useRef, type PointerEvent as ReactPointerEvent } from "react";
-import { useParams, useSearchParams } from "react-router-dom";
-import EditorHeader from "./components/EditorHeader";
-import ScriptPanel from "./components/ScriptPanel";
-import StoryAssetsModal from "./components/StoryAssetsModal";
-import ShotVisualModal from "./components/Visuals/ShotVisualModal";
-import CanvasPreview from "./components/CanvasPreview/CanvasPreview";
-import ResplitAllModal from "./components/Resplit/ResplitAllModal";
-import { mockInitialShots } from "@/mocks/mockShots";
-import { mockCharacters } from "@/mocks/mockCharacters";
-import { getProject } from "@/lib/projectStore";
-import { PLACEHOLDER_IMAGE } from "@/lib/placeholderImage";
-import type {
-  Shot,
-  DiffProposal,
-  CharacterAsset,
-  DialogueBlock,
-  ShotVisualData,
-} from "@/types/script";
+import { useEffect, useMemo, useState } from "react";
+import { Navigate, useNavigate, useParams } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Textarea } from "@/components/ui/textarea";
+import { Slider } from "@/components/ui/slider";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+  DialogFooter,
+} from "@/components/ui/dialog";
+import {
+  ArrowLeft,
+  ChevronLeft,
+  ChevronRight,
+  Download,
+  Pause,
+  Play,
+  Plus,
+  Trash2,
+  Volume2,
+  CheckCircle2,
+  Sparkles,
+} from "lucide-react";
+import { getLessonProject } from "@/lib/projectStore";
+import {
+  MOCK_LESSON_SLIDES,
+  MOCK_TEMPLATES,
+  MOCK_VOICES,
+} from "@/mocks/mockBook2Video";
+import type { LessonSlide, NarrationSegment } from "@/types/lesson";
+import SlideCanvas from "./components/SlideCanvas";
 
 export default function EditorPage() {
+  const navigate = useNavigate();
   const { projectId } = useParams<{ projectId: string }>();
-  const [searchParams] = useSearchParams();
-  const chapterParam = Number(searchParams.get("chapter"));
-  const selectedChapter =
-    Number.isFinite(chapterParam) && chapterParam > 0 ? chapterParam : undefined;
 
-  // Tìm tên dự án từ kho dự án (localStorage + mock data)
-  const currentProject = projectId ? getProject(projectId) : undefined;
-  const projectTitle = currentProject?.title || "Đấu Phá Thương Khung";
+  const project = useMemo(
+    () => (projectId ? getLessonProject(projectId) : undefined),
+    [projectId]
+  );
 
-  // 1. Quản lý trạng thái các Panel & Menu Sidebar
-  const [isAssetsModalOpen, setIsAssetsModalOpen] = useState(false);
-  const [isVisualModalOpen, setIsVisualModalOpen] = useState(false);
-  const [visualModalShotId, setVisualModalShotId] = useState<string | null>(null);
+  const [slides, setSlides] = useState<LessonSlide[]>(MOCK_LESSON_SLIDES);
+  const [activeSlideId, setActiveSlideId] = useState<string>(
+    MOCK_LESSON_SLIDES[0].id
+  );
+  const [templateId, setTemplateId] = useState<string>(
+    project?.templateId || MOCK_TEMPLATES[0].id
+  );
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [playingSegmentId, setPlayingSegmentId] = useState<string | null>(null);
+  const [isExportOpen, setIsExportOpen] = useState(false);
+  const [sectionFilter, setSectionFilter] = useState<string>("all");
 
-  // 1.0 Quản lý kéo dãn độ rộng 2 thanh bên trái và phải
-  const [leftWidth, setLeftWidth] = useState<number>(490);
+  const sections = useMemo(
+    () => ["all", ...Array.from(new Set(slides.map((s) => s.section)))],
+    [slides]
+  );
+  const visibleSlides = useMemo(
+    () =>
+      sectionFilter === "all"
+        ? slides
+        : slides.filter((s) => s.section === sectionFilter),
+    [slides, sectionFilter]
+  );
 
-  const leftStartXRef = useRef(0);
-  const leftStartWidthRef = useRef(0);
+  const activeSlideIndex = Math.max(
+    0,
+    slides.findIndex((s) => s.id === activeSlideId)
+  );
+  const activeSlide = slides[activeSlideIndex] || slides[0];
 
-  const handleLeftResizeStart = (e: ReactPointerEvent<HTMLDivElement>) => {
-    e.preventDefault();
-    leftStartXRef.current = e.clientX;
-    leftStartWidthRef.current = leftWidth;
-
-    const previousUserSelect = document.body.style.userSelect;
-    document.body.style.userSelect = "none";
-
-    const handlePointerMove = (moveEvent: PointerEvent) => {
-      const maxWidth = Math.min(750, window.innerWidth * 0.55);
-      const nextWidth = Math.min(
-        Math.max(leftStartWidthRef.current + moveEvent.clientX - leftStartXRef.current, 380),
-        maxWidth
-      );
-      setLeftWidth(nextWidth);
-    };
-
-    const handlePointerUp = () => {
-      document.body.style.userSelect = previousUserSelect;
-      window.removeEventListener("pointermove", handlePointerMove);
-      window.removeEventListener("pointerup", handlePointerUp);
-    };
-
-    window.addEventListener("pointermove", handlePointerMove);
-    window.addEventListener("pointerup", handlePointerUp);
-  };
-
-  // 1.1 Quản lý danh sách nhân vật & điều hướng chọn nhân vật
-  const [characters] = useState<CharacterAsset[]>(mockCharacters);
-  const [selectedCharacterId, setSelectedCharacterId] = useState<string | null>(null);
-
-  // 2. Quản lý 2 chế độ thanh tua (mặc định mở thanh timeline đa track khi vào Studio)
-  const [timelineMode, setTimelineMode] = useState<"compact" | "expanded">("expanded");
-
-  // 3. Quản lý dữ liệu phân cảnh
-  const [shots, setShots] = useState<Shot[]>(mockInitialShots);
-  const [activeShotId, setActiveShotId] = useState<string>(mockInitialShots[0]?.id || "shot-1");
-  const [selectedShotIds, setSelectedShotIds] = useState<string[]>([]);
-  const [proposal, setProposal] = useState<DiffProposal | null>(null);
-  const [isResplitModalOpen, setIsResplitModalOpen] = useState<boolean>(false);
-
-  // 4. Quản lý phát Video
-  const [isPlaying, setIsPlaying] = useState<boolean>(false);
-  const [currentTime, setCurrentTime] = useState<number>(0);
-  const duration = shots.reduce((acc, s) => acc + s.duration, 0) || 44.0;
-
-  const activeShot = shots.find((s) => s.id === activeShotId) || shots[0];
-
-  // Callback khi người dùng bấm [✏] ở bất kỳ đâu để mở Story Assets và điều hướng đúng nhân vật
-  const handleEditCharacter = (characterId: string) => {
-    setSelectedCharacterId(characterId);
-    setIsAssetsModalOpen(true);
-  };
-
-  // Cập nhật phân cảnh khi có thay đổi khối thoại/tách câu/sửa chữ
-  const handleShotUpdate = (
-    shotId: string,
-    updated: { blocks: DialogueBlock[]; text: string; duration: number }
-  ) => {
-    setShots((prev) =>
-      prev.map((s) =>
-        s.id === shotId
-          ? {
-              ...s,
-              blocks: updated.blocks,
-              text: updated.text,
-              duration: updated.duration,
-            }
-          : s
-      )
-    );
-  };
-
-  // Khi chọn một phân cảnh (click ShotCard hoặc Scene trên Timeline):
-  // Chuyển activeShotId VÀ chuyển con trỏ thời gian timeline về mốc bắt đầu của phân cảnh đó
-  const handleSelectShot = (id: string) => {
-    setActiveShotId(id);
-
-    let startTime = 0;
-    for (const s of shots) {
-      if (s.id === id) break;
-      startTime += s.duration;
-    }
-    setCurrentTime(Number(startTime.toFixed(1)));
-  };
-
-  // Khi click nút [🎨 Chỉnh ảnh Cảnh X] trên Canvas Preview
-  const handleOpenVisualsDetail = (shotId: string) => {
-    setActiveShotId(shotId);
-    setVisualModalShotId(shotId);
-    setIsVisualModalOpen(true);
-  };
-
-  // Cập nhật thuộc tính visual của phân cảnh
-  const handleUpdateShotVisual = (
-    shotId: string,
-    visualData: Partial<ShotVisualData>
-  ) => {
-    setShots((prev) =>
-      prev.map((s) =>
-        s.id === shotId
-          ? {
-              ...s,
-              visual: {
-                prompt: s.visual?.prompt || "",
-                status: s.visual?.status || "ready",
-                linkedAssetIds: s.visual?.linkedAssetIds || [],
-                unlinkedWarnings: s.visual?.unlinkedWarnings || [],
-                ...s.visual,
-                ...visualData,
-              },
-            }
-          : s
-      )
-    );
-  };
-
-  // Giả lập phát video thời gian thực
-  useEffect(() => {
-    let interval: ReturnType<typeof setInterval>;
-    if (isPlaying) {
-      interval = setInterval(() => {
-        setCurrentTime((prev) => {
-          if (prev >= duration) {
-            setIsPlaying(false);
-            return 0;
-          }
-          return Number((prev + 0.2).toFixed(1));
-        });
-      }, 200);
-    }
-    return () => clearInterval(interval);
-  }, [isPlaying, duration]);
-
-  // Cập nhật activeShot theo currentTime khi phát video hoặc tua timeline
-  useEffect(() => {
-    let acc = 0;
-    for (let i = 0; i < shots.length; i++) {
-      const shot = shots[i];
-      const nextAcc = acc + shot.duration;
-      const isLast = i === shots.length - 1;
-
-      // Kim thời gian nằm trong khoảng [acc, nextAcc) hoặc tại mốc cuối của cảnh cuối cùng
-      if (currentTime >= acc - 0.001 && (currentTime < nextAcc - 0.001 || isLast)) {
-        setActiveShotId(shot.id);
-        break;
-      }
-      acc = nextAcc;
-    }
-  }, [currentTime, shots]);
-
-  // Hiệu ứng Gối đầu (Look-ahead Pre-generation) khi nghe thử toàn bộ:
-  // Tự động sinh ngầm audio cho khối thoại kế tiếp khi kim chạy đến gần
+  // Simulated presentation playback
   useEffect(() => {
     if (!isPlaying) return;
-
-    let accumulatedTime = 0;
-    for (const shot of shots) {
-      if (!shot.blocks) continue;
-      for (const block of shot.blocks) {
-        const blockDur = block.totalDuration || 3;
-        const blockStart = accumulatedTime;
-        accumulatedTime += blockDur;
-
-        // Nếu kim sắp chạm tới block này (trong khoảng 3.5s trước) mà block chưa sẵn sàng
-        if (
-          currentTime + 3.5 >= blockStart &&
-          currentTime <= blockStart + blockDur &&
-          (block.status === "stale" || block.status === "not_generated")
-        ) {
-          // Chuyển sang generating (nhấp nháy vàng cam)
-          setShots((prev) =>
-            prev.map((s) => ({
-              ...s,
-              blocks: s.blocks?.map((b) =>
-                b.id === block.id ? { ...b, status: "generating" as const } : b
-              ),
-            }))
-          );
-
-          // Sau 1.2s chuyển thành ready (xanh ngọc sẵn sàng)
-          const timer = setTimeout(() => {
-            setShots((prev) =>
-              prev.map((s) => ({
-                ...s,
-                blocks: s.blocks?.map((b) =>
-                  b.id === block.id ? { ...b, status: "ready" as const } : b
-                ),
-              }))
-            );
-          }, 1200);
-
-          return () => clearTimeout(timer);
+    const timer = setInterval(() => {
+      setActiveSlideId((currentId) => {
+        const idx = slides.findIndex((s) => s.id === currentId);
+        if (idx < slides.length - 1) {
+          return slides[idx + 1].id;
         }
-      }
-    }
-  }, [isPlaying, currentTime, shots]);
+        setIsPlaying(false);
+        return currentId;
+      });
+    }, 3200);
+    return () => clearInterval(timer);
+  }, [isPlaying, slides]);
 
-  // Logic Sidebar bên trái
-  // Logic tương tác kịch bản
-  const handleToggleSelectShot = (id: string, checked: boolean) => {
-    setSelectedShotIds((prev) =>
-      checked ? [...prev, id] : prev.filter((item) => item !== id)
-    );
-  };
+  if (!project) {
+    return <Navigate to="/" replace />;
+  }
 
-  const handleTextChange = (id: string, text: string) => {
-    setShots((prev) => prev.map((s) => (s.id === id ? { ...s, text } : s)));
-  };
+  const totalSlideDuration = activeSlide.narrations.reduce(
+    (sum, n) => sum + n.durationSec + n.pauseAfterSec,
+    0
+  );
 
-  const handleToggleLock = (id: string) => {
-    setShots((prev) =>
-      prev.map((s) => (s.id === id ? { ...s, isLocked: !s.isLocked } : s))
-    );
-  };
-
-  const handleMergeShots = () => {
-    if (selectedShotIds.length <= 1) return;
-    const selected = shots.filter((s) => selectedShotIds.includes(s.id));
-    const mergedText = selected.map((s) => s.text).join(" ");
-    const mergedDuration = selected.reduce((sum, s) => sum + s.duration, 0);
-
-    const firstId = selectedShotIds[0];
-    const newShots = shots
-      .map((s) => {
-        if (s.id === firstId) {
-          return {
-            ...s,
-            text: mergedText,
-            duration: mergedDuration,
-          };
-        }
-        return s;
-      })
-      .filter((s) => s.id === firstId || !selectedShotIds.includes(s.id));
-
-    setShots(newShots);
-    setSelectedShotIds([]);
-  };
-
-  const handleApplyResplitAll = (
-    _mode: "auto" | "duration" | "count",
-    _value?: number
+  const updateNarration = (
+    segId: string,
+    patch: Partial<NarrationSegment>
   ) => {
-    // Tạo giả lập Diff Proposal chia lại
-    const targetIds = selectedShotIds.length > 0 ? selectedShotIds : ["shot-2", "shot-3"];
-    setProposal({
-      targetShotIds: targetIds,
-      newShots: [
+    setSlides((prev) =>
+      prev.map((s) =>
+        s.id !== activeSlide.id
+          ? s
+          : {
+              ...s,
+              narrations: s.narrations.map((n) =>
+                n.id === segId ? { ...n, ...patch } : n
+              ),
+            }
+      )
+    );
+  };
+
+  const addNarrationSegment = () => {
+    const newSeg: NarrationSegment = {
+      id: `nar-${Date.now()}`,
+      voiceId: MOCK_VOICES[0].id,
+      lang: "vi",
+      speed: 1.0,
+      pauseAfterSec: 0.5,
+      text: "Nhập lời đọc mới cho slide này...",
+      durationSec: 3.5,
+    };
+    setSlides((prev) =>
+      prev.map((s) =>
+        s.id !== activeSlide.id
+          ? s
+          : { ...s, narrations: [...s.narrations, newSeg] }
+      )
+    );
+  };
+
+  const deleteNarrationSegment = (segId: string) => {
+    setSlides((prev) =>
+      prev.map((s) =>
+        s.id !== activeSlide.id
+          ? s
+          : {
+              ...s,
+              narrations: s.narrations.filter((n) => n.id !== segId),
+            }
+      )
+    );
+  };
+
+  const handlePreviewVoice = (segId: string) => {
+    if (playingSegmentId === segId) {
+      setPlayingSegmentId(null);
+      return;
+    }
+    setPlayingSegmentId(segId);
+    setTimeout(() => {
+      setPlayingSegmentId((curr) => (curr === segId ? null : curr));
+    }, 2200);
+  };
+
+  const handleAddSlide = () => {
+    const nextIndex = slides.length + 1;
+    const newSlide: LessonSlide = {
+      id: `slide-${Date.now()}`,
+      index: nextIndex,
+      section: "Mở rộng",
+      layout: "vocab-card",
+      title: `Slide ${nextIndex}`,
+      subtitle: "Nội dung mới",
+      content: {
+        word: "warehouse",
+        ipa: "/ˈweəhaʊs/",
+        meaning: "nhà kho",
+        exampleEn: "This is our main warehouse.",
+        exampleVi: "Đây là nhà kho chính của chúng tôi.",
+        note: "Nghe và nhắc lại",
+      },
+      narrations: [
         {
-          id: `new-${Date.now()}-1`,
-          code: "Cảnh 2A (Đề xuất)",
-          text: "Trên quảng trường, trắc nghiệm ma thạch hiện lên năm chữ chói mắt: “Đấu chi lực, tam đoạn”.",
-          duration: 7,
-        },
-        {
-          id: `new-${Date.now()}-2`,
-          code: "Cảnh 2B (Đề xuất)",
-          text: "“Tiêu Viêm, đấu lực, tam đoạn! Cấp bậc: Cấp thấp!” Trung niên trắc nghiệm viên hờ hững công bố, đám đông lập tức xôn xao châm chọc.",
-          duration: 6,
+          id: `nar-new-${Date.now()}`,
+          voiceId: MOCK_VOICES[0].id,
+          lang: "vi",
+          speed: 1.0,
+          pauseAfterSec: 0.5,
+          text: "Từ tiếp theo là warehouse, nghĩa là nhà kho.",
+          durationSec: 4.0,
         },
       ],
-    });
+    };
+    setSlides((prev) => [...prev, newSlide]);
+    setActiveSlideId(newSlide.id);
   };
 
-  const handleRequestResplitScoped = (
-    targetShotIds: string[],
-    _prompt: string,
-    mode: "merge_resplit" | "split_each"
-  ) => {
-    const targetShots = shots.filter((s) => targetShotIds.includes(s.id));
-    if (targetShots.length === 0) return;
-
-    const firstIndex = shots.findIndex((s) => s.id === targetShots[0].id);
-    const baseOrder = firstIndex !== -1 ? firstIndex + 1 : 1;
-
-    let newShots: { id: string; code: string; text: string; duration: number }[] = [];
-
-    if (targetShots.length === 1) {
-      // Trường hợp C: Chia đôi cảnh đơn
-      const originalText = targetShots[0].text;
-      const mid = Math.floor(originalText.length / 2);
-      const spaceIdx = originalText.indexOf(" ", mid);
-      const cut = spaceIdx !== -1 ? spaceIdx : mid;
-      const part1 = originalText.slice(0, cut).trim();
-      const part2 = originalText.slice(cut).trim();
-      const dur1 = Math.max(3, Math.round(targetShots[0].duration / 2));
-      const dur2 = Math.max(3, targetShots[0].duration - dur1);
-
-      newShots = [
-        {
-          id: `new-${Date.now()}-1`,
-          code: `Cảnh ${baseOrder}A (Đề xuất)`,
-          text: part1 || originalText,
-          duration: dur1,
-        },
-        {
-          id: `new-${Date.now()}-2`,
-          code: `Cảnh ${baseOrder}B (Đề xuất)`,
-          text: part2 || "Tiếp tục diễn biến phân cảnh...",
-          duration: dur2,
-        },
-      ];
-    } else if (mode === "merge_resplit") {
-      // Trường hợp A: Gom toàn bộ đoạn lại rồi chia
-      const combinedText = targetShots.map((s) => s.text).join(" ");
-      const totalDur = targetShots.reduce((acc, s) => acc + s.duration, 0);
-      const mid = Math.floor(combinedText.length / 2);
-      const spaceIdx = combinedText.indexOf(" ", mid);
-      const cut = spaceIdx !== -1 ? spaceIdx : mid;
-
-      newShots = [
-        {
-          id: `new-${Date.now()}-1`,
-          code: `Cảnh ${baseOrder}A (Đề xuất)`,
-          text: combinedText.slice(0, cut).trim(),
-          duration: Math.max(3, Math.round(totalDur / 2)),
-        },
-        {
-          id: `new-${Date.now()}-2`,
-          code: `Cảnh ${baseOrder}B (Đề xuất)`,
-          text: combinedText.slice(cut).trim(),
-          duration: Math.max(3, totalDur - Math.round(totalDur / 2)),
-        },
-      ];
-    } else {
-      // Trường hợp B hoặc chia nhỏ từng cảnh (split_each)
-      let counter = 1;
-      targetShots.forEach((s, idx) => {
-        const shotOrder = firstIndex !== -1 ? firstIndex + idx + 1 : idx + 1;
-        const text = s.text;
-        const mid = Math.floor(text.length / 2);
-        const spaceIdx = text.indexOf(" ", mid);
-        const cut = spaceIdx !== -1 ? spaceIdx : mid;
-
-        newShots.push({
-          id: `new-${Date.now()}-${counter++}`,
-          code: `Cảnh ${shotOrder}A (Đề xuất)`,
-          text: text.slice(0, cut).trim() || text,
-          duration: Math.max(3, Math.round(s.duration / 2)),
-        });
-        newShots.push({
-          id: `new-${Date.now()}-${counter++}`,
-          code: `Cảnh ${shotOrder}B (Đề xuất)`,
-          text: text.slice(cut).trim() || "Diễn biến tiếp theo...",
-          duration: Math.max(3, s.duration - Math.round(s.duration / 2)),
-        });
-      });
-    }
-
-    setProposal({
-      targetShotIds,
-      newShots,
-    });
-  };
-
-  const handleApplyProposal = () => {
-    if (!proposal) return;
-    const firstTargetIndex = shots.findIndex((s) => s.id === proposal.targetShotIds[0]);
-    if (firstTargetIndex === -1) return;
-
-    const convertedNewShots: Shot[] = proposal.newShots.map((ns, idx) => ({
-      id: ns.id,
-      order: firstTargetIndex + idx + 1,
-      code: `Cảnh ${firstTargetIndex + idx + 1}`,
-      text: ns.text,
-      duration: ns.duration,
-      image: PLACEHOLDER_IMAGE,
-    }));
-
-    const nextShots = [
-      ...shots.slice(0, firstTargetIndex),
-      ...convertedNewShots,
-      ...shots.slice(firstTargetIndex + proposal.targetShotIds.length),
-    ].map((s, idx) => ({ ...s, order: idx + 1, code: `Cảnh ${idx + 1}` }));
-
-    setShots(nextShots);
-    setProposal(null);
-    setSelectedShotIds([]);
-  };
+  const activeSubtitle = isPlaying
+    ? activeSlide.narrations[0]?.text
+    : playingSegmentId
+    ? activeSlide.narrations.find((n) => n.id === playingSegmentId)?.text
+    : undefined;
 
   return (
-    <div className="h-screen w-screen overflow-hidden flex flex-col bg-stone-50/70 dark:bg-neutral-950 select-none">
-      {/* 1. Header riêng của Studio */}
-      <EditorHeader
-        title={projectTitle}
-        chapter={selectedChapter}
-        onExport={(opts) =>
-          alert(
-            `Đang chuẩn bị xuất file video MP4 (${opts?.resolution.toUpperCase() || "1080P"} - ${opts?.fps || "30"} FPS)...`
-          )
-        }
-      />
-
-      {/* 2. Thân Studio: Cột kịch bản (luôn hiện bên trái) + Canvas Preview + Menu Sidebar bên phải */}
-      <div className="flex-1 min-h-0 flex overflow-hidden">
-        {/* (1) CỘT KỊCH BẢN & CẤU HÌNH GIỌNG (Luôn luôn hiển thị) */}
-        <div className="relative shrink-0 flex">
-          <ScriptPanel
-            width={leftWidth}
-            shots={shots}
-            characters={characters}
-            activeShotId={activeShotId}
-            selectedShotIds={selectedShotIds}
-            onSelectShot={handleSelectShot}
-            onToggleSelectShot={handleToggleSelectShot}
-            onClearSelection={() => setSelectedShotIds([])}
-            onTextChange={handleTextChange}
-            onShotUpdate={handleShotUpdate}
-            onToggleLock={handleToggleLock}
-            onOpenResplitModal={() => setIsResplitModalOpen(true)}
-            onRequestResplitScoped={handleRequestResplitScoped}
-            proposal={proposal}
-            onApplyProposal={handleApplyProposal}
-            onCancelProposal={() => setProposal(null)}
-            onMergeShots={handleMergeShots}
-            onEditCharacter={handleEditCharacter}
-            onSeekWord={(t) => setCurrentTime(t)}
-            onAddNewCharacter={() => handleEditCharacter("new")}
-            currentTime={currentTime}
-            isPlaying={isPlaying}
-          />
-          {/* Handle kéo dãn thanh bên trái */}
-          <div
-            role="separator"
-            aria-orientation="vertical"
-            aria-label="Kéo để thay đổi độ rộng cột kịch bản"
-            tabIndex={0}
-            onPointerDown={handleLeftResizeStart}
-            title="Kéo để thay đổi độ rộng"
-            className="group absolute -right-1.5 top-0 z-20 hidden h-full w-3 cursor-col-resize touch-none items-center justify-center lg:flex select-none"
+    <div className="h-full flex flex-col bg-stone-50/70 dark:bg-neutral-950 overflow-hidden">
+      {/* Studio Header */}
+      <header className="h-14 border-b px-4 flex items-center justify-between bg-white dark:bg-neutral-900 shrink-0 gap-3">
+        <div className="flex items-center gap-2.5 min-w-0">
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={() => navigate(`/project/${project.id}/overview`)}
           >
-            <span className="h-full w-0.5 bg-transparent transition-colors group-hover:bg-brand/60 group-focus-visible:bg-brand" />
-          </div>
+            <ArrowLeft className="w-4 h-4 mr-1" />
+            Duyệt Assets
+          </Button>
+          <div className="h-5 w-px bg-border hidden sm:block" />
+          <h1 className="font-semibold text-sm truncate hidden sm:block">
+            {project.title}
+          </h1>
         </div>
 
-        {/* (2) KHUNG CANVAS PREVIEW (Tự co giãn flex-1 chiếm không gian trung tâm) */}
-        <CanvasPreview
-          timelineMode={timelineMode}
-          onTimelineModeChange={setTimelineMode}
-          activeShot={activeShot}
-          shots={shots}
-          characters={characters}
-          currentTime={currentTime}
-          duration={duration}
-          isPlaying={isPlaying}
-          onTogglePlay={() => setIsPlaying(!isPlaying)}
-          onSeek={(t) => setCurrentTime(t)}
-          onRewind={(s) => setCurrentTime((t) => Math.max(0, t - s))}
-          onSelectShot={handleSelectShot}
-          onOpenVisualsDetail={handleOpenVisualsDetail}
-          onOpenStoryAssets={() => setIsAssetsModalOpen(true)}
-        />
+        <div className="flex items-center gap-2.5 shrink-0">
+          <div className="flex items-center gap-1.5">
+            <Sparkles className="w-3.5 h-3.5 text-blue-600 hidden md:block" />
+            <Select value={templateId} onValueChange={(v) => v && setTemplateId(v)}>
+              <SelectTrigger className="h-8 w-[170px] text-xs">
+                <SelectValue placeholder="Chọn template" />
+              </SelectTrigger>
+              <SelectContent>
+                {MOCK_TEMPLATES.map((t) => (
+                  <SelectItem key={t.id} value={t.id} className="text-xs">
+                    {t.name}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
+
+          <Button
+            size="sm"
+            onClick={() => setIsExportOpen(true)}
+            className="bg-blue-600 hover:bg-blue-700 text-white"
+          >
+            <Download className="w-4 h-4 mr-1.5" />
+            Xuất bản
+          </Button>
+        </div>
+      </header>
+
+      {/* Main 2-Column Studio: Left = Vbee Narration, Right = Slide Canvas & Filmstrip */}
+      <div className="flex-1 min-h-0 flex flex-col lg:flex-row overflow-hidden">
+        {/* LEFT PANEL: Lời đọc & Giọng đọc (Vbee-style) */}
+        <aside className="w-full lg:w-[440px] xl:w-[480px] border-r bg-white dark:bg-neutral-900 flex flex-col min-h-0 shrink-0">
+          <div className="p-3.5 border-b flex items-center justify-between bg-slate-50/70 dark:bg-neutral-900">
+            <div>
+              <div className="flex items-center gap-2">
+                <Volume2 className="w-4 h-4 text-blue-600" />
+                <span className="font-semibold text-sm">
+                  Lời đọc & Giọng đọc (Vbee)
+                </span>
+              </div>
+              <p className="text-[11px] text-muted-foreground mt-0.5">
+                Slide {activeSlide.index}/{slides.length} · {activeSlide.section} ·{" "}
+                ~{totalSlideDuration.toFixed(1)}s
+              </p>
+            </div>
+            <div className="flex items-center gap-1">
+              <Button
+                variant="outline"
+                size="icon"
+                className="h-7 w-7"
+                disabled={activeSlideIndex === 0}
+                onClick={() =>
+                  setActiveSlideId(slides[activeSlideIndex - 1].id)
+                }
+              >
+                <ChevronLeft className="w-4 h-4" />
+              </Button>
+              <Button
+                variant="outline"
+                size="icon"
+                className="h-7 w-7"
+                disabled={activeSlideIndex === slides.length - 1}
+                onClick={() =>
+                  setActiveSlideId(slides[activeSlideIndex + 1].id)
+                }
+              >
+                <ChevronRight className="w-4 h-4" />
+              </Button>
+            </div>
+          </div>
+
+          {/* Narration Segments List */}
+          <div className="flex-1 overflow-y-auto p-3.5 space-y-3">
+            {activeSlide.narrations.map((seg, idx) => {
+              const isSegPlaying = playingSegmentId === seg.id;
+              return (
+                <div
+                  key={seg.id}
+                  className="p-3 rounded-xl border bg-stone-50/60 dark:bg-neutral-800/40 space-y-2.5"
+                >
+                  <div className="flex items-center justify-between gap-2">
+                    <div className="flex items-center gap-2 flex-1 min-w-0">
+                      <Badge variant="secondary" className="text-[10px] shrink-0">
+                        Đoạn {idx + 1}
+                      </Badge>
+                      <Select
+                        value={seg.voiceId}
+                        onValueChange={(v) =>
+                          v && updateNarration(seg.id, { voiceId: v })
+                        }
+                      >
+                        <SelectTrigger className="h-7 text-xs bg-white dark:bg-neutral-900">
+                          <SelectValue />
+                        </SelectTrigger>
+                        <SelectContent>
+                          {MOCK_VOICES.map((voice) => (
+                            <SelectItem
+                              key={voice.id}
+                              value={voice.id}
+                              className="text-xs"
+                            >
+                              {voice.lang === "vi" ? "🇻🇳" : "🇺🇸"} {voice.name} (
+                              {voice.accent})
+                            </SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
+                    </div>
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      className="h-7 w-7 text-muted-foreground hover:text-destructive shrink-0"
+                      onClick={() => deleteNarrationSegment(seg.id)}
+                      title="Xóa đoạn lời đọc"
+                    >
+                      <Trash2 className="w-3.5 h-3.5" />
+                    </Button>
+                  </div>
+
+                  <Textarea
+                    rows={3}
+                    value={seg.text}
+                    onChange={(e) =>
+                      updateNarration(seg.id, { text: e.target.value })
+                    }
+                    className="text-xs bg-white dark:bg-neutral-900 resize-none leading-relaxed"
+                  />
+
+                  <div className="flex items-center justify-between gap-3 pt-1">
+                    <div className="flex items-center gap-2 flex-1">
+                      <span className="text-[11px] text-muted-foreground shrink-0">
+                        Tốc độ: <strong>{seg.speed.toFixed(2)}x</strong>
+                      </span>
+                      <Slider
+                        value={[seg.speed]}
+                        min={0.75}
+                        max={1.5}
+                        step={0.05}
+                        onValueChange={(vals) => {
+                          const v = Array.isArray(vals) ? vals[0] : vals;
+                          updateNarration(seg.id, { speed: v });
+                        }}
+                        className="w-24"
+                      />
+                    </div>
+
+                    <Button
+                      size="sm"
+                      variant={isSegPlaying ? "default" : "outline"}
+                      onClick={() => handlePreviewVoice(seg.id)}
+                      className={`h-7 text-xs ${
+                        isSegPlaying
+                          ? "bg-blue-600 hover:bg-blue-700 text-white"
+                          : "bg-white dark:bg-neutral-900"
+                      }`}
+                    >
+                      {isSegPlaying ? (
+                        <>
+                          <Pause className="w-3 h-3 mr-1" />
+                          Đang đọc…
+                        </>
+                      ) : (
+                        <>
+                          <Play className="w-3 h-3 mr-1" />
+                          Nghe thử
+                        </>
+                      )}
+                    </Button>
+                  </div>
+                </div>
+              );
+            })}
+
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={addNarrationSegment}
+              className="w-full border-dashed text-xs"
+            >
+              <Plus className="w-3.5 h-3.5 mr-1.5" />
+              Thêm đoạn lời đọc
+            </Button>
+          </div>
+        </aside>
+
+        {/* RIGHT PANEL: Slide Preview & Filmstrip */}
+        <main className="flex-1 min-h-0 flex flex-col overflow-hidden bg-slate-100/70 dark:bg-neutral-950">
+          {/* Canvas Area */}
+          <div className="flex-1 min-h-0 flex flex-col items-center justify-center p-4 md:p-6 overflow-y-auto">
+            <div className="w-full max-w-3xl space-y-3">
+              <SlideCanvas
+                slide={activeSlide}
+                templateId={templateId}
+                activeSubtitle={activeSubtitle}
+              />
+
+              {/* Playback Bar */}
+              <div className="flex items-center justify-between bg-white dark:bg-neutral-900 px-4 py-2 rounded-xl border shadow-xs">
+                <div className="flex items-center gap-2">
+                  <Button
+                    size="sm"
+                    variant={isPlaying ? "default" : "outline"}
+                    onClick={() => setIsPlaying((p) => !p)}
+                    className={
+                      isPlaying ? "bg-blue-600 hover:bg-blue-700 text-white" : ""
+                    }
+                  >
+                    {isPlaying ? (
+                      <>
+                        <Pause className="w-3.5 h-3.5 mr-1.5" />
+                        Tạm dừng
+                      </>
+                    ) : (
+                      <>
+                        <Play className="w-3.5 h-3.5 mr-1.5" />
+                        Phát thử bài giảng
+                      </>
+                    )}
+                  </Button>
+                  <span className="text-xs text-muted-foreground">
+                    Slide {activeSlide.index} / {slides.length}
+                  </span>
+                </div>
+                <span className="text-xs font-mono text-muted-foreground">
+                  ~{totalSlideDuration.toFixed(1)}s
+                </span>
+              </div>
+            </div>
+          </div>
+
+          {/* Section Filter Bar + Bottom Slide Filmstrip */}
+          <div className="border-t bg-white dark:bg-neutral-900 shrink-0">
+            <div className="px-4 pt-2 pb-1 flex items-center gap-1.5 overflow-x-auto border-b border-slate-100 dark:border-neutral-800">
+              {sections.map((sec) => (
+                <button
+                  key={sec}
+                  type="button"
+                  onClick={() => setSectionFilter(sec)}
+                  className={`px-2.5 py-1 rounded-md text-[11px] font-medium shrink-0 transition-colors ${
+                    sectionFilter === sec
+                      ? "bg-blue-600 text-white"
+                      : "text-muted-foreground hover:bg-slate-100 dark:hover:bg-neutral-800"
+                  }`}
+                >
+                  {sec === "all" ? `Tất cả (${slides.length})` : sec}
+                </button>
+              ))}
+            </div>
+
+            <div className="h-28 px-4 py-2 flex items-center gap-2.5 overflow-x-auto">
+              {visibleSlides.map((s) => {
+                const isActive = s.id === activeSlide.id;
+                return (
+                  <button
+                    key={s.id}
+                    type="button"
+                    onClick={() => {
+                      setIsPlaying(false);
+                      setActiveSlideId(s.id);
+                    }}
+                    className={`w-36 h-20 rounded-lg border-2 overflow-hidden relative shrink-0 transition-all bg-white ${
+                      isActive
+                        ? "border-blue-600 ring-2 ring-blue-600/20"
+                        : "border-border hover:border-slate-300"
+                    }`}
+                  >
+                    {s.imageUrl ? (
+                      <img
+                        src={s.imageUrl}
+                        alt={s.title}
+                        loading="lazy"
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      <div className="p-2 text-left text-[11px] font-medium line-clamp-2">
+                        {s.content.word || s.title}
+                      </div>
+                    )}
+                    <span className="absolute top-1 left-1 px-1.5 py-0.5 rounded bg-slate-900/75 text-white text-[10px] font-bold">
+                      #{s.index}
+                    </span>
+                  </button>
+                );
+              })}
+
+              <button
+                type="button"
+                onClick={handleAddSlide}
+                className="w-24 h-20 rounded-lg border-2 border-dashed border-slate-300 hover:border-blue-500 flex flex-col items-center justify-center gap-1 text-xs text-muted-foreground hover:text-blue-600 shrink-0 transition-colors"
+              >
+                <Plus className="w-4 h-4" />
+                <span>Thêm</span>
+              </button>
+            </div>
+          </div>
+        </main>
       </div>
 
-      {/* Modal chỉnh sửa hình ảnh phân cảnh (Overlayer dạng Modal/Dialog) */}
-      <ShotVisualModal
-        open={isVisualModalOpen}
-        onOpenChange={setIsVisualModalOpen}
-        shot={
-          shots.find((s) => s.id === (visualModalShotId || activeShotId)) ||
-          activeShot
-        }
-        onUpdateShotVisual={handleUpdateShotVisual}
-        onOpenStoryAssetsForEdit={handleEditCharacter}
-        onOpenStoryAssetsForCreate={() => {
-          setIsVisualModalOpen(false);
-          setIsAssetsModalOpen(true);
-        }}
-      />
-
-      {/* Modal Tài sản truyện */}
-      <StoryAssetsModal
-        open={isAssetsModalOpen}
-        onOpenChange={setIsAssetsModalOpen}
-        selectedAssetId={selectedCharacterId}
-        onSelectAssetId={setSelectedCharacterId}
-      />
-
-      {/* Modal Re-split all shots */}
-      <ResplitAllModal
-        open={isResplitModalOpen}
-        onOpenChange={setIsResplitModalOpen}
-        onApplyResplitAll={handleApplyResplitAll}
-      />
+      {/* Export Dialog */}
+      <Dialog open={isExportOpen} onOpenChange={setIsExportOpen}>
+        <DialogContent className="max-w-md">
+          <DialogHeader>
+            <DialogTitle className="flex items-center gap-2">
+              <CheckCircle2 className="w-5 h-5 text-emerald-600" />
+              Xuất bản bài giảng
+            </DialogTitle>
+            <DialogDescription>
+              Chọn định dạng xuất bản cho "{project.title}" ({slides.length}{" "}
+              slides có lồng tiếng Vbee).
+            </DialogDescription>
+          </DialogHeader>
+          <div className="space-y-2 py-2 text-sm">
+            <div className="p-3 rounded-lg border flex items-center justify-between">
+              <div>
+                <div className="font-medium">Video bài giảng (.MP4)</div>
+                <div className="text-xs text-muted-foreground">
+                  1920x1080 · Kèm lồng tiếng Vbee & phụ đề
+                </div>
+              </div>
+              <Button size="sm" onClick={() => setIsExportOpen(false)}>
+                Tải MP4
+              </Button>
+            </div>
+            <div className="p-3 rounded-lg border flex items-center justify-between">
+              <div>
+                <div className="font-medium">Slide PowerPoint (.PPTX)</div>
+                <div className="text-xs text-muted-foreground">
+                  Kèm file âm thanh rời từng slide
+                </div>
+              </div>
+              <Button
+                size="sm"
+                variant="outline"
+                onClick={() => setIsExportOpen(false)}
+              >
+                Tải PPTX
+              </Button>
+            </div>
+          </div>
+          <DialogFooter>
+            <Button variant="ghost" onClick={() => setIsExportOpen(false)}>
+              Đóng
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }
