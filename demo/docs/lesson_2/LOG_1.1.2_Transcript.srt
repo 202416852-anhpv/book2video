@@ -1,0 +1,1144 @@
+1
+00:00:00,000 --> 00:00:11,970
+Chào các em. Hôm nay chúng ta học Bài một chấm một chấm hai: What's your name? Trong ngành logistics, việc hỏi và khai báo chính xác họ tên, tuổi tại quầy tiếp nhận hay cổng kho là vô cùng quan trọng.
+
+2
+00:00:12,370 --> 00:00:14,790
+Học xong bài này, các em sẽ:
+
+3
+00:00:14,790 --> 00:00:17,200
+Hỏi và trả lời về họ và tên.
+
+4
+00:00:17,200 --> 00:00:19,680
+Hỏi và nói tuổi của bản thân.
+
+5
+00:00:19,680 --> 00:00:23,010
+Nghe hiểu tên và tuổi trong hội thoại ngắn.
+
+6
+00:00:23,010 --> 00:00:26,460
+Điền phiếu đăng ký và viết câu tự giới thiệu.
+
+7
+00:00:26,460 --> 00:00:30,570
+Bây giờ, các em mở Student Book, Lesson 1 chấm 1 chấm 2.
+
+8
+00:00:30,970 --> 00:00:35,530
+Chúng ta cùng bắt đầu với phần Khởi động nào. Look.
+
+9
+00:00:35,530 --> 00:00:37,990
+Who asks? Who answers?
+
+10
+00:00:37,990 --> 00:00:40,230
+Ai hỏi? Ai trả lời?
+
+11
+00:00:40,230 --> 00:00:44,860
+What is the boy’s first name? What is his last name?
+
+12
+00:00:44,860 --> 00:00:50,800
+Tên của bạn nam là gì? Họ của bạn ấy là gì? Các em quan sát tranh nhé.
+
+13
+00:00:51,200 --> 00:00:54,820
+What’s your first name?
+
+14
+00:00:54,820 --> 00:00:58,850
+Hoa hỏi: Tên của bạn là gì?
+
+15
+00:00:58,850 --> 00:01:04,530
+My first name is Nam. My last name is Tran.
+
+16
+00:01:04,530 --> 00:01:10,730
+Nam trả lời: Tên tôi là Nam. Họ của tôi là Tran.
+
+17
+00:01:11,130 --> 00:01:18,250
+Phần A: Từ vựng. Chúng ta cùng học các từ để nói về tên, họ và tuổi.
+
+18
+00:01:18,250 --> 00:01:20,830
+New words to use.
+
+19
+00:01:23,830 --> 00:01:29,940
+Từ thứ nhất: Các em nghe và nhắc lại hai lần nhé.
+
+20
+00:01:29,940 --> 00:01:32,150
+first name
+
+21
+00:01:32,150 --> 00:01:34,350
+first name
+
+22
+00:01:34,350 --> 00:01:39,360
+first name nghĩa là tên, hoặc tên gọi.
+
+23
+00:01:39,360 --> 00:01:42,660
+My first name is Nam.
+
+24
+00:01:42,660 --> 00:01:45,370
+Tên tôi là Nam.
+
+25
+00:01:45,770 --> 00:01:51,850
+Từ thứ hai: Các em nghe và nhắc lại hai lần nhé.
+
+26
+00:01:51,850 --> 00:01:53,970
+last name
+
+27
+00:01:53,970 --> 00:01:56,100
+last name
+
+28
+00:01:56,100 --> 00:01:59,550
+last name nghĩa là họ.
+
+29
+00:01:59,550 --> 00:02:02,890
+My last name is Tran.
+
+30
+00:02:02,890 --> 00:02:06,030
+Họ của tôi là Tran.
+
+31
+00:02:06,430 --> 00:02:12,880
+Từ thứ ba: Các em nghe và nhắc lại hai lần nhé.
+
+32
+00:02:12,880 --> 00:02:14,520
+age
+
+33
+00:02:14,520 --> 00:02:16,160
+age
+
+34
+00:02:16,160 --> 00:02:19,440
+age nghĩa là tuổi.
+
+35
+00:02:19,440 --> 00:02:22,180
+My age is 19.
+
+36
+00:02:22,180 --> 00:02:25,570
+Tuổi của tôi là 19.
+
+37
+00:02:25,970 --> 00:02:32,370
+Cụm từ thứ tư: Các em nghe và nhắc lại hai lần nhé.
+
+38
+00:02:32,370 --> 00:02:34,510
+years old
+
+39
+00:02:34,510 --> 00:02:36,650
+years old
+
+40
+00:02:36,650 --> 00:02:40,310
+years old nghĩa là tuổi.
+
+41
+00:02:40,310 --> 00:02:43,260
+I’m 18 years old.
+
+42
+00:02:43,260 --> 00:02:45,700
+Tôi 18 tuổi.
+
+43
+00:02:46,100 --> 00:02:51,610
+Từ thứ năm: Các em nghe và nhắc lại hai lần nhé.
+
+44
+00:02:51,610 --> 00:02:53,080
+form
+
+45
+00:02:53,080 --> 00:02:54,540
+form
+
+46
+00:02:54,540 --> 00:02:58,860
+form nghĩa là phiếu, hoặc biểu mẫu.
+
+47
+00:02:58,860 --> 00:03:01,430
+This is my form.
+
+48
+00:03:01,430 --> 00:03:04,730
+Đây là biểu mẫu của tôi.
+
+49
+00:03:05,130 --> 00:03:09,770
+Chúng ta có thêm hai từ bổ trợ hữu ích.
+
+50
+00:03:09,770 --> 00:03:11,220
+desk
+
+51
+00:03:11,220 --> 00:03:15,310
+desk là bàn tiếp nhận, hoặc quầy.
+
+52
+00:03:15,310 --> 00:03:17,130
+eighteen
+
+53
+00:03:17,130 --> 00:03:20,400
+eighteen là số mười tám.
+
+54
+00:03:20,800 --> 00:03:28,600
+Bài tập A một: Nối từ với nghĩa. Viết chữ cái tương ứng. Câu một, cô làm mẫu nhé.
+
+55
+00:03:28,600 --> 00:03:30,690
+1. first name
+
+56
+00:03:30,690 --> 00:03:42,090
+first name là tên gọi chính, đứng đầu theo cách gọi tiếng Anh. Ta đối chiếu với cột nghĩa bên phải để tìm phương án phù hợp.
+
+57
+00:03:42,090 --> 00:03:46,530
+b. the first word of your name (Nam, Hoa)
+
+58
+00:03:46,930 --> 00:03:48,190
+1 - b
+
+59
+00:03:48,190 --> 00:03:56,500
+Đáp án là một nối với b. First name là tên gọi chính, đứng đầu theo cách gọi tiếng Anh như Nam, Hoa.
+
+60
+00:03:56,900 --> 00:03:58,550
+Câu hai nào.
+
+61
+00:03:58,550 --> 00:04:00,200
+2. last name
+
+62
+00:04:00,200 --> 00:04:05,630
+last name nghĩa là gì các em nhỉ? Hãy chọn một chữ cái phù hợp nhé.
+
+63
+00:04:08,630 --> 00:04:09,910
+2 - d
+
+64
+00:04:09,910 --> 00:04:17,200
+Đáp án là hai nối với d. Last name là họ của một người, ví dụ như họ Tran hay Nguyen.
+
+65
+00:04:17,600 --> 00:04:19,020
+Câu ba.
+
+66
+00:04:19,020 --> 00:04:20,380
+3. age
+
+67
+00:04:20,380 --> 00:04:25,100
+Từ age tương ứng với giải nghĩa nào ở cột bên phải?
+
+68
+00:04:28,100 --> 00:04:29,270
+3 - a
+
+69
+00:04:29,270 --> 00:04:37,830
+Đáp án là ba nối với a. Age là tuổi tác, tức con số chỉ bạn bao nhiêu tuổi như mười tám, mười chín hay hai mươi.
+
+70
+00:04:38,230 --> 00:04:41,050
+Chúng ta tiếp tục với câu bốn.
+
+71
+00:04:41,050 --> 00:04:42,390
+4. hello
+
+72
+00:04:42,390 --> 00:04:45,270
+Hello là từ dùng để làm gì nào?
+
+73
+00:04:48,270 --> 00:04:49,720
+4 - e
+
+74
+00:04:49,720 --> 00:04:56,900
+Đáp án là bốn nối với e. Hello là từ dùng để chào hỏi ai đó khi gặp mặt.
+
+75
+00:04:57,300 --> 00:04:59,250
+Và câu số năm.
+
+76
+00:04:59,250 --> 00:05:00,600
+5. you
+
+77
+00:05:00,600 --> 00:05:05,630
+Từ you có ý nghĩa như thế nào trong định nghĩa còn lại?
+
+78
+00:05:08,630 --> 00:05:09,980
+5 - c
+
+79
+00:05:09,980 --> 00:05:17,930
+Đáp án là năm nối với c. You là đại từ chỉ người mà mình đang trực tiếp trò chuyện cùng.
+
+80
+00:05:18,330 --> 00:05:27,090
+Bây giờ chúng ta cùng chuyển sang phần B: Mẫu câu thực hành. Các em mở bài tập phần B trong sách nhé.
+
+81
+00:05:27,090 --> 00:05:30,030
+B. Structures to practise.
+
+82
+00:05:33,030 --> 00:05:39,360
+Mẫu câu đầu tiên dùng để hỏi và trả lời về tên gọi hoặc họ.
+
+83
+00:05:39,360 --> 00:05:44,440
+What's your first name? My first name is Nam.
+
+84
+00:05:44,440 --> 00:05:58,070
+Tên của bạn là gì? Tên của tôi là Nam. Các em chú ý: từ What's là dạng viết tắt của What is, và trong câu trả lời bắt buộc phải có từ is nhé.
+
+85
+00:05:58,470 --> 00:06:03,360
+Mẫu câu tiếp theo dùng để hỏi và nói số tuổi.
+
+86
+00:06:03,360 --> 00:06:07,320
+How old are you? I'm 19 years old.
+
+87
+00:06:07,320 --> 00:06:21,230
+Bạn bao nhiêu tuổi? Tôi mười chín tuổi. Khi nói tuổi, chúng ta dùng động từ to be I'm, không dùng have. Các em cũng có thể trả lời ngắn gọn là I'm 19.
+
+88
+00:06:21,630 --> 00:06:25,330
+Có một lỗi các em rất hay mắc phải khi nói tuổi.
+
+89
+00:06:25,330 --> 00:06:27,310
+I have 19 years old.
+
+90
+00:06:27,310 --> 00:06:33,290
+Cách nói này chưa đúng vì bị dịch từng chữ từ tiếng Việt sang. Câu chuẩn xác phải là:
+
+91
+00:06:33,290 --> 00:06:35,080
+I'm 19 years old.
+
+92
+00:06:35,080 --> 00:06:39,770
+Luôn dùng động từ to be I'm khi nói số tuổi của mình các em nhé.
+
+93
+00:06:40,170 --> 00:06:48,040
+Chúng ta cùng làm bài tập B một: Nhìn thẻ tên và trả lời các câu hỏi. Câu một, cô làm mẫu nhé.
+
+94
+00:06:48,040 --> 00:06:52,650
+Tuan Le: What's your last name? My last name is...
+
+95
+00:06:52,650 --> 00:07:02,530
+Thẻ ghi tên Tuan Le. Câu hỏi hỏi last name tức là hỏi họ, nên chúng ta tìm họ trong khung từ là Le để điền vào chỗ trống.
+
+96
+00:07:02,930 --> 00:07:05,280
+My last name is Le.
+
+97
+00:07:05,280 --> 00:07:11,500
+Đáp án là Le. Vì câu hỏi yêu cầu last name nên chúng ta điền họ là Le.
+
+98
+00:07:11,900 --> 00:07:15,500
+Sang câu số hai, các em tự làm nào.
+
+99
+00:07:15,500 --> 00:07:20,340
+Mai Vo: What's your first name? My first name is...
+
+100
+00:07:20,340 --> 00:07:26,700
+Thẻ tên ghi Mai Vo, và câu hỏi đang hỏi first name, tức là hỏi tên gọi.
+
+101
+00:07:29,700 --> 00:07:32,160
+My first name is Mai.
+
+102
+00:07:32,160 --> 00:07:38,630
+Đáp án chính xác là Mai. Câu hỏi hỏi first name nên ta chọn tên gọi là Mai.
+
+103
+00:07:39,030 --> 00:07:40,790
+Đến câu số ba.
+
+104
+00:07:40,790 --> 00:07:44,250
+Huy Do: What's your name? My name is...
+
+105
+00:07:44,250 --> 00:07:49,670
+Câu hỏi hỏi họ và tên. Các em nhìn thẻ và chọn cụm từ thích hợp nhé.
+
+106
+00:07:52,670 --> 00:07:54,830
+My name is Huy Do.
+
+107
+00:07:54,830 --> 00:08:01,100
+Đáp án là Huy Do. Câu hỏi What's your name yêu cầu nói đầy đủ cả họ và tên.
+
+108
+00:08:01,500 --> 00:08:03,340
+Câu số bốn nào.
+
+109
+00:08:03,340 --> 00:08:07,630
+Trang Ha: What's your last name? My last name is...
+
+110
+00:08:07,630 --> 00:08:12,730
+Thẻ tên là Trang Ha, và câu hỏi muốn biết last name của bạn ấy.
+
+111
+00:08:15,730 --> 00:08:18,220
+My last name is Ha.
+
+112
+00:08:18,220 --> 00:08:25,100
+Đáp án là Ha. Thẻ ghi Trang Ha và câu hỏi hỏi last name nên ta điền họ Ha.
+
+113
+00:08:25,500 --> 00:08:27,350
+Và câu số năm.
+
+114
+00:08:27,350 --> 00:08:31,050
+An Bui: Say hi and your name. Hi. I'm...
+
+115
+00:08:31,050 --> 00:08:36,030
+Yêu cầu là chào và giới thiệu tên đầy đủ của bạn trên thẻ.
+
+116
+00:08:39,030 --> 00:08:41,070
+Hi. I'm An Bui.
+
+117
+00:08:41,070 --> 00:08:49,130
+Đáp án là An Bui. Chúng ta hoàn thành mẫu câu chào và giới thiệu đầy đủ họ tên: Hi. I'm An Bui.
+
+118
+00:08:49,530 --> 00:08:56,270
+Bây giờ chúng ta cùng chuyển sang phần C, kỹ năng nghe, với chủ đề Ngày đăng ký.
+
+119
+00:08:59,270 --> 00:09:11,000
+Ở phần này, bạn Hoa tại quầy đăng ký sẽ hỏi thông tin của bạn sinh viên mới tên là Minh. Các em hãy chú ý lắng nghe tên, họ và tuổi, đặc biệt là số tuổi có đuôi -teen được nhấn mạnh nhé.
+
+120
+00:09:11,400 --> 00:09:20,400
+Trước khi nghe, các em cùng đọc lướt qua năm câu hỏi của bài C một nào.
+
+121
+00:09:20,400 --> 00:09:25,710
+The girl’s name is... a. Lan, b. Hoa.
+
+122
+00:09:25,710 --> 00:09:31,680
+The boy’s first name is... a. Minh, b. Nam.
+
+123
+00:09:31,680 --> 00:09:36,770
+His last name is... a. Vo, b. Tran.
+
+124
+00:09:36,770 --> 00:09:42,300
+Hoa asks about his... a. phone, b. age.
+
+125
+00:09:42,300 --> 00:09:48,700
+Minh is... years old. a. nineteen, b. eighteen.
+
+126
+00:09:49,100 --> 00:09:53,640
+Nào, các em cùng lắng nghe cuộc đối thoại lần thứ nhất.
+
+127
+00:09:53,640 --> 00:09:56,900
+Hi! I'm Hoa. What's your first name?
+
+128
+00:09:56,900 --> 00:10:00,020
+Hello, Hoa. My first name is Minh.
+
+129
+00:10:00,020 --> 00:10:03,950
+Nice to meet you, Minh. What's your last name?
+
+130
+00:10:03,950 --> 00:10:06,670
+My last name is Vo. Minh Vo.
+
+131
+00:10:06,670 --> 00:10:09,450
+OK, Minh Vo. How old are you?
+
+132
+00:10:09,450 --> 00:10:12,570
+I'm eighteen years old. Thank you!
+
+133
+00:10:12,970 --> 00:10:16,660
+Nghe lần hai, có lời thoại trên màn hình.
+
+134
+00:10:16,660 --> 00:10:20,000
+Hi! I’m Hoa. What’s your first name?
+
+135
+00:10:20,400 --> 00:10:24,170
+Hello, Hoa. My first name is Minh.
+
+136
+00:10:24,570 --> 00:10:28,800
+Nice to meet you, Minh. What’s your last name?
+
+137
+00:10:29,200 --> 00:10:32,600
+My last name is Vo. Minh Vo.
+
+138
+00:10:33,000 --> 00:10:37,030
+OK, Minh Vo. How old are you?
+
+139
+00:10:37,430 --> 00:10:40,430
+I’m eighteen years old. Thank you!
+
+140
+00:10:40,830 --> 00:10:43,990
+Câu một, cô làm mẫu nhé.
+
+141
+00:10:43,990 --> 00:10:48,290
+The girl’s name is... a. Lan. b. Hoa.
+
+142
+00:10:48,290 --> 00:10:56,800
+Để biết tên bạn nữ, các em chú ý ngay câu đầu tiên khi bạn ấy tự giới thiệu tên mình.
+
+143
+00:10:57,200 --> 00:10:59,600
+The girl’s name is Hoa.
+
+144
+00:10:59,600 --> 00:11:04,870
+Đáp án là b. Bạn nữ tự giới thiệu ở ngay câu mở đầu: Hi! I’m Hoa.
+
+145
+00:11:05,270 --> 00:11:07,200
+Câu hai nào.
+
+146
+00:11:07,200 --> 00:11:11,630
+The boy’s first name is... a. Minh. b. Nam.
+
+147
+00:11:11,630 --> 00:11:16,870
+Câu hỏi tìm tên gọi của bạn nam, các em chọn a hay b?
+
+148
+00:11:19,870 --> 00:11:22,780
+The boy’s first name is Minh.
+
+149
+00:11:22,780 --> 00:11:27,900
+Đáp án là a. Bạn nam trả lời rõ ràng: My first name is Minh.
+
+150
+00:11:28,300 --> 00:11:30,270
+Đến câu ba.
+
+151
+00:11:30,270 --> 00:11:34,310
+His last name is... a. Vo. b. Tran.
+
+152
+00:11:34,310 --> 00:11:37,400
+Họ của bạn ấy là gì nào?
+
+153
+00:11:40,400 --> 00:11:42,720
+His last name is Vo.
+
+154
+00:11:42,720 --> 00:11:48,970
+Đáp án đúng là a. Khi được hỏi về họ, bạn nam trả lời: My last name is Vo.
+
+155
+00:11:49,370 --> 00:11:51,130
+Câu bốn.
+
+156
+00:11:51,130 --> 00:11:55,610
+Hoa asks about his... a. phone. b. age.
+
+157
+00:11:55,610 --> 00:12:01,070
+Bạn Hoa hỏi về số điện thoại hay số tuổi của Minh?
+
+158
+00:12:04,070 --> 00:12:06,680
+Hoa asks about his age.
+
+159
+00:12:06,680 --> 00:12:13,170
+Đáp án là b. Hoa hỏi câu How old are you?, đây chính là câu hỏi về số tuổi.
+
+160
+00:12:13,570 --> 00:12:16,300
+Và câu số năm.
+
+161
+00:12:16,300 --> 00:12:22,490
+Minh is... years old. a. nineteen. b. eighteen.
+
+162
+00:12:22,490 --> 00:12:27,000
+Minh bao nhiêu tuổi các em nhỉ?
+
+163
+00:12:30,000 --> 00:12:33,030
+Minh is eighteen years old.
+
+164
+00:12:33,030 --> 00:12:38,630
+Đáp án là b. Minh nói eighteen, tức là bạn ấy mười tám tuổi.
+
+165
+00:12:39,030 --> 00:12:45,700
+Phần D: Đọc. Chúng ta sẽ cùng đọc phiếu đăng ký của bạn Nam nhé.
+
+166
+00:12:48,700 --> 00:12:55,040
+Các em hãy lắng nghe và đọc thầm theo đoạn văn.
+
+167
+00:12:55,040 --> 00:13:11,370
+Hello! My first name is Nam. My last name is Tran. I’m 19 years old. I’m a college student. I’m in class LG01. This is my registration form.
+
+168
+00:13:11,770 --> 00:13:19,320
+Bài tập D một: Đọc lại và viết câu trả lời của Nam từ ba đến năm từ. Câu một, cô làm mẫu nhé.
+
+169
+00:13:19,320 --> 00:13:21,840
+What’s your first name?
+
+170
+00:13:21,840 --> 00:13:29,400
+Tên của bạn là gì? Để trả lời, các em nhìn vào câu thứ hai của bài đọc: My first name is Nam.
+
+171
+00:13:29,800 --> 00:13:32,440
+My first name is Nam.
+
+172
+00:13:32,440 --> 00:13:37,330
+Bài đọc nêu rõ tên của bạn: My first name is Nam.
+
+173
+00:13:37,730 --> 00:13:39,080
+Câu hai nào.
+
+174
+00:13:39,080 --> 00:13:40,990
+What’s your last name?
+
+175
+00:13:40,990 --> 00:13:45,530
+Họ của bạn là gì? Các em tìm câu nói về họ của Nam trong bài đọc nhé.
+
+176
+00:13:48,530 --> 00:13:51,120
+My last name is Tran.
+
+177
+00:13:51,120 --> 00:13:56,300
+Ở câu thứ ba, bài đọc nêu rõ họ: My last name is Tran.
+
+178
+00:13:56,700 --> 00:13:58,270
+Sang câu thứ ba.
+
+179
+00:13:58,270 --> 00:13:59,830
+How old are you?
+
+180
+00:13:59,830 --> 00:14:03,800
+Bạn bao nhiêu tuổi? Các em hãy viết câu trả lời đầy đủ nhé.
+
+181
+00:14:06,800 --> 00:14:09,170
+I’m 19 years old.
+
+182
+00:14:09,170 --> 00:14:15,470
+Đáp án là I’m 19 years old. Bài đọc đã nêu rõ số tuổi của bạn ấy.
+
+183
+00:14:15,870 --> 00:14:17,980
+Tiếp tục với câu số bốn.
+
+184
+00:14:17,980 --> 00:14:19,800
+What is your class?
+
+185
+00:14:19,800 --> 00:14:24,500
+Lớp của bạn là lớp nào? Các em tìm thông tin về lớp học của Nam nhé.
+
+186
+00:14:27,500 --> 00:14:29,940
+I’m in class LG01.
+
+187
+00:14:29,940 --> 00:14:35,870
+Chính xác. Bài đọc cho biết thông tin lớp: I’m in class LG01.
+
+188
+00:14:36,270 --> 00:14:37,730
+Và câu số năm.
+
+189
+00:14:37,730 --> 00:14:39,420
+Are you a student?
+
+190
+00:14:39,420 --> 00:14:44,200
+Bạn có phải là sinh viên không? Các em tìm câu trả lời trong bài đọc nhé.
+
+191
+00:14:47,200 --> 00:14:49,350
+Yes, I’m a student.
+
+192
+00:14:49,350 --> 00:14:57,130
+Bài đọc khẳng định bạn là sinh viên qua câu I’m a college student, nên đáp án là Yes, I’m a student.
+
+193
+00:14:57,530 --> 00:15:06,470
+Phần E: Speaking. Luyện nói tại quầy đăng ký. Các em mở Student Book trang bài một chấm một chấm hai nhé.
+
+194
+00:15:09,470 --> 00:15:13,460
+Hello. What’s your first name?
+
+195
+00:15:13,460 --> 00:15:17,260
+Xin chào. Tên của bạn là gì?
+
+196
+00:15:17,260 --> 00:15:20,780
+Hi. My first name is Lan.
+
+197
+00:15:20,780 --> 00:15:24,300
+Chào bạn. Tên tôi là Lan.
+
+198
+00:15:24,700 --> 00:15:27,380
+And your last name?
+
+199
+00:15:27,380 --> 00:15:30,230
+Còn họ của bạn là gì?
+
+200
+00:15:30,230 --> 00:15:33,090
+My last name is Pham.
+
+201
+00:15:33,090 --> 00:15:35,770
+Họ của tôi là Pham.
+
+202
+00:15:36,170 --> 00:15:39,160
+How old are you, Lan?
+
+203
+00:15:39,160 --> 00:15:42,690
+Bạn bao nhiêu tuổi vậy Lan?
+
+204
+00:15:42,690 --> 00:15:45,320
+I’m 19 years old.
+
+205
+00:15:45,320 --> 00:15:48,130
+Tôi mười chín tuổi.
+
+206
+00:15:48,530 --> 00:15:51,880
+Lượt nói thứ nhất, cô làm mẫu nhé.
+
+207
+00:15:51,880 --> 00:15:54,930
+Hello. What’s your first name?
+
+208
+00:15:54,930 --> 00:15:58,930
+Đến lượt em: Chào lại và nói tên em là Huy.
+
+209
+00:16:02,930 --> 00:16:07,450
+Câu mẫu, các em nghe và nói lại nhé:
+
+210
+00:16:07,450 --> 00:16:10,930
+Hi. My first name is Huy.
+
+211
+00:16:11,330 --> 00:16:13,660
+Lượt nói thứ hai.
+
+212
+00:16:13,660 --> 00:16:16,390
+What’s your last name?
+
+213
+00:16:16,390 --> 00:16:20,000
+Đến lượt em: Nói họ của em là Do.
+
+214
+00:16:24,000 --> 00:16:28,190
+Câu mẫu, các em nghe và nói lại nhé:
+
+215
+00:16:28,190 --> 00:16:30,900
+My last name is Do.
+
+216
+00:16:31,300 --> 00:16:33,220
+Lượt nói thứ ba.
+
+217
+00:16:33,220 --> 00:16:35,150
+How old are you?
+
+218
+00:16:35,150 --> 00:16:39,000
+Đến lượt em: Nói em mười tám tuổi và cảm ơn.
+
+219
+00:16:43,000 --> 00:16:47,440
+Câu mẫu, các em nghe và nói lại nhé:
+
+220
+00:16:47,440 --> 00:16:51,130
+I’m 18 years old. Thank you.
+
+221
+00:16:51,530 --> 00:16:55,870
+Lượt nói thứ tư. Bây giờ em đóng vai Tuấn nhé.
+
+222
+00:16:55,870 --> 00:16:59,010
+Hello. What’s your first name?
+
+223
+00:16:59,010 --> 00:17:03,200
+Đến lượt em: Chào lại và nói tên em là Tuan.
+
+224
+00:17:07,200 --> 00:17:11,870
+Câu mẫu, các em nghe và nói lại nhé:
+
+225
+00:17:11,870 --> 00:17:15,570
+Hi. My first name is Tuan.
+
+226
+00:17:15,970 --> 00:17:18,290
+Lượt nói thứ năm.
+
+227
+00:17:18,290 --> 00:17:20,770
+And your last name?
+
+228
+00:17:20,770 --> 00:17:24,370
+Đến lượt em: Nói họ của em là Le.
+
+229
+00:17:28,370 --> 00:17:32,560
+Câu mẫu, các em nghe và nói lại nhé:
+
+230
+00:17:32,560 --> 00:17:35,270
+My last name is Le.
+
+231
+00:17:35,670 --> 00:17:45,400
+Phần F: Viết. Chúng ta sẽ cùng nhau thực hành điền và viết câu tự giới thiệu với phiếu đăng ký thông tin cá nhân nhé.
+
+232
+00:17:48,400 --> 00:17:55,680
+Các em quan sát phiếu mẫu của bạn Nam. Các trường thông tin gồm có:
+
+233
+00:17:55,680 --> 00:18:03,410
+First name: Nam. Last name: Tran. Age: 19. Class: LG01. Date: 9 October.
+
+234
+00:18:03,410 --> 00:18:11,700
+Bây giờ, các em hãy hoàn thành biểu mẫu với thông tin của chính mình vào sách.
+
+235
+00:18:12,100 --> 00:18:15,570
+Bài tập F hai. Câu một, cô làm mẫu.
+
+236
+00:18:15,570 --> 00:18:18,370
+Hello! My first name is...
+
+237
+00:18:18,370 --> 00:18:24,930
+Điền tên gọi của mình vào sau cụm My first name is. Nhớ viết hoa chữ đầu nhé.
+
+238
+00:18:25,330 --> 00:18:27,990
+Câu mẫu của bạn Nam là:
+
+239
+00:18:27,990 --> 00:18:31,020
+Hello! My first name is Nam.
+
+240
+00:18:31,020 --> 00:18:34,130
+Xin chào! Tên của tôi là Nam.
+
+241
+00:18:34,530 --> 00:18:35,780
+Câu hai.
+
+242
+00:18:35,780 --> 00:18:37,650
+My last name is...
+
+243
+00:18:37,650 --> 00:18:40,770
+Các em điền họ của mình vào chỗ trống.
+
+244
+00:18:43,770 --> 00:18:45,970
+Câu mẫu của Nam:
+
+245
+00:18:45,970 --> 00:18:48,570
+My last name is Tran.
+
+246
+00:18:48,570 --> 00:18:56,370
+Họ của tôi là Tran. Điền họ vào sau cụm My last name is và viết hoa chữ cái đầu của họ.
+
+247
+00:18:56,770 --> 00:18:58,140
+Câu ba nào.
+
+248
+00:18:58,140 --> 00:18:59,930
+My full name is...
+
+249
+00:18:59,930 --> 00:19:02,670
+Họ và tên đầy đủ của em là gì nào?
+
+250
+00:19:05,670 --> 00:19:07,210
+Câu mẫu:
+
+251
+00:19:07,210 --> 00:19:10,050
+My full name is Nam Tran.
+
+252
+00:19:10,050 --> 00:19:14,900
+Họ tên đầy đủ full name gồm tên gọi và họ ghép lại.
+
+253
+00:19:15,300 --> 00:19:16,720
+Câu bốn.
+
+254
+00:19:16,720 --> 00:19:18,790
+I’m... years old.
+
+255
+00:19:18,790 --> 00:19:22,070
+Điền số tuổi của bản thân vào câu.
+
+256
+00:19:25,070 --> 00:19:26,960
+Câu mẫu của Nam:
+
+257
+00:19:26,960 --> 00:19:28,930
+I’m 19 years old.
+
+258
+00:19:28,930 --> 00:19:35,770
+Tôi mười chín tuổi. Điền con số chỉ tuổi của bạn, ví dụ mười tám, mười chín hay hai mươi.
+
+259
+00:19:36,170 --> 00:19:37,410
+Câu năm.
+
+260
+00:19:37,410 --> 00:19:38,970
+This is my...
+
+261
+00:19:38,970 --> 00:19:42,270
+Các em điền cụm từ chỉ phiếu đăng ký nhé.
+
+262
+00:19:45,270 --> 00:19:47,460
+Đáp án câu năm:
+
+263
+00:19:47,460 --> 00:19:50,800
+This is my registration form.
+
+264
+00:19:50,800 --> 00:19:58,200
+Đây là phiếu đăng ký của tôi. Cụm từ chỉ biểu mẫu đăng ký là registration form.
+
+265
+00:19:58,600 --> 00:20:01,090
+Hôm nay các em đã học:
+
+266
+00:20:01,090 --> 00:20:04,100
+What’s your first, last name?
+
+267
+00:20:04,100 --> 00:20:05,790
+Hỏi tên, họ
+
+268
+00:20:05,790 --> 00:20:08,290
+My first, last name is
+
+269
+00:20:08,290 --> 00:20:10,270
+Trả lời tên, họ
+
+270
+00:20:10,270 --> 00:20:12,320
+How old are you?
+
+271
+00:20:12,320 --> 00:20:13,790
+Hỏi tuổi
+
+272
+00:20:13,790 --> 00:20:15,770
+I’m  years old.
+
+273
+00:20:15,770 --> 00:20:17,240
+Nói tuổi
+
+274
+00:20:17,240 --> 00:20:19,370
+registration form
+
+275
+00:20:19,370 --> 00:20:21,930
+Phiếu đăng ký thông tin
+
+276
+00:20:22,330 --> 00:20:26,820
+Bây giờ các em tự đánh giá. Em đã làm được những việc sau chưa?
+
+277
+00:20:26,820 --> 00:20:29,220
+Hỏi và trả lời về họ và tên.
+
+278
+00:20:29,220 --> 00:20:31,670
+Hỏi và nói tuổi của bản thân.
+
+279
+00:20:31,670 --> 00:20:34,960
+Nghe hiểu tên và tuổi trong hội thoại ngắn.
+
+280
+00:20:34,960 --> 00:20:38,380
+Điền phiếu đăng ký và viết câu tự giới thiệu.
+
+281
+00:20:38,380 --> 00:20:41,970
+Các em đánh dấu những việc mình đã làm được nhé.
+
+282
+00:20:42,370 --> 00:20:44,580
+Bài tập về nhà của các em:
+
+283
+00:20:44,580 --> 00:20:47,620
+Làm bài tập A2 và B2 trong Student Book.
+
+284
+00:20:47,620 --> 00:20:50,710
+Làm bài luyện tập của bài 1.1.2 trên LMS.
+
+285
+00:20:50,710 --> 00:20:54,160
+Thực hành hỏi họ, tên và tuổi với bạn cùng lớp.
+
+286
+00:20:54,160 --> 00:20:56,900
+Chào các em, hẹn gặp lại ở bài sau.
+

@@ -1,0 +1,932 @@
+{
+ "course": "Logistics English",
+ "lesson": "1.1.2",
+ "level": "TB1",
+ "title": "What’s Your Name?",
+ "video_duration": 1257.3,
+ "note": "skills: các đoạn kỹ năng của video theo thứ tự (start/end giây, LMS dùng để bỏ qua đoạn). Mỗi đoạn có popups: video_stop = mốc dừng video và hiện popup; học viên làm trong time_limit_sec (gợi ý, LMS tự chỉnh); nộp xong video chạy tiếp từ video_resume để xem chữa, hết chữa ở review_end. questions = danh sách câu trong popup (type, answer_format, options); answer_key KHÔNG hiện cho học viên. Đoạn mở đầu và tổng kết không có popup.",
+ "skills": [
+  {
+   "skill": "intro",
+   "label": "Mở đầu",
+   "title": "Mở đầu, mục tiêu, khởi động",
+   "start": 0.0,
+   "end": 71.13,
+   "start_hms": "00:00",
+   "end_hms": "01:11",
+   "duration": 71.13,
+   "popups": []
+  },
+  {
+   "skill": "vocabulary",
+   "label": "Từ vựng",
+   "title": "A | NEW WORDS TO USE | Từ vựng: Tên, họ và tuổi",
+   "start": 71.13,
+   "end": 318.33,
+   "start_hms": "01:11",
+   "end_hms": "05:18",
+   "duration": 247.2,
+   "popups": [
+    {
+     "popup_id": "1.1.2-P1",
+     "skill": "vocabulary",
+     "type": "match",
+     "game": "link_word",
+     "answer_format": "choice",
+     "video_stop": 236.9,
+     "time_limit_sec": 120,
+     "video_resume": 236.9,
+     "review_end": 318.33,
+     "instruction": "Match the words with the meanings. Write the letter.",
+     "audio_file": "",
+     "image_file": "",
+     "material": {},
+     "shared_options": [
+      {
+       "key": "a",
+       "text": "how old you are (18, 19, 20)"
+      },
+      {
+       "key": "b",
+       "text": "the first word of your name (Nam, Hoa)"
+      },
+      {
+       "key": "c",
+       "text": "the person I talk to"
+      },
+      {
+       "key": "d",
+       "text": "the last word of your name (Tran, Nguyen)"
+      },
+      {
+       "key": "e",
+       "text": "a word to say hi"
+      }
+     ],
+     "word_bank": null,
+     "context_text": "Options:\na. how old you are (18, 19, 20)\nb. the first word of your name (Nam, Hoa)\nc. the person I talk to\nd. the last word of your name (Tran, Nguyen)\ne. a word to say hi",
+     "questions": [
+      {
+       "no": 1,
+       "type": "match",
+       "game": "link_word",
+       "answer_format": "choice",
+       "question": "last name",
+       "options": [
+        {
+         "key": "a",
+         "text": "how old you are (18, 19, 20)"
+        },
+        {
+         "key": "b",
+         "text": "the first word of your name (Nam, Hoa)"
+        },
+        {
+         "key": "c",
+         "text": "the person I talk to"
+        },
+        {
+         "key": "d",
+         "text": "the last word of your name (Tran, Nguyen)"
+        },
+        {
+         "key": "e",
+         "text": "a word to say hi"
+        }
+       ]
+      },
+      {
+       "no": 2,
+       "type": "match",
+       "game": "link_word",
+       "answer_format": "choice",
+       "question": "age",
+       "options": [
+        {
+         "key": "a",
+         "text": "how old you are (18, 19, 20)"
+        },
+        {
+         "key": "b",
+         "text": "the first word of your name (Nam, Hoa)"
+        },
+        {
+         "key": "c",
+         "text": "the person I talk to"
+        },
+        {
+         "key": "d",
+         "text": "the last word of your name (Tran, Nguyen)"
+        },
+        {
+         "key": "e",
+         "text": "a word to say hi"
+        }
+       ]
+      },
+      {
+       "no": 3,
+       "type": "match",
+       "game": "link_word",
+       "answer_format": "choice",
+       "question": "hello",
+       "options": [
+        {
+         "key": "a",
+         "text": "how old you are (18, 19, 20)"
+        },
+        {
+         "key": "b",
+         "text": "the first word of your name (Nam, Hoa)"
+        },
+        {
+         "key": "c",
+         "text": "the person I talk to"
+        },
+        {
+         "key": "d",
+         "text": "the last word of your name (Tran, Nguyen)"
+        },
+        {
+         "key": "e",
+         "text": "a word to say hi"
+        }
+       ]
+      },
+      {
+       "no": 4,
+       "type": "match",
+       "game": "link_word",
+       "answer_format": "choice",
+       "question": "you",
+       "options": [
+        {
+         "key": "a",
+         "text": "how old you are (18, 19, 20)"
+        },
+        {
+         "key": "b",
+         "text": "the first word of your name (Nam, Hoa)"
+        },
+        {
+         "key": "c",
+         "text": "the person I talk to"
+        },
+        {
+         "key": "d",
+         "text": "the last word of your name (Tran, Nguyen)"
+        },
+        {
+         "key": "e",
+         "text": "a word to say hi"
+        }
+       ]
+      }
+     ],
+     "answer_key": [
+      {
+       "no": 1,
+       "qid": "A1.2",
+       "answer": "d",
+       "answer_text": "the last word of your name (Tran, Nguyen)",
+       "explanation_vi": "“Last name” là họ của một người, ví dụ như họ Tran hay Nguyen.",
+       "open_ended": false,
+       "competency": "VOC.RECEPT",
+       "video_time": 236.9,
+       "grading": "choice_key"
+      },
+      {
+       "no": 2,
+       "qid": "A1.3",
+       "answer": "a",
+       "answer_text": "how old you are (18, 19, 20)",
+       "explanation_vi": "“Age” là tuổi tác, tức con số chỉ bạn bao nhiêu tuổi (như 18, 19, 20).",
+       "open_ended": false,
+       "competency": "VOC.RECEPT",
+       "video_time": 257.6,
+       "grading": "choice_key"
+      },
+      {
+       "no": 3,
+       "qid": "A1.4",
+       "answer": "e",
+       "answer_text": "a word to say hi",
+       "explanation_vi": "“Hello” là từ dùng để chào hỏi ai đó khi gặp mặt.",
+       "open_ended": false,
+       "competency": "VOC.RECEPT",
+       "video_time": 278.23,
+       "grading": "choice_key"
+      },
+      {
+       "no": 4,
+       "qid": "A1.5",
+       "answer": "c",
+       "answer_text": "the person I talk to",
+       "explanation_vi": "“You” là đại từ chỉ người mà mình đang trực tiếp trò chuyện cùng.",
+       "open_ended": false,
+       "competency": "VOC.RECEPT",
+       "video_time": 297.3,
+       "grading": "choice_key"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "skill": "grammar",
+   "label": "Mẫu câu",
+   "title": "B | STRUCTURES TO PRACTISE | Mẫu câu: Hỏi và trả lời tên, họ",
+   "start": 318.33,
+   "end": 529.53,
+   "start_hms": "05:18",
+   "end_hms": "08:50",
+   "duration": 211.2,
+   "popups": [
+    {
+     "popup_id": "1.1.2-P2",
+     "skill": "grammar",
+     "type": "fill_gap",
+     "game": "spelling_word",
+     "answer_format": "text",
+     "video_stop": 431.9,
+     "time_limit_sec": 180,
+     "video_resume": 431.9,
+     "review_end": 529.53,
+     "instruction": "Look at the name tags. Answer the questions.",
+     "audio_file": "",
+     "image_file": "Chapter 1/Unit 1/Lesson 2/LOG_1.1.2_Hinh_P2.png",
+     "material": {},
+     "shared_options": null,
+     "word_bank": [
+      "Le",
+      "Mai",
+      "Huy Do",
+      "Ha",
+      "An Bui"
+     ],
+     "context_text": "Word bank: Le, Mai, Huy Do, Ha, An Bui",
+     "questions": [
+      {
+       "no": 1,
+       "type": "fill_gap",
+       "game": "spelling_word",
+       "answer_format": "text",
+       "question": "Mai Vo: What’s your first name? → My first name is ____ ."
+      },
+      {
+       "no": 2,
+       "type": "fill_gap",
+       "game": "spelling_word",
+       "answer_format": "text",
+       "question": "Huy Do: What’s your name? → My name is ____ ."
+      },
+      {
+       "no": 3,
+       "type": "fill_gap",
+       "game": "spelling_word",
+       "answer_format": "text",
+       "question": "Trang Ha: What’s your last name? → My last name is ____ ."
+      },
+      {
+       "no": 4,
+       "type": "fill_gap",
+       "game": "spelling_word",
+       "answer_format": "text",
+       "question": "An Bui: Say hi and your name. → Hi. I’m ____ ."
+      }
+     ],
+     "answer_key": [
+      {
+       "no": 1,
+       "qid": "B1.2",
+       "answer": "Mai",
+       "answers": [
+        "Mai"
+       ],
+       "answer_text": "My first name is Mai.",
+       "explanation_vi": "Thẻ ghi “Mai Vo”, câu hỏi hỏi tên (“first name”) nên điền tên gọi là “Mai”.",
+       "open_ended": false,
+       "competency": "GRA.FORMS",
+       "video_time": 431.9,
+       "grading": "text_match"
+      },
+      {
+       "no": 2,
+       "qid": "B1.3",
+       "answer": "Huy Do",
+       "answers": [
+        "Huy Do"
+       ],
+       "answer_text": "My name is Huy Do.",
+       "explanation_vi": "Câu hỏi “What’s your name?” yêu cầu nói đầy đủ cả họ và tên: “Huy Do”.",
+       "open_ended": false,
+       "competency": "GRA.FORMS",
+       "video_time": 459.03,
+       "grading": "text_match"
+      },
+      {
+       "no": 3,
+       "qid": "B1.4",
+       "answer": "Ha",
+       "answers": [
+        "Ha"
+       ],
+       "answer_text": "My last name is Ha.",
+       "explanation_vi": "Thẻ ghi “Trang Ha”, câu hỏi hỏi họ (“last name”) nên điền “Ha”.",
+       "open_ended": false,
+       "competency": "GRA.FORMS",
+       "video_time": 481.5,
+       "grading": "text_match"
+      },
+      {
+       "no": 4,
+       "qid": "B1.5",
+       "answer": "An Bui",
+       "answers": [
+        "An Bui"
+       ],
+       "answer_text": "Hi. I’m An Bui.",
+       "explanation_vi": "Theo mẫu câu chào và giới thiệu tên đầy đủ: “Hi. I’m An Bui.”.",
+       "open_ended": false,
+       "competency": "GRA.FORMS",
+       "video_time": 505.5,
+       "grading": "text_match"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "skill": "listening",
+   "label": "Nghe",
+   "title": "C | LISTENING | Nghe: Registration day",
+   "start": 529.53,
+   "end": 759.03,
+   "start_hms": "08:50",
+   "end_hms": "12:39",
+   "duration": 229.5,
+   "popups": [
+    {
+     "popup_id": "1.1.2-P3",
+     "skill": "listening",
+     "type": "single_choice",
+     "game": "quiz",
+     "answer_format": "choice",
+     "video_stop": 665.27,
+     "time_limit_sec": 210,
+     "video_resume": 665.27,
+     "review_end": 759.03,
+     "instruction": "Listen. Circle a or b.",
+     "audio_file": "Chapter 1/Unit 1/Lesson 2/LOG_1.1.2_Audio_bai_nghe.mp3",
+     "image_file": "",
+     "material": {},
+     "shared_options": null,
+     "word_bank": null,
+     "context_text": "",
+     "questions": [
+      {
+       "no": 1,
+       "type": "single_choice",
+       "game": "quiz",
+       "answer_format": "choice",
+       "question": "The boy’s first name is ____.",
+       "options": [
+        {
+         "key": "a",
+         "text": "Minh"
+        },
+        {
+         "key": "b",
+         "text": "Nam"
+        }
+       ]
+      },
+      {
+       "no": 2,
+       "type": "single_choice",
+       "game": "quiz",
+       "answer_format": "choice",
+       "question": "His last name is ____.",
+       "options": [
+        {
+         "key": "a",
+         "text": "Vo"
+        },
+        {
+         "key": "b",
+         "text": "Tran"
+        }
+       ]
+      },
+      {
+       "no": 3,
+       "type": "single_choice",
+       "game": "quiz",
+       "answer_format": "choice",
+       "question": "Hoa asks about his ____.",
+       "options": [
+        {
+         "key": "a",
+         "text": "phone"
+        },
+        {
+         "key": "b",
+         "text": "age"
+        }
+       ]
+      },
+      {
+       "no": 4,
+       "type": "single_choice",
+       "game": "quiz",
+       "answer_format": "choice",
+       "question": "Minh is ____ years old.",
+       "options": [
+        {
+         "key": "a",
+         "text": "19"
+        },
+        {
+         "key": "b",
+         "text": "18"
+        }
+       ]
+      }
+     ],
+     "answer_key": [
+      {
+       "no": 1,
+       "qid": "C1.2",
+       "answer": "a",
+       "answer_text": "Minh",
+       "explanation_vi": "Bạn nam trả lời rõ: “My first name is Minh.”.",
+       "open_ended": false,
+       "competency": "LIS.SPECIFIC",
+       "video_time": 665.27,
+       "grading": "choice_key"
+      },
+      {
+       "no": 2,
+       "qid": "C1.3",
+       "answer": "a",
+       "answer_text": "Vo",
+       "explanation_vi": "Khi được hỏi về họ, bạn nam trả lời: “My last name is Vo.”.",
+       "open_ended": false,
+       "competency": "LIS.SPECIFIC",
+       "video_time": 688.3,
+       "grading": "choice_key"
+      },
+      {
+       "no": 3,
+       "qid": "C1.4",
+       "answer": "b",
+       "answer_text": "age",
+       "explanation_vi": "Hoa hỏi câu “How old are you?”, đây là câu hỏi về số tuổi (“age”).",
+       "open_ended": false,
+       "competency": "LIS.SPECIFIC",
+       "video_time": 709.37,
+       "grading": "choice_key"
+      },
+      {
+       "no": 4,
+       "qid": "C1.5",
+       "answer": "b",
+       "answer_text": "18",
+       "explanation_vi": "Minh nói “eighteen”, tức là 18 tuổi.",
+       "open_ended": false,
+       "competency": "LIS.SPECIFIC",
+       "video_time": 733.57,
+       "grading": "choice_key"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "skill": "reading",
+   "label": "Đọc",
+   "title": "D | READING | Đọc: Nam’s registration form",
+   "start": 759.03,
+   "end": 897.53,
+   "start_hms": "12:39",
+   "end_hms": "14:58",
+   "duration": 138.5,
+   "popups": [
+    {
+     "popup_id": "1.1.2-P4",
+     "skill": "reading",
+     "type": "short_answer",
+     "game": "spelling_sentence",
+     "answer_format": "text",
+     "video_stop": 817.73,
+     "time_limit_sec": 300,
+     "video_resume": 817.73,
+     "review_end": 897.53,
+     "instruction": "Read again. Write Nam’s answers. Use 3–5 words.",
+     "audio_file": "",
+     "image_file": "",
+     "material": {
+      "reading": {
+       "title": "Registration form",
+       "card": [
+        {
+         "label": "First name",
+         "value": "Nam"
+        },
+        {
+         "label": "Last name",
+         "value": "Tran"
+        },
+        {
+         "label": "Age",
+         "value": "19"
+        },
+        {
+         "label": "Class",
+         "value": "LG01"
+        }
+       ],
+       "text": [
+        "Hello!",
+        "My first name is Nam.",
+        "My last name is Tran.",
+        "I’m 19 years old.",
+        "I’m a college student.",
+        "I’m in class LG01.",
+        "This is my registration form."
+       ]
+      }
+     },
+     "shared_options": null,
+     "word_bank": null,
+     "context_text": "Registration form\n\nFirst name: Nam\nLast name: Tran\nAge: 19\nClass: LG01\n\nHello!\nMy first name is Nam.\nMy last name is Tran.\nI’m 19 years old.\nI’m a college student.\nI’m in class LG01.\nThis is my registration form.",
+     "questions": [
+      {
+       "no": 1,
+       "type": "short_answer",
+       "game": "spelling_sentence",
+       "answer_format": "text",
+       "question": "What’s your last name?"
+      },
+      {
+       "no": 2,
+       "type": "short_answer",
+       "game": "spelling_sentence",
+       "answer_format": "text",
+       "question": "How old are you?"
+      },
+      {
+       "no": 3,
+       "type": "short_answer",
+       "game": "spelling_sentence",
+       "answer_format": "text",
+       "question": "What is your class?"
+      },
+      {
+       "no": 4,
+       "type": "short_answer",
+       "game": "spelling_sentence",
+       "answer_format": "text",
+       "question": "Are you a student?"
+      }
+     ],
+     "answer_key": [
+      {
+       "no": 1,
+       "qid": "D1.2",
+       "answer": "My last name is Tran.",
+       "answer_text": "My last name is Tran.",
+       "explanation_vi": "Bài đọc nêu rõ họ: “My last name is Tran.”.",
+       "open_ended": true,
+       "competency": "REA.INFO",
+       "video_time": 817.73,
+       "grading": "open"
+      },
+      {
+       "no": 2,
+       "qid": "D1.3",
+       "answer": "I’m 19 years old.",
+       "answer_text": "I’m 19 years old.",
+       "explanation_vi": "Bài đọc nêu rõ số tuổi: “I’m 19 years old.”.",
+       "open_ended": true,
+       "competency": "REA.INFO",
+       "video_time": 836.7,
+       "grading": "open"
+      },
+      {
+       "no": 3,
+       "qid": "D1.4",
+       "answer": "I’m in class LG01.",
+       "answer_text": "I’m in class LG01.",
+       "explanation_vi": "Bài đọc cho biết thông tin lớp: “I’m in class LG01.”.",
+       "open_ended": true,
+       "competency": "REA.INFO",
+       "video_time": 855.87,
+       "grading": "open"
+      },
+      {
+       "no": 4,
+       "qid": "D1.5",
+       "answer": "Yes, I’m a student.",
+       "answer_text": "Yes, I’m a student.",
+       "explanation_vi": "Bài đọc khẳng định bạn là sinh viên: “I’m a college student.”.",
+       "open_ended": true,
+       "competency": "REA.INFO",
+       "video_time": 876.27,
+       "grading": "open"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "skill": "speaking",
+   "label": "Nói",
+   "title": "E | SPEAKING | Nói: At the registration desk",
+   "start": 897.53,
+   "end": 1055.67,
+   "start_hms": "14:58",
+   "end_hms": "17:36",
+   "duration": 158.14,
+   "popups": [
+    {
+     "popup_id": "1.1.2-P5",
+     "skill": "speaking",
+     "type": "speak",
+     "game": "speaking_para",
+     "answer_format": "audio",
+     "video_stop": 948.53,
+     "time_limit_sec": 300,
+     "video_resume": 948.53,
+     "review_end": 1055.67,
+     "instruction": "Nghe Trang nói và đáp lại trong vai Huy.",
+     "audio_file": "",
+     "image_file": "",
+     "material": {},
+     "shared_options": null,
+     "word_bank": null,
+     "context_text": "Nhập vai: em là Huy, Trang nói trước.",
+     "questions": [
+      {
+       "no": 1,
+       "type": "speak",
+       "game": "speaking_para",
+       "answer_format": "audio",
+       "question": "Trang: Hello. What’s your first name?",
+       "task": "Chào lại và nói tên em là Huy."
+      },
+      {
+       "no": 2,
+       "type": "speak",
+       "game": "speaking_para",
+       "answer_format": "audio",
+       "question": "Trang: What’s your last name?",
+       "task": "Nói họ của em là Do."
+      },
+      {
+       "no": 3,
+       "type": "speak",
+       "game": "speaking_para",
+       "answer_format": "audio",
+       "question": "Trang: How old are you?",
+       "task": "Nói em 18 tuổi và cảm ơn."
+      },
+      {
+       "no": 4,
+       "type": "speak",
+       "game": "speaking_para",
+       "answer_format": "audio",
+       "question": "Trang: Hello. What’s your first name?",
+       "task": "Chào lại và nói tên em là Tuan."
+      },
+      {
+       "no": 5,
+       "type": "speak",
+       "game": "speaking_para",
+       "answer_format": "audio",
+       "question": "Trang: And your last name?",
+       "task": "Nói họ của em là Le."
+      }
+     ],
+     "answer_key": [
+      {
+       "no": 1,
+       "qid": "E.1",
+       "answer": "Hi. My first name is Huy.",
+       "answer_text": "Hi. My first name is Huy.",
+       "explanation_vi": null,
+       "open_ended": true,
+       "competency": "SPE.INTERACT",
+       "video_time": 948.53,
+       "grading": "open"
+      },
+      {
+       "no": 2,
+       "qid": "E.2",
+       "answer": "My last name is Do.",
+       "answer_text": "My last name is Do.",
+       "explanation_vi": null,
+       "open_ended": true,
+       "competency": "SPE.INTERACT",
+       "video_time": 971.33,
+       "grading": "open"
+      },
+      {
+       "no": 3,
+       "qid": "E.3",
+       "answer": "I’m 18 years old. Thank you.",
+       "answer_text": "I’m 18 years old. Thank you.",
+       "explanation_vi": null,
+       "open_ended": true,
+       "competency": "SPE.INTERACT",
+       "video_time": 991.3,
+       "grading": "open"
+      },
+      {
+       "no": 4,
+       "qid": "E.4",
+       "answer": "Hi. My first name is Tuan.",
+       "answer_text": "Hi. My first name is Tuan.",
+       "explanation_vi": null,
+       "open_ended": true,
+       "competency": "SPE.INTERACT",
+       "video_time": 1011.53,
+       "grading": "open"
+      },
+      {
+       "no": 5,
+       "qid": "E.5",
+       "answer": "My last name is Le.",
+       "answer_text": "My last name is Le.",
+       "explanation_vi": null,
+       "open_ended": true,
+       "competency": "SPE.INTERACT",
+       "video_time": 1035.97,
+       "grading": "open"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "skill": "writing",
+   "label": "Viết",
+   "title": "F | WRITING | Viết: My registration form",
+   "start": 1055.67,
+   "end": 1198.6,
+   "start_hms": "17:36",
+   "end_hms": "19:59",
+   "duration": 142.93,
+   "popups": [
+    {
+     "popup_id": "1.1.2-P6",
+     "skill": "writing",
+     "type": "fill_gap",
+     "game": "spelling_word",
+     "answer_format": "text",
+     "video_stop": 1114.53,
+     "time_limit_sec": 180,
+     "video_resume": 1114.53,
+     "review_end": 1198.6,
+     "instruction": "Complete the sentences. Use the model. Use the words in the box.",
+     "audio_file": "",
+     "image_file": "",
+     "material": {
+      "model": {
+       "title": "Registration Form",
+       "fields": [
+        {
+         "label": "First name",
+         "value": "Nam"
+        },
+        {
+         "label": "Last name",
+         "value": "Tran"
+        },
+        {
+         "label": "Age",
+         "value": "19"
+        },
+        {
+         "label": "Class",
+         "value": "LG01"
+        },
+        {
+         "label": "Date",
+         "value": "9 October"
+        }
+       ]
+      }
+     },
+     "shared_options": null,
+     "word_bank": [
+      "19",
+      "Tran",
+      "registration form",
+      "Nam Tran"
+     ],
+     "context_text": "Registration Form\nFirst name: Nam\nLast name: Tran\nAge: 19\nClass: LG01\nDate: 9 October\n\nWord bank: 19, Tran, registration form, Nam Tran",
+     "questions": [
+      {
+       "no": 1,
+       "type": "fill_gap",
+       "game": "spelling_word",
+       "answer_format": "text",
+       "question": "My last name is ____."
+      },
+      {
+       "no": 2,
+       "type": "fill_gap",
+       "game": "spelling_word",
+       "answer_format": "text",
+       "question": "My full name is ____."
+      },
+      {
+       "no": 3,
+       "type": "fill_gap",
+       "game": "spelling_word",
+       "answer_format": "text",
+       "question": "I’m ____ years old."
+      },
+      {
+       "no": 4,
+       "type": "fill_gap",
+       "game": "spelling_word",
+       "answer_format": "text",
+       "question": "This is my ____."
+      }
+     ],
+     "answer_key": [
+      {
+       "no": 1,
+       "qid": "F2.2",
+       "answer": "Tran",
+       "answers": [
+        "Tran"
+       ],
+       "answer_text": "My last name is Tran.",
+       "explanation_vi": "Điền họ vào sau cụm “My last name is” và viết hoa chữ cái đầu của họ.",
+       "open_ended": false,
+       "competency": "WRI.PROD",
+       "video_time": 1114.53,
+       "grading": "text_match"
+      },
+      {
+       "no": 2,
+       "qid": "F2.3",
+       "answer": "Nam Tran",
+       "answers": [
+        "Nam Tran"
+       ],
+       "answer_text": "My full name is Nam Tran.",
+       "explanation_vi": "Họ tên đầy đủ (full name) gồm tên gọi và họ ghép lại.",
+       "open_ended": false,
+       "competency": "WRI.PROD",
+       "video_time": 1136.77,
+       "grading": "text_match"
+      },
+      {
+       "no": 3,
+       "qid": "F2.4",
+       "answer": "19",
+       "answers": [
+        "19"
+       ],
+       "answer_text": "I’m 19 years old.",
+       "explanation_vi": "Điền con số chỉ tuổi của bạn (ví dụ: 18, 19, 20).",
+       "open_ended": false,
+       "competency": "WRI.PROD",
+       "video_time": 1155.3,
+       "grading": "text_match"
+      },
+      {
+       "no": 4,
+       "qid": "F2.5",
+       "answer": "registration form",
+       "answers": [
+        "registration form"
+       ],
+       "answer_text": "This is my registration form.",
+       "explanation_vi": "Cụm từ chỉ biểu mẫu đăng ký là “registration form”.",
+       "open_ended": false,
+       "competency": "WRI.PROD",
+       "video_time": 1176.17,
+       "grading": "text_match"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "skill": "closing",
+   "label": "Tổng kết",
+   "title": "Tổng kết, tự đánh giá, bài về nhà",
+   "start": 1198.6,
+   "end": 1257.3,
+   "start_hms": "19:59",
+   "end_hms": "20:57",
+   "duration": 58.7,
+   "popups": []
+  }
+ ]
+}

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Drive Audio/Image Test</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #f5f5f5;
+        }
+        h1 {
+            color: #1e164e;
+        }
+        .test-section {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .test-item {
+            margin: 15px 0;
+            padding: 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+        }
+        .status {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+        .status.loading {
+            background: #ffd60a;
+            color: #1e164e;
+        }
+        .status.success {
+            background: #34c759;
+            color: white;
+        }
+        .status.error {
+            background: #ff3b30;
+            color: white;
+        }
+        audio {
+            width: 100%;
+            margin: 10px 0;
+        }
+        img {
+            max-width: 300px;
+            max-height: 200px;
+            margin: 10px 0;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+        }
+        code {
+            background: #f5f5f5;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 12px;
+            display: block;
+            margin: 5px 0;
+            word-break: break-all;
+        }
+    </style>
+</head>
+<body>
+    <h1>🧪 Google Drive Audio & Image Test</h1>
+    
+    <div class="test-section">
+        <h2>📊 Test Format Comparison</h2>
+        <p>Testing different URL formats for Google Drive files:</p>
+        
+        <div class="test-item">
+            <h3>🎵 Audio Test - Slide 2 (Multiple Formats)</h3>
+            <code>File ID: 1N99ANThw1N_2Sy00fXi5TkOL_iExzbgc</code>
+            
+            <h4>Format 1: Docs UC Export Download (Current - BEST for Audio)</h4>
+            <code>https://docs.google.com/uc?export=download&id=FILE_ID</code>
+            <span class="status loading" id="audio-1-status">Testing...</span>
+            <audio id="audio-1" controls preload="metadata">
+                <source src="https://docs.google.com/uc?export=download&id=1N99ANThw1N_2Sy00fXi5TkOL_iExzbgc" type="audio/mpeg">
+            </audio>
+            
+            <h4>Format 2: Simple Drive UC</h4>
+            <code>https://drive.google.com/uc?id=FILE_ID</code>
+            <span class="status loading" id="audio-2-status">Testing...</span>
+            <audio id="audio-2" controls preload="metadata">
+                <source src="https://drive.google.com/uc?id=1N99ANThw1N_2Sy00fXi5TkOL_iExzbgc" type="audio/mpeg">
+            </audio>
+            
+            <h4>Format 3: Drive Export Download</h4>
+            <code>https://drive.google.com/uc?export=download&id=FILE_ID</code>
+            <span class="status loading" id="audio-3-status">Testing...</span>
+            <audio id="audio-3" controls preload="metadata">
+                <source src="https://drive.google.com/uc?export=download&id=1N99ANThw1N_2Sy00fXi5TkOL_iExzbgc" type="audio/mpeg">
+            </audio>
+        </div>
+        
+        <div class="test-item">
+            <h3>🖼️ Image Test - Slide 1 (Multiple Formats)</h3>
+            <code>File ID: 1qOf8sRTsEqS-BbES3rBs31fRzJ9YqXhB</code>
+            
+            <h4>Format 1: Google CDN (Current - BEST for Images)</h4>
+            <code>https://lh3.googleusercontent.com/d/FILE_ID</code>
+            <span class="status loading" id="img-1-status">Testing...</span>
+            <br>
+            <img id="img-1" src="https://lh3.googleusercontent.com/d/1qOf8sRTsEqS-BbES3rBs31fRzJ9YqXhB" alt="Test Image 1">
+            
+            <h4>Format 2: Simple Drive UC</h4>
+            <code>https://drive.google.com/uc?id=FILE_ID</code>
+            <span class="status loading" id="img-2-status">Testing...</span>
+            <br>
+            <img id="img-2" src="https://drive.google.com/uc?id=1qOf8sRTsEqS-BbES3rBs31fRzJ9YqXhB" alt="Test Image 2">
+            
+            <h4>Format 3: Drive Thumbnail</h4>
+            <code>https://drive.google.com/thumbnail?id=FILE_ID</code>
+            <span class="status loading" id="img-3-status">Testing...</span>
+            <br>
+            <img id="img-3" src="https://drive.google.com/thumbnail?id=1qOf8sRTsEqS-BbES3rBs31fRzJ9YqXhB" alt="Test Image 3">
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h2>📋 Test Results Summary</h2>
+        <div id="summary">
+            <p>Testing in progress...</p>
+        </div>
+    </div>
+
+    <script>
+        // Audio tests
+        const audio1 = document.getElementById('audio-1');
+        const audio2 = document.getElementById('audio-2');
+        const audio3 = document.getElementById('audio-3');
+        
+        const audioStatus1 = document.getElementById('audio-1-status');
+        const audioStatus2 = document.getElementById('audio-2-status');
+        const audioStatus3 = document.getElementById('audio-3-status');
+        
+        audio1.addEventListener('loadeddata', () => {
+            audioStatus1.textContent = 'SUCCESS ✅';
+            audioStatus1.className = 'status success';
+        });
+        audio1.addEventListener('error', (e) => {
+            audioStatus1.textContent = 'FAILED ❌';
+            audioStatus1.className = 'status error';
+            console.error('Audio 1 error:', e);
+        });
+        
+        audio2.addEventListener('loadeddata', () => {
+            audioStatus2.textContent = 'SUCCESS ✅';
+            audioStatus2.className = 'status success';
+        });
+        audio2.addEventListener('error', (e) => {
+            audioStatus2.textContent = 'FAILED ❌';
+            audioStatus2.className = 'status error';
+            console.error('Audio 2 error:', e);
+        });
+        
+        audio3.addEventListener('loadeddata', () => {
+            audioStatus3.textContent = 'SUCCESS ✅';
+            audioStatus3.className = 'status success';
+        });
+        audio3.addEventListener('error', (e) => {
+            audioStatus3.textContent = 'FAILED ❌';
+            audioStatus3.className = 'status error';
+            console.error('Audio 3 error:', e);
+        });
+        
+        // Image tests
+        const img1 = document.getElementById('img-1');
+        const img2 = document.getElementById('img-2');
+        const img3 = document.getElementById('img-3');
+        
+        const imgStatus1 = document.getElementById('img-1-status');
+        const imgStatus2 = document.getElementById('img-2-status');
+        const imgStatus3 = document.getElementById('img-3-status');
+        
+        img1.addEventListener('load', () => {
+            imgStatus1.textContent = 'SUCCESS ✅';
+            imgStatus1.className = 'status success';
+        });
+        img1.addEventListener('error', (e) => {
+            imgStatus1.textContent = 'FAILED ❌';
+            imgStatus1.className = 'status error';
+            console.error('Image 1 error:', e);
+        });
+        
+        img2.addEventListener('load', () => {
+            imgStatus2.textContent = 'SUCCESS ✅';
+            imgStatus2.className = 'status success';
+        });
+        img2.addEventListener('error', (e) => {
+            imgStatus2.textContent = 'FAILED ❌';
+            imgStatus2.className = 'status error';
+            console.error('Image 2 error:', e);
+        });
+        
+        img3.addEventListener('load', () => {
+            imgStatus3.textContent = 'SUCCESS ✅';
+            imgStatus3.className = 'status success';
+        });
+        img3.addEventListener('error', (e) => {
+            imgStatus3.textContent = 'FAILED ❌';
+            imgStatus3.className = 'status error';
+            console.error('Image 3 error:', e);
+        });
+        
+        // Generate summary after 5 seconds
+        setTimeout(() => {
+            const summary = document.getElementById('summary');
+            const results = [];
+            
+            if (audioStatus1.classList.contains('success')) results.push('✅ Audio Format 1 (Docs UC Export Download) works');
+            else results.push('❌ Audio Format 1 (Docs UC Export Download) failed');
+            
+            if (audioStatus2.classList.contains('success')) results.push('✅ Audio Format 2 (Simple Drive UC) works');
+            else results.push('❌ Audio Format 2 (Simple Drive UC) failed');
+            
+            if (audioStatus3.classList.contains('success')) results.push('✅ Audio Format 3 (Drive Export Download) works');
+            else results.push('❌ Audio Format 3 (Drive Export Download) failed');
+            
+            if (imgStatus1.classList.contains('success')) results.push('✅ Image Format 1 (Google CDN) works');
+            else results.push('❌ Image Format 1 (Google CDN) failed');
+            
+            if (imgStatus2.classList.contains('success')) results.push('✅ Image Format 2 (Simple Drive UC) works');
+            else results.push('❌ Image Format 2 (Simple Drive UC) failed');
+            
+            if (imgStatus3.classList.contains('success')) results.push('✅ Image Format 3 (Drive Thumbnail) works');
+            else results.push('❌ Image Format 3 (Drive Thumbnail) failed');
+            
+            summary.innerHTML = '<ul>' + results.map(r => '<li>' + r + '</li>').join('') + '</ul>';
+        }, 5000);
+    </script>
+</body>
+</html>
