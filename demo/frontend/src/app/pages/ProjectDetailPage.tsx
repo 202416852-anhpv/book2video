@@ -58,12 +58,58 @@ interface MediaPlayerState {
 interface BlockPlayerState {
   isPlaying: boolean;
   currentBlockId: number | null;
+  currentSentenceId?: string | null;
   currentTime: number;  // Time within the block
+}
+
+function buildSentencesForBlock(block: any, defaultVoice?: any, defaultSpeed: string = '1.0x'): any[] {
+  const voice = block.voice || defaultVoice;
+  const speed = block.speed || defaultSpeed || '1.0x';
+  if (Array.isArray(block.sentences) && block.sentences.length > 0) {
+    return block.sentences.map((s: any, idx: number) => ({
+      ...s,
+      id: s.id || `b${block.id}_s${idx + 1}`,
+      voice: s.voice || voice,
+      speed: s.speed || speed,
+    }));
+  }
+  const rawLines = (block.content || '').split('\n').map((s: string) => s.trim()).filter(Boolean);
+  if (rawLines.length === 0) {
+    return [{
+      id: `b${block.id}_s1`,
+      content: '',
+      voice,
+      speed,
+      startSeconds: block.startSeconds ?? 0,
+      endSeconds: block.endSeconds ?? (block.startSeconds ?? 0) + 5,
+    }];
+  }
+  const startSec = block.startSeconds ?? 0;
+  const endSec = block.endSeconds ?? startSec + 5;
+  const totalDur = Math.max(0.5, endSec - startSec);
+  const totalChars = Math.max(1, rawLines.reduce((acc: number, l: string) => acc + l.length, 0));
+  let cursor = startSec;
+  return rawLines.map((line: string, idx: number) => {
+    const dur = idx === rawLines.length - 1
+      ? Math.max(0.2, endSec - cursor)
+      : Math.max(0.2, (line.length / totalChars) * totalDur);
+    const sStart = Math.round(cursor * 100) / 100;
+    const sEnd = Math.round((cursor + dur) * 100) / 100;
+    cursor = sEnd;
+    return {
+      id: `b${block.id}_s${idx + 1}`,
+      content: line,
+      voice,
+      speed,
+      startSeconds: sStart,
+      endSeconds: sEnd,
+    };
+  });
 }
 
 /**
  * Group blocks that belong to the same slide (where gap between consecutive blocks <= 0.1s)
- * into a single block per slide.
+ * into a single block per slide, preserving each sub-block as a sentence in `sentences`.
  */
 function mergeBlocksBySlide(rawBlocks: any[]): any[] {
   if (!rawBlocks || rawBlocks.length <= 1) return rawBlocks || [];
@@ -105,12 +151,30 @@ function mergeBlocksBySlide(rawBlocks: any[]): any[] {
     const endSec = last.endSeconds;
     const content = group.map(b => (b.content || '').trim()).filter(Boolean).join('\n');
     const words = group.flatMap(b => Array.isArray(b.words) ? b.words : []);
+    const sentences = group.flatMap((b, sIdx) => {
+      if (Array.isArray(b.sentences) && b.sentences.length > 0) {
+        return b.sentences;
+      }
+      return [{
+        id: `b${slideId}_s${sIdx + 1}`,
+        content: (b.content || '').trim(),
+        voice: b.voice || first.voice,
+        speed: b.speed || first.speed || '1.0x',
+        audioUrl: b.audioUrl,
+        startTime: formatMmSs(b.startSeconds),
+        endTime: formatMmSs(b.endSeconds),
+        startSeconds: b.startSeconds,
+        endSeconds: b.endSeconds,
+        words: b.words,
+      }];
+    });
     return {
       ...first,
       id: slideId,
       uid: first.uid || `block_${slideId}`,
       title: `Khối ${slideId}`,
       content,
+      sentences,
       startTime: formatMmSs(startSec),
       endTime: formatMmSs(endSec),
       startSeconds: startSec,
@@ -174,12 +238,17 @@ export default function ProjectDetailPage() {
         setProjectData(loaded);
         // Hydrate all state from saved data (auto-merge blocks belonging to the same slide)
         const mergedLoadedBlocks = mergeBlocksBySlide(loaded.blocks || []);
-        const newBlocks = mergedLoadedBlocks.map((block: any) => ({
-          ...block,
-          uid: block.uid || crypto.randomUUID(),
-          voice: loaded.voice || block.voice,
-          speed: loaded.readingSpeed || block.speed || '1.0x',
-        }));
+        const newBlocks = mergedLoadedBlocks.map((block: any) => {
+          const bVoice = loaded.voice || block.voice;
+          const bSpeed = loaded.readingSpeed || block.speed || '1.0x';
+          return {
+            ...block,
+            uid: block.uid || crypto.randomUUID(),
+            voice: bVoice,
+            speed: bSpeed,
+            sentences: buildSentencesForBlock(block, bVoice, bSpeed),
+          };
+        });
         setBlocks(newBlocks);
         blocksRef.current = newBlocks; // sync ref immediately to prevent auto-transcribe race
         const alreadyTranscribed = newBlocks.some((b: any) => b.content?.trim());
@@ -216,18 +285,24 @@ export default function ProjectDetailPage() {
 
   // Initialize blocks from location.state (sync, for new projects only)
   const initialBlocks = projectData
-    ? mergeBlocksBySlide(projectData?.blocks || []).map((block: any, i: number) => ({
-        ...block,
-        uid: block.uid || crypto.randomUUID(),
-        voice: projectData?.voice || block.voice,
-        speed: projectData?.readingSpeed || block.speed || '1.0x',
-      }))
+    ? mergeBlocksBySlide(projectData?.blocks || []).map((block: any) => {
+        const bVoice = projectData?.voice || block.voice;
+        const bSpeed = projectData?.readingSpeed || block.speed || '1.0x';
+        return {
+          ...block,
+          uid: block.uid || crypto.randomUUID(),
+          voice: bVoice,
+          speed: bSpeed,
+          sentences: buildSentencesForBlock(block, bVoice, bSpeed),
+        };
+      })
     : [];
 
   const [blocks, setBlocks] = useState(initialBlocks);
   const blocksRef = useRef(blocks);
   blocksRef.current = blocks; // sync on every render, not via useEffect (avoids stale ref after await)
   const [selectedBlocks, setSelectedBlocks] = useState<number[]>([]);
+  const [selectedSentences, setSelectedSentences] = useState<string[]>([]);
   const [highlightedBlock, setHighlightedBlock] = useState<number | null>(null);
   
   const [selectAll, setSelectAll] = useState(false);
@@ -237,6 +312,8 @@ export default function ProjectDetailPage() {
   const [showSpeedDropdown, setShowSpeedDropdown] = useState(false);
   const speedDropdownRef = useRef<HTMLDivElement>(null);
   const [currentEditingBlockId, setCurrentEditingBlockId] = useState<number | null>(null);
+  const [currentEditingSentenceId, setCurrentEditingSentenceId] = useState<string | null>(null);
+  const [ttsLoadingSentenceIds, setTtsLoadingSentenceIds] = useState<Set<string>>(new Set());
   
   // ============================================
   // AUDIO REFS
@@ -645,6 +722,7 @@ export default function ProjectDetailPage() {
     setBlockPlayerState({
       isPlaying: false,
       currentBlockId: null,
+      currentSentenceId: null,
       currentTime: 0,
     });
   };
@@ -674,10 +752,35 @@ export default function ProjectDetailPage() {
     }
   };
 
+  const ensureSentenceTTS = async (block: any, sentence: any): Promise<string | null> => {
+    if (sentence.audioUrl) return sentence.audioUrl;
+    if (!sentence.content?.trim()) return null;
+
+    const voiceId = sentence.voice?.id || block.voice?.id || selectedVoice.id;
+    const speed = (sentence.speed || block.speed || '1.0x').replace('x', '') || '1.0';
+    setTtsLoadingSentenceIds(prev => new Set(prev).add(sentence.id));
+    try {
+      const audioUrl = await generateTTS(sentence.content, voiceId, speed);
+      setBlocks(prev => prev.map(b => {
+        if (b.id !== block.id) return b;
+        const sentences = buildSentencesForBlock(b).map((s: any) =>
+          s.id === sentence.id ? { ...s, audioUrl } : s
+        );
+        return { ...b, sentences };
+      }));
+      measureGain(audioUrl).then(g => gainNodes.setVoiceGain(block.id, g));
+      return audioUrl;
+    } catch {
+      return null;
+    } finally {
+      setTtsLoadingSentenceIds(prev => { const next = new Set(prev); next.delete(sentence.id); return next; });
+    }
+  };
+
   // ============================================
   // HANDLE BLOCK CLICK (not play button)
   // ============================================
-  const handleSelectBlock = (id: number) => {
+  const handleSelectBlock = (id: number, seekSeconds?: number) => {
     gainNodes.resumeContext();
     // Check if media player is ACTUALLY playing (from audio element, not state)
     const isMediaPlayerPlaying = audioRef.current && !audioRef.current.paused;
@@ -731,14 +834,21 @@ export default function ProjectDetailPage() {
     }
 
     // If media player is NOT playing, set highlight and seek video preview to this block/slide
+    // Only seek if switching to a DIFFERENT block (or if current time is outside this block's slide interval)
     if (projectType === 'video') {
       const targetBlock = blocks.find((s: any) => s.id === id);
       if (targetBlock && targetBlock.startSeconds != null) {
         if (!engine.stateRef.current.isPlaying) {
-          const dur = (targetBlock.endSeconds ?? targetBlock.startSeconds + 5) - targetBlock.startSeconds;
-          const safeTime = targetBlock.startSeconds + Math.min(0.15, Math.max(0, dur * 0.1));
-          engine.seek(safeTime);
-          setMediaPlayerState(prev => ({ ...prev, currentTime: safeTime }));
+          const curTime = engine.getCurrentTime();
+          const blockStart = targetBlock.startSeconds;
+          const blockEnd = targetBlock.endSeconds ?? blockStart + 5;
+          const isAlreadyInSlide = highlightedBlock === id && curTime >= blockStart - 0.05 && curTime <= blockEnd + 0.05;
+          if (!isAlreadyInSlide) {
+            const dur = blockEnd - blockStart;
+            const safeTime = blockStart + Math.min(0.15, Math.max(0, dur * 0.1));
+            engine.seek(safeTime);
+            setMediaPlayerState(prev => ({ ...prev, currentTime: safeTime }));
+          }
         }
       }
     }
@@ -753,6 +863,93 @@ export default function ProjectDetailPage() {
         }
       }, 100);
     }
+  };
+
+  // ============================================
+  // HANDLE PLAY SENTENCE (play button inside a sentence row)
+  // ============================================
+  const handlePlaySentence = async (textBlockId: number, sentenceId: string) => {
+    gainNodes.resumeContext();
+    const block = blocks.find((s: any) => s.id === textBlockId);
+    if (!block) return;
+    const sentences = buildSentencesForBlock(block);
+    const sentence = sentences.find((s: any) => s.id === sentenceId);
+    if (!sentence) return;
+
+    // Toggle off if already playing this exact sentence
+    if (
+      blockPlayerState.isPlaying &&
+      blockPlayerState.currentBlockId === textBlockId &&
+      blockPlayerState.currentSentenceId === sentenceId
+    ) {
+      stopBlockPlayer();
+      if (projectType === 'video') {
+        if (engine.stateRef.current.isPlaying) engine.pause();
+        videoRef.current?.pause();
+      }
+      return;
+    }
+
+    if (projectType !== 'video') stopMediaPlayer();
+
+    if (projectType === 'video') {
+      if (engine.stateRef.current.isPlaying) engine.pause();
+
+      const video = videoRef.current;
+      if (!video) return;
+
+      const audioUrl = await ensureSentenceTTS(block, sentence);
+      if (!audioUrl) return;
+
+      const startSec = sentence.startSeconds ?? block.startSeconds ?? 0;
+      const endSec = sentence.endSeconds ?? block.endSeconds ?? startSec + 3;
+
+      video.currentTime = startSec;
+      video.volume = volumesRef.current.media / 100;
+      video.muted = volumesRef.current.media === 0;
+      video.play().catch(() => {});
+
+      const blockAudio = blockAudioRef.current;
+      if (blockAudio) {
+        blockAudio.src = audioUrl;
+        blockAudio.currentTime = 0;
+        blockAudio.volume = volumesRef.current.voiceover / 100;
+        gainNodes.applyVoiceGain(blockAudio, textBlockId);
+        const segDur = endSec - startSec;
+        const globalRate = video.playbackRate;
+        const applyBlockRate = () => {
+          const dur = blockAudio.duration;
+          if (dur && isFinite(dur) && segDur > 0) {
+            blockAudio.playbackRate = Math.min(dur / segDur, 3.0) * globalRate;
+          } else {
+            blockAudio.playbackRate = globalRate;
+          }
+        };
+        blockAudio.onloadedmetadata = () => applyBlockRate();
+        blockAudio.play().then(() => {
+          if (blockAudio.duration && isFinite(blockAudio.duration)) applyBlockRate();
+        }).catch(() => {});
+      }
+
+      setBlockPlayerState({
+        isPlaying: true,
+        currentBlockId: textBlockId,
+        currentSentenceId: sentenceId,
+        currentTime: 0,
+      });
+      setHighlightedBlock(textBlockId);
+      setMediaPlayerState(prev => ({ ...prev, currentTime: startSec }));
+      return;
+    }
+
+    const audioUrl = await ensureSentenceTTS(block, sentence);
+    if (!audioUrl) return;
+    setBlockPlayerState({
+      isPlaying: true,
+      currentBlockId: textBlockId,
+      currentSentenceId: sentenceId,
+      currentTime: 0,
+    });
   };
 
   // ============================================
@@ -1135,21 +1332,40 @@ export default function ProjectDetailPage() {
   };
 
   // ============================================
-  // CHECKBOX CHANGE
+  // CHECKBOX CHANGE (per sentence & select all)
   // ============================================
   const handleCheckboxChange = (id: number) => {
-    if (selectedBlocks.includes(id)) {
-      setSelectedBlocks(selectedBlocks.filter(textBlockId => textBlockId !== id));
+    const targetBlock = blocks.find((b: any) => b.id === id);
+    if (!targetBlock) return;
+    const sIds = buildSentencesForBlock(targetBlock).map((s: any) => s.id);
+    const allInBlockSelected = sIds.length > 0 && sIds.every((sid: string) => selectedSentences.includes(sid));
+    if (allInBlockSelected) {
+      setSelectedSentences(prev => prev.filter(sid => !sIds.includes(sid)));
+      setSelectedBlocks(prev => prev.filter(textBlockId => textBlockId !== id));
     } else {
-      setSelectedBlocks([...selectedBlocks, id]);
+      setSelectedSentences(prev => Array.from(new Set([...prev, ...sIds])));
+      setSelectedBlocks(prev => Array.from(new Set([...prev, id])));
     }
+    setSelectAll(false);
+  };
+
+  const handleSentenceCheckboxChange = (blockId: number, sentenceId: string) => {
+    setSelectedSentences(prev => {
+      const next = prev.includes(sentenceId)
+        ? prev.filter(id => id !== sentenceId)
+        : [...prev, sentenceId];
+      return next;
+    });
     setSelectAll(false);
   };
 
   const handleSelectAll = () => {
     if (selectAll) {
+      setSelectedSentences([]);
       setSelectedBlocks([]);
     } else {
+      const allSentenceIds = blocks.flatMap((b: any) => buildSentencesForBlock(b).map((s: any) => s.id));
+      setSelectedSentences(allSentenceIds);
       setSelectedBlocks(blocks.map((b: any) => b.id));
     }
     setSelectAll(!selectAll);
@@ -1157,6 +1373,29 @@ export default function ProjectDetailPage() {
 
   const handleDeleteSelected = () => {
     pushHistory();
+    if (selectedSentences.length > 0) {
+      const selectedSet = new Set(selectedSentences);
+      setBlocks((prev: any[]) => {
+        const nextBlocks: any[] = [];
+        for (const block of prev) {
+          const remainingSentences = buildSentencesForBlock(block).filter((s: any) => !selectedSet.has(s.id));
+          if (remainingSentences.length > 0) {
+            nextBlocks.push({
+              ...block,
+              sentences: remainingSentences,
+              content: remainingSentences.map((s: any) => s.content).join('\n'),
+              audioUrl: undefined,
+              words: undefined,
+            });
+          }
+        }
+        return reindex(nextBlocks);
+      });
+      setSelectedSentences([]);
+      setSelectedBlocks([]);
+      setSelectAll(false);
+      return;
+    }
     setBlocks((prev: any[]) => reindex(prev.filter((block) => !selectedBlocks.includes(block.id))));
     setSelectedBlocks([]);
     setSelectAll(false);
@@ -1166,29 +1405,141 @@ export default function ProjectDetailPage() {
   const handleContentChange = (textBlockId: number, newContent: string) => {
     pushHistory();
     setBlocks((prev: any[]) =>
-      prev.map((block) =>
-        block.id === textBlockId ? { ...block, content: newContent, audioUrl: undefined, words: undefined } : block
-      )
+      prev.map((block) => {
+        if (block.id !== textBlockId) return block;
+        const updatedBlock = { ...block, content: newContent, audioUrl: undefined, words: undefined, sentences: undefined };
+        return {
+          ...updatedBlock,
+          sentences: buildSentencesForBlock(updatedBlock),
+        };
+      })
+    );
+  };
+
+  const handleSentenceContentChange = (textBlockId: number, sentenceId: string, newContent: string) => {
+    pushHistory();
+    setBlocks((prev: any[]) =>
+      prev.map((block) => {
+        if (block.id !== textBlockId) return block;
+        const sentences = buildSentencesForBlock(block).map((s: any) =>
+          s.id === sentenceId ? { ...s, content: newContent, audioUrl: undefined, words: undefined } : s
+        );
+        const content = sentences.map((s: any) => s.content).join('\n');
+        return {
+          ...block,
+          content,
+          sentences,
+          audioUrl: undefined,
+          words: undefined,
+        };
+      })
+    );
+  };
+
+  const handleAddSentence = (textBlockId: number, afterSentenceId?: string) => {
+    pushHistory();
+    setBlocks((prev: any[]) =>
+      prev.map((block) => {
+        if (block.id !== textBlockId) return block;
+        const currentSentences = buildSentencesForBlock(block);
+        const insertIdx = afterSentenceId
+          ? currentSentences.findIndex((s: any) => s.id === afterSentenceId) + 1
+          : currentSentences.length;
+        const actualIdx = insertIdx > 0 ? insertIdx : currentSentences.length;
+        const prevSent = currentSentences[Math.max(0, actualIdx - 1)];
+        const nextSent = currentSentences[actualIdx];
+        const startSec = prevSent?.endSeconds ?? block.startSeconds ?? 0;
+        const endSec = nextSent?.startSeconds ?? block.endSeconds ?? startSec + 2;
+        const newSentence = {
+          id: `b${block.id}_s${Date.now()}`,
+          content: '',
+          voice: prevSent?.voice || block.voice || selectedVoiceRef.current,
+          speed: prevSent?.speed || block.speed || '1.0x',
+          startSeconds: startSec,
+          endSeconds: Math.max(startSec + 0.5, endSec),
+        };
+        const nextSentences = [...currentSentences];
+        nextSentences.splice(actualIdx, 0, newSentence);
+        return {
+          ...block,
+          sentences: nextSentences,
+          content: nextSentences.map((s: any) => s.content).join('\n'),
+          audioUrl: undefined,
+        };
+      })
+    );
+  };
+
+  const handleDeleteSentence = (textBlockId: number, sentenceId: string) => {
+    pushHistory();
+    setBlocks((prev: any[]) =>
+      prev.map((block) => {
+        if (block.id !== textBlockId) return block;
+        const currentSentences = buildSentencesForBlock(block);
+        if (currentSentences.length <= 1) return block;
+        const nextSentences = currentSentences.filter((s: any) => s.id !== sentenceId);
+        return {
+          ...block,
+          sentences: nextSentences,
+          content: nextSentences.map((s: any) => s.content).join('\n'),
+          audioUrl: undefined,
+        };
+      })
     );
   };
 
   const handleSelectVoice = (voice: Voice | TTSVoice) => {
     if ('id' in voice) setSelectedVoice(voice as TTSVoice);
     pushHistory();
-    if (currentEditingBlockId !== null) {
+    if (currentEditingBlockId !== null && currentEditingSentenceId !== null) {
+      // Change voice for a specific sentence inside the block
       setBlocks((prev: any[]) =>
-        prev.map((block) =>
-          block.id === currentEditingBlockId
-            ? { ...block, voice: voice, audioUrl: undefined }
-            : block
-        )
+        prev.map((block) => {
+          if (block.id !== currentEditingBlockId) return block;
+          const sentences = buildSentencesForBlock(block).map((s: any) =>
+            s.id === currentEditingSentenceId ? { ...s, voice, audioUrl: undefined } : s
+          );
+          return { ...block, sentences, audioUrl: undefined };
+        })
       );
       setCurrentEditingBlockId(null);
+      setCurrentEditingSentenceId(null);
+    } else if (currentEditingBlockId !== null) {
+      // Change voice for the entire block (and all sentences inside it)
+      setBlocks((prev: any[]) =>
+        prev.map((block) => {
+          if (block.id !== currentEditingBlockId) return block;
+          const sentences = buildSentencesForBlock(block).map((s: any) => ({
+            ...s,
+            voice,
+            audioUrl: undefined,
+          }));
+          return { ...block, voice, sentences, audioUrl: undefined };
+        })
+      );
+      setCurrentEditingBlockId(null);
+    } else if (selectedSentences.length > 0) {
+      const selectedSet = new Set(selectedSentences);
+      setBlocks((prev: any[]) =>
+        prev.map((block) => {
+          const currentSentences = buildSentencesForBlock(block);
+          if (!currentSentences.some((s: any) => selectedSet.has(s.id))) return block;
+          const sentences = currentSentences.map((s: any) =>
+            selectedSet.has(s.id) ? { ...s, voice, audioUrl: undefined } : s
+          );
+          return { ...block, sentences, audioUrl: undefined };
+        })
+      );
     } else {
       setBlocks((prev: any[]) =>
         prev.map((block) => {
           if (selectedBlocks.includes(block.id)) {
-            return { ...block, voice: voice, audioUrl: undefined };
+            const sentences = buildSentencesForBlock(block).map((s: any) => ({
+              ...s,
+              voice,
+              audioUrl: undefined,
+            }));
+            return { ...block, voice, sentences, audioUrl: undefined };
           }
           return block;
         })
@@ -1204,17 +1555,38 @@ export default function ProjectDetailPage() {
     setBlocks((prev: any[]) => reindex(prev.slice(0, idx)));
   }, [blocks, pushHistory]);
 
-  const handleVoiceClick = (textBlockId: number) => {
+  const handleVoiceClick = (textBlockId: number, sentenceId?: string) => {
     setCurrentEditingBlockId(textBlockId);
+    setCurrentEditingSentenceId(sentenceId ?? null);
     setShowVoiceModal(true);
   };
 
   const handleSelectSpeed = (speed: string) => {
     pushHistory();
+    if (selectedSentences.length > 0) {
+      const selectedSet = new Set(selectedSentences);
+      setBlocks((prev: any[]) =>
+        prev.map((block) => {
+          const currentSentences = buildSentencesForBlock(block);
+          if (!currentSentences.some((s: any) => selectedSet.has(s.id))) return block;
+          const sentences = currentSentences.map((s: any) =>
+            selectedSet.has(s.id) ? { ...s, speed, audioUrl: undefined } : s
+          );
+          return { ...block, sentences, audioUrl: undefined };
+        })
+      );
+      setShowSpeedDropdown(false);
+      return;
+    }
     setBlocks((prev: any[]) =>
       prev.map((block) => {
-        if (selectedBlocks.includes(block.id) && block.speed !== speed) {
-          return { ...block, speed, audioUrl: undefined };
+        if (selectedBlocks.includes(block.id)) {
+          const sentences = buildSentencesForBlock(block).map((s: any) => ({
+            ...s,
+            speed,
+            audioUrl: undefined,
+          }));
+          return { ...block, speed, sentences, audioUrl: undefined };
         }
         return block;
       })
@@ -1226,10 +1598,28 @@ export default function ProjectDetailPage() {
     pushHistory();
     setBlocks((prev: any[]) =>
       prev.map((block) => {
-        if (block.id === blockId && block.speed !== speed) {
-          return { ...block, speed, audioUrl: undefined };
+        if (block.id === blockId) {
+          const sentences = buildSentencesForBlock(block).map((s: any) => ({
+            ...s,
+            speed,
+            audioUrl: undefined,
+          }));
+          return { ...block, speed, sentences, audioUrl: undefined };
         }
         return block;
+      })
+    );
+  };
+
+  const handleSentenceSpeedChange = (blockId: number, sentenceId: string, speed: string) => {
+    pushHistory();
+    setBlocks((prev: any[]) =>
+      prev.map((block) => {
+        if (block.id !== blockId) return block;
+        const sentences = buildSentencesForBlock(block).map((s: any) =>
+          s.id === sentenceId ? { ...s, speed, audioUrl: undefined } : s
+        );
+        return { ...block, sentences, audioUrl: undefined };
       })
     );
   };
@@ -1400,7 +1790,8 @@ export default function ProjectDetailPage() {
       const blockB = prev[index + 1];
       const merged = {
         ...blockA,
-        content: [blockA.content, blockB.content].filter(Boolean).join(' '),
+        content: [blockA.content, blockB.content].filter(Boolean).join('\n'),
+        sentences: [...buildSentencesForBlock(blockA), ...buildSentencesForBlock(blockB)],
         endTime: blockB.endTime,
         endSeconds: blockB.endSeconds,
         audioUrl: undefined,
@@ -2056,21 +2447,30 @@ export default function ProjectDetailPage() {
                             block={block}
                             index={index}
                             isSelected={selectedBlocks.includes(block.id)}
+                            selectedSentenceIds={selectedSentences}
                             isHighlighted={highlightedBlock === block.id}
                             isTtsLoading={ttsLoadingBlockIds.has(block.id)}
+                            ttsLoadingSentenceIds={ttsLoadingSentenceIds}
                             autoEdit={autoEditBlockId === block.id}
                             onAutoEditConsumed={() => setAutoEditBlockId(null)}
                             onBlockClick={handleSelectBlock}
                             onCheckboxChange={handleCheckboxChange}
+                            onSentenceCheckboxChange={handleSentenceCheckboxChange}
                             onContentChange={handleContentChange}
+                            onSentenceContentChange={handleSentenceContentChange}
                             onPlayBlock={handlePlayBlock}
+                            onPlaySentence={handlePlaySentence}
                             currentPlayingBlockId={blockPlayerState.currentBlockId}
+                            currentPlayingSentenceId={blockPlayerState.currentSentenceId}
                             onVoiceClick={handleVoiceClick}
                             onDelete={handleDeleteBlock}
                             onDeleteFromHere={handleDeleteFromHere}
                             onMergeWithPrev={index > 0 ? () => handleMergeBlocks(index - 1) : undefined}
                             onInsertBefore={index > 0 ? () => handleInsertBlock(index - 1) : undefined}
                             onSpeedChange={handleBlockSpeedChange}
+                            onSentenceSpeedChange={handleSentenceSpeedChange}
+                            onAddSentence={handleAddSentence}
+                            onDeleteSentence={handleDeleteSentence}
                           />
                         ))}
                         <AddBlockButton onClick={handleAddBlock} />
@@ -2168,11 +2568,11 @@ export default function ProjectDetailPage() {
         </div>
 
         {/* Selection toolbar — fixed above timeline */}
-        {selectedBlocks.length > 0 && (
+        {(selectedSentences.length > 0 || selectedBlocks.length > 0) && (
           <div className="fixed left-[80px] right-0 z-30 px-4 py-2 flex items-center justify-between bg-[#1c1c1e] rounded-tl-xl rounded-tr-xl" style={{ bottom: timelineHeight }}>
             <div className="flex items-center gap-3">
               <span className="text-[13px] text-white font-medium">
-                Đã chọn {selectedBlocks.length}
+                Đã chọn {selectedSentences.length > 0 ? selectedSentences.length : selectedBlocks.length}
               </span>
               <div className="w-px h-4 bg-white/20" />
               <button
@@ -2208,6 +2608,14 @@ export default function ProjectDetailPage() {
                     <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
                   </svg>
                   {(() => {
+                    if (selectedSentences.length > 0) {
+                      const selectedSet = new Set(selectedSentences);
+                      const speeds = blocks.flatMap((b: any) =>
+                        buildSentencesForBlock(b).filter((s: any) => selectedSet.has(s.id)).map((s: any) => s.speed || b.speed || '1.0x')
+                      ).filter(Boolean);
+                      const unique = [...new Set(speeds)];
+                      return unique.length === 1 ? unique[0] : unique.length > 1 ? 'Đa tốc độ' : '1.0x';
+                    }
                     const speeds = selectedBlocks.map((id: number) => blocks.find((b: any) => b.id === id)?.speed).filter(Boolean);
                     const unique = [...new Set(speeds)];
                     return unique.length === 1 ? unique[0] : unique.length > 1 ? 'Đa tốc độ' : '1.0x';
@@ -2216,6 +2624,14 @@ export default function ProjectDetailPage() {
                 {showSpeedDropdown && (
                   <SpeedPicker
                     currentSpeed={(() => {
+                      if (selectedSentences.length > 0) {
+                        const selectedSet = new Set(selectedSentences);
+                        const speeds = blocks.flatMap((b: any) =>
+                          buildSentencesForBlock(b).filter((s: any) => selectedSet.has(s.id)).map((s: any) => s.speed || b.speed || '1.0x')
+                        ).filter(Boolean);
+                        const unique = [...new Set(speeds)];
+                        return unique.length === 1 ? (unique[0] as string) : undefined;
+                      }
                       const speeds = selectedBlocks.map((id: number) => blocks.find((b: any) => b.id === id)?.speed).filter(Boolean);
                       const unique = [...new Set(speeds)];
                       return unique.length === 1 ? (unique[0] as string) : undefined;
@@ -2240,7 +2656,7 @@ export default function ProjectDetailPage() {
               </button>
             </div>
             <button
-              onClick={() => setSelectedBlocks([])}
+              onClick={() => { setSelectedSentences([]); setSelectedBlocks([]); setSelectAll(false); }}
               className="p-1.5 rounded-md text-white/60 hover:text-white hover:bg-white/10 transition-colors cursor-pointer"
             >
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -2288,12 +2704,27 @@ export default function ProjectDetailPage() {
         {/* Modals */}
         {showVoiceModal && (
           <VoiceSelectionModal
-            onClose={() => { setShowVoiceModal(false); setCurrentEditingBlockId(null); }}
+            onClose={() => { setShowVoiceModal(false); setCurrentEditingBlockId(null); setCurrentEditingSentenceId(null); }}
             onSelectVoice={handleSelectVoice}
             currentVoiceId={(() => {
+              // Editing a specific sentence inside a block
+              if (currentEditingBlockId !== null && currentEditingSentenceId !== null) {
+                const targetBlock = blocks.find((s: any) => s.id === currentEditingBlockId);
+                const targetSent = targetBlock ? buildSentencesForBlock(targetBlock).find((s: any) => s.id === currentEditingSentenceId) : null;
+                return targetSent?.voice?.id || targetBlock?.voice?.id || selectedVoice.id;
+              }
               // Editing a single block
               if (currentEditingBlockId !== null) {
                 return blocks.find((s: any) => s.id === currentEditingBlockId)?.voice?.id || selectedVoice.id;
+              }
+              // Multiple selected sentences — show "Đã chọn" only if all same voice
+              if (selectedSentences.length > 0) {
+                const selectedSet = new Set(selectedSentences);
+                const voiceIds = blocks.flatMap((b: any) =>
+                  buildSentencesForBlock(b).filter((s: any) => selectedSet.has(s.id)).map((s: any) => (s.voice || b.voice)?.id)
+                ).filter(Boolean);
+                const allSame = voiceIds.length > 0 && voiceIds.every(v => v === voiceIds[0]);
+                return allSame ? voiceIds[0] : undefined;
               }
               // Multiple selected blocks — show "Đã chọn" only if all same voice
               if (selectedBlocks.length > 0) {
